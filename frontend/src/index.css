@@ -1,0 +1,1111 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.navbar {
+  height: 60px;
+  background-color: #24252A;
+  position: relative;
+  border-bottom: 1px solid rgb(206, 206, 74);
+  border-radius: 10px;
+}
+
+.nav-elements {
+  justify-content: center;
+  text-align: center;
+  margin-left: 350px;
+}
+
+.logREgDiv {
+  display: flex;
+}
+
+.spacer {
+  margin-right: 50px;
+  /* Adjust the value as needed */
+}
+
+.nav-elements ul {
+  display: flex;
+  list-style-type: none;
+
+}
+
+
+
+.loggedAs {
+  font-size: 16px;
+  color: rgb(181, 181, 50);
+  margin-left: 10px;
+
+  margin-top: 5px;
+}
+
+/**/
+
+.dropdown {
+  margin-right: 20px;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: rgb(182, 182, 16);
+  border: 1px solid #24252A;
+  display: none;
+  border-radius: 7px;
+  color: whitesmoke;
+}
+
+.dropdown-menu a {
+  display: block;
+  text-decoration: none;
+  color: #000;
+  margin-left: 5px;
+}
+
+.dropdown-menu a:hover {
+  background-color: #24252A;
+  color: whitesmoke;
+  margin-left: -5px;
+  border-radius: 4px;
+}
+
+.loggedAs:hover {
+  cursor: pointer;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+  cursor: pointer;
+}
+
+/**/
+
+
+
+
+.nav-elements ul li:not(:last-child) {
+  margin-right: 60px;
+}
+
+.nav-elements ul a {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(181, 181, 50);
+  text-decoration: none;
+}
+
+.OdajavaLink {
+  text-decoration: none;
+  padding-right: 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.odjava {
+  font-size: 16px;
+  color: rgb(181, 181, 50);
+  margin-top: 5px;
+}
+
+
+.nav-elements ul a.active {
+  color: rgb(181, 181, 50);
+  font-weight: 500;
+  position: relative;
+}
+
+.nav-elements ul a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: rgb(181, 181, 50);
+}
+
+.nav-elements ul li {
+  flex-grow: 1;
+  /* Allow <li> elements to expand and fill the space */
+}
+
+.home a {
+  margin-right: auto;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #24252A;
+  color: rgb(181, 181, 50);
+  margin: 0;
+  padding: 0;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.registerForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  /* Adjust the height as needed */
+
+}
+
+.form {
+  border: 2px solid rgb(206, 206, 74);
+  height: 500px;
+  width: 400px;
+  border-radius: 13px;
+
+}
+
+.form input {
+  background-color: #24252A;
+  color: whitesmoke;
+  border: 0;
+  border-bottom: 1px solid rgb(134, 134, 73);
+  float: left;
+  margin-left: 8%;
+  width: 80%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+
+
+}
+
+input:focus {
+  outline: none;
+  border-bottom: 1px solid yellow;
+}
+
+/*
+input[type=text]:focus {
+  border-bottom: 1px solid yellow;
+  width: 60%;
+  align-items: center;
+  border-bottom-width: 60%;
+ 
+
+}
+
+input[type=password]:focus {
+  border-bottom: 1px solid yellow;
+}
+*/
+
+input[type=submit] {
+  border-bottom: 1px solid yellow;
+}
+
+input[type=submit]:hover {
+  background-color: rgb(180, 180, 74);
+}
+
+.registracijaText {
+  text-align: center;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+
+.wetherMap {
+  display: flex;
+  border: 1px solid rgb(194, 183, 30);
+  /*color: black;
+  background-color: #EAEAEA;*/
+  /*background-color: #444547;*/
+  /*border-top-width: 0;*/
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+
+  color: rgb(184, 184, 184);
+
+  width: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.small_Container {
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: 20px;
+}
+
+.name_small {
+  margin-left: 15px;
+
+}
+
+.name_small p {
+  border: 1px solid rgb(153, 153, 81);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-right-width: 0;
+  margin-top: 0.7em;
+  margin-bottom: 0.7em;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 15px;
+
+}
+
+.humidity_small {
+  text-align: center;
+
+}
+
+.humidity_small p {
+  border: 1px solid rgb(153, 153, 81);
+  border-left-width: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-right-width: 0;
+  margin-top: 0.7em;
+  margin-bottom: 0.7em;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 15px;
+}
+
+.wind_small {
+  text-align: center;
+}
+
+.wind_small p {
+  border: 1px solid rgb(153, 153, 81);
+  padding-left: 40px;
+  padding-right: 20px;
+  border-left-width: 0;
+  border-right-width: 0;
+  margin-top: 0.7em;
+  margin-bottom: 0.7em;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 15px;
+}
+
+.temp_small {
+  text-align: center;
+}
+
+.temp_small p {
+  border: 1px solid rgb(153, 153, 81);
+  padding-left: 20px;
+  padding-right: 20px;
+  border-left-width: 0;
+  border-right-width: 0;
+  margin-top: 0.7em;
+  margin-bottom: 0.7em;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 15px;
+}
+
+.pressure_small {
+  text-align: center;
+}
+
+.pressure_small p {
+  border: 1px solid rgb(153, 153, 81);
+  padding-left: 20px;
+  padding-right: 20px;
+  border-left-width: 0;
+  margin-top: 0.7em;
+  margin-bottom: 0.7em;
+  padding-bottom: 3px;
+  border-right: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 15px;
+}
+
+.weatherStatus {
+  text-align: left;
+  margin-right: 20px;
+
+}
+
+.weatherStatus p {
+  border: 1px solid rgb(153, 153, 81);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-left-width: 0;
+  margin-top: 0.7em;
+  margin-bottom: 0.7em;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 15px;
+}
+
+@media only screen and (max-width: 768px) {
+
+  .name_small p {
+    border: 1px solid green;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-left-width: 0;
+    font-size: 12px;
+    margin-top: 0.7em;
+    margin-bottom: 0.7em;
+
+
+  }
+
+  .temp_small p {
+    border: 1px solid green;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-left-width: 0;
+    font-size: 12px;
+    margin-top: 0.7em;
+    margin-bottom: 0.7em;
+
+  }
+
+  .humidity_small p {
+    border: 1px solid green;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-left-width: 0;
+    font-size: 12px;
+    margin-top: 0.7em;
+    margin-bottom: 0.7em;
+
+  }
+
+  .wind_small p {
+    border: 1px solid green;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-left-width: 0;
+    font-size: 12px;
+    margin-top: 0.7em;
+    margin-bottom: 0.7em;
+
+  }
+
+  .pressure_small p {
+    border: 1px solid green;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-left-width: 0;
+    font-size: 12px;
+    margin-top: 0.7em;
+    margin-bottom: 0.7em;
+
+  }
+
+  .weatherStatus p {
+    border: 1px solid green;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-left-width: 0;
+    font-size: 12px;
+    margin-top: 0.7em;
+    margin-bottom: 0.7em;
+  }
+
+}
+
+
+.name_small h4 {
+  font-size: 12px;
+  color: whitesmoke;
+
+}
+
+.temp_small h4 {
+  font-size: 12px;
+  color: whitesmoke;
+}
+
+.humidity_small h4 {
+  font-size: 12px;
+  color: whitesmoke;
+}
+
+.wind_small h4 {
+  font-size: 12px;
+  color: whitesmoke;
+}
+
+.pressure_small h4 {
+  font-size: 12px;
+  color: whitesmoke;
+}
+
+.weatherStatus h4 {
+  font-size: 12px;
+  color: whitesmoke;
+}
+
+
+.poSloveniji {
+  text-align: center;
+  border: 1px solid rgb(194, 183, 30);
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  background-color: rgb(180, 180, 74);
+  color: whitesmoke;
+  padding-top: 10px;
+  font-family: "Arial", Times, serif;
+}
+
+.city_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.cityName {
+  text-align: center;
+  border: 1px solid rgb(194, 183, 30);
+  /*border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  background-color: rgb(180, 180, 74);*/
+  color: whitesmoke;
+  padding-top: 10px;
+  font-family: "Arial", Times, serif;
+}
+
+.hourContainer {
+  border: 1px solid rgb(153, 153, 81);
+  width: fit-content;
+  border-radius: 10px;
+  overflow-y: auto;
+  max-height: 92vh;
+  border-top: 0;
+}
+
+.hourContainerFav {
+  border: 1px solid rgb(153, 153, 81);
+  height: fit-content;
+  width: fit-content;
+  border-radius: 10px;
+  overflow-y: auto;
+  max-height: 92vh;
+  border-top: 0;
+}
+
+.hourName {
+  position: sticky;
+  top: 0;
+}
+
+
+.hourTime {
+  margin-left: 15px;
+
+}
+
+
+
+.hourTime p {
+  border: 1px solid rgb(153, 153, 81);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-right-width: 0;
+  margin-top: 0.7em;
+  margin-bottom: 0.7em;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 15px;
+}
+
+.hourTemp {
+  display: block;
+}
+
+.hourTemp p {
+  border: 1px solid rgb(153, 153, 81);
+  border-left: 0;
+  padding-left: 30px;
+  padding-right: 20px;
+  border-right-width: 0;
+  margin-top: 0.7em;
+  margin-bottom: 0.7em;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 15px;
+}
+
+
+.hourHumidity p {
+  border: 1px solid rgb(153, 153, 81);
+  border-left: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-right-width: 0;
+  margin-top: 0.7em;
+  margin-bottom: 0.7em;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 15px;
+}
+
+
+
+.hourWind p {
+  border: 1px solid rgb(153, 153, 81);
+  border-left: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-right-width: 0;
+  margin-top: 0.7em;
+  margin-bottom: 0.7em;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 15px;
+}
+
+
+
+.hourHumidity p {
+  border: 1px solid rgb(153, 153, 81);
+  border-left: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-right-width: 0;
+  margin-top: 0.7em;
+  margin-bottom: 0.7em;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 15px;
+}
+
+
+
+.hourWeatherStatus p {
+  border: 1px solid rgb(153, 153, 81);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-left-width: 0;
+  margin-top: 0.7em;
+  margin-bottom: 0.7em;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 15px;
+}
+
+.hourTimeDiv {
+
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.hourTimeDiv h4 {
+  font-size: 16px;
+  color: whitesmoke;
+  text-align: center;
+}
+
+.hourTempDiv {
+  padding-top: 10px;
+  text-align: center;
+}
+
+.hourTempDiv h4 {
+  font-size: 16px;
+  color: whitesmoke;
+  text-align: center;
+}
+
+.hourWindDiv {
+  padding-top: 10px;
+  text-align: center;
+}
+
+.hourWindDiv h4 {
+  font-size: 16px;
+  color: whitesmoke;
+  text-align: center;
+}
+
+.hourPercDiv {
+  padding-top: 10px;
+  text-align: center;
+}
+
+.hourPercDiv h4 {
+  font-size: 16px;
+  color: whitesmoke;
+  text-align: center;
+}
+
+.hourWeatherDiv {
+  padding-top: 10px;
+  text-align: left;
+  padding-right: 30px;
+}
+
+.hourWeatherDiv h4 {
+  font-size: 16px;
+  color: whitesmoke;
+  text-align: center;
+}
+
+.hourWeatherMap {
+  display: flex;
+}
+
+.hourName {
+  text-align: center;
+  border: 1px solid rgb(194, 183, 30);
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  background-color: rgb(180, 180, 74);
+  color: whitesmoke;
+  padding-top: 10px;
+  font-family: "Arial", Times, serif;
+  text-transform: uppercase;
+}
+
+.citiesName {
+  font-size: 25px;
+  font-family: "Arial", Times, serif;
+  text-transform: uppercase;
+  padding-top: 30px;
+  border-bottom: 1px solid rgb(194, 183, 30);
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+  padding-left: 5px;
+}
+
+.namesDiv {
+  width: 40%;
+  display: inline-block;
+  padding-bottom: 20px;
+}
+
+
+.citiesData {
+  border-bottom: 1px solid rgb(194, 183, 30);
+  border-left: 1px solid rgb(194, 183, 30);
+  border-bottom-left-radius: 6px;
+  width: fit-content;
+  padding-left: 10px;
+}
+
+.ccontainer {
+  border: 1px solid red;
+}
+
+
+.all {
+  display: flex;
+  padding-bottom: 100px;
+}
+
+.tempGraph {
+  width: 60%;
+  height: 500px;
+
+  margin-left: 30px;
+}
+
+.chartSection{
+  width: 60%;
+  height: 500px;
+}
+
+.mapTemp {
+  margin-top: -60px;
+  background-color: whitesmoke;
+  color: black;
+  padding: 4px 8px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.marker {
+
+  margin-bottom: 82px;
+  border-radius: 10px;
+  margin-left: 55px;
+}
+
+.markeStation {
+
+  margin-bottom: 82px;
+  border-radius: 10px;
+  margin-left: 55px;
+  color: rgb(63, 63, 62);
+  background-color: lightgray;
+}
+
+.smallMap {
+  padding-left: 20px;
+  padding-top: 220px;
+}
+
+.percButtonDiv {
+  text-align: center;
+
+}
+
+.percButton {
+  width: 100%;
+  border: 1px solid #24252A;
+  border-radius: 10px;
+  color: whitesmoke;
+  background-color: rgb(180, 180, 74);
+}
+
+.percButton:hover {
+  background-color: #24252A;
+}
+
+.hideShow {
+  text-align: right;
+  /*margin-top: -30px;*/
+  font-size: 15px;
+  margin-bottom: 3px;
+  display: flex;
+  float: right;
+  margin-top: -5px;
+
+}
+
+.hideShowBtn {
+  border: 1px solid rgb(194, 183, 30);
+  background-color: #24252A;
+  border-radius: 7px;
+  color: rgb(194, 183, 30);
+  margin-bottom: 3px;
+}
+
+.hideShowBtn:hover {
+  background-color: rgb(180, 180, 74);
+  color: #24252A;
+}
+
+.hGraf {
+  border-bottom: 1px solid rgb(180, 180, 74);
+  width: 87%;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.dayHumidityDiv {
+  padding-top: 10px;
+  text-align: center;
+}
+
+.dayHumidityDiv h4 {
+  font-size: 16px;
+  color: whitesmoke;
+  text-align: center;
+}
+
+.dayHumidity p {
+  border: 1px solid rgb(153, 153, 81);
+  border-left: 0;
+  padding-left: 30px;
+  padding-right: 20px;
+  border-right-width: 0;
+  margin-top: 0.7em;
+  margin-bottom: 0.7em;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 15px;
+}
+
+.dayContainer {
+  border: 1px solid rgb(153, 153, 81);
+  width: fit-content;
+  border-radius: 10px;
+  height: fit-content;
+}
+
+.dayWeatherMap {
+  padding-bottom: 10px;
+  display: flex;
+}
+
+.dayTempGraph {
+  width: 60%;
+  padding-left: 50px;
+  margin-top: 80px;
+  height: 400px;
+}
+
+.something {
+  text-align: center;
+  padding-left: 200px;
+  padding-top: -20px;
+  padding-bottom: 50px;
+}
+
+.tst {
+  position: absolute;
+  right: 0;
+  padding-bottom: 100px;
+}
+
+.test {
+  width: 800px;
+  margin-top: 80px;
+  height: 500px;
+  margin-left: 200px;
+}
+
+.eightDay {
+  border-bottom: 1px solid rgb(180, 180, 74);
+  width: 100%;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.eightDay2 {
+  border-bottom: 1px solid rgb(180, 180, 74);
+  width: 70%;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+
+.loginDiv {
+  border: 1px solid red;
+}
+
+.addBtn {
+  margin-left: 10px;
+  border-radius: 10px;
+  color: rgb(180, 180, 74);
+  background-color: rgb(180, 180, 74);
+}
+
+.addBtn:hover {
+  background-color: rgb(231, 231, 100);
+  color: #24252A;
+}
+
+.firstDiv {
+  border: 1px solid green;
+}
+
+.somethingDayDiv {
+  text-align: center;
+  padding-left: 200px;
+  padding-top: -20px;
+  padding-bottom: 50px;
+}
+
+.hourTempGraphFav {
+  width: 100%;
+  padding-top: 50px;
+  height: 400px;
+}
+
+.twentyFourFav {
+  border-bottom: 1px solid rgb(180, 180, 74);
+  width: 100%;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.dayTempGraphFav {
+  width: 100%;
+  margin-top: 70px;
+  height: 400px;
+}
+
+.eightDayTemoFav {
+  border-bottom: 1px solid rgb(180, 180, 74);
+  width: 100%;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.dayWindGraphDiv {
+  width: 100%;
+  margin-top: 70px;
+  height: 400px;
+}
+
+.eightDayWindFav {
+  border-bottom: 1px solid rgb(180, 180, 74);
+  width: 100%;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.dayHumidityGraphDiv {
+  width: 100%;
+  margin-top: 70px;
+  height: 400px;
+}
+
+.eightDayHumidityFav {
+  border-bottom: 1px solid rgb(180, 180, 74);
+  width: 100%;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.removeBtn {
+  margin-left: 10px;
+  border-radius: 10px;
+  color: rgb(180, 74, 74);
+  background-color: #24252A;
+}
+
+.removeBtn:hover {
+  color: red;
+  border: 1px solid rgb(180, 180, 74);
+}
+
+.scrollable {
+  max-height: 70vh;
+  /* Adjust the maximum height as needed */
+  overflow-y: auto;
+}
+
+.stationsP {
+  border-bottom: 1px solid rgb(180, 180, 74);
+  font-size: larger;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.tempWeatherMap {
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 15px;
+  color: black;
+  background-color: lightgrey;
+  border-radius: 3px;
+}
+
+.circle {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: red;
+}
+
+.centerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+
+}
+
+.profileContainer {
+  border: 1px solid rgb(184, 184, 30);
+  border-radius: 10px;
+  width: fit-content;
+  padding: 50px;
+  height: fit-content;
+}
+
+.userProfile {
+  border: 1px solid red;
+}
+
+.naslovProfile {
+  padding-bottom: 50px;
+
+}
+
+.naslovProfile h3 {
+  border-bottom: 1px solid rgb(184, 184, 30);
+  padding-right: 50px;
+  padding-left: 50px;
+  text-transform: uppercase;
+
+}
+
+.profileInfo p {
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.infoSpec {
+  border-bottom: 1px solid rgb(184, 184, 30);
+  width: fit-content;
+}
+
+.onClickChart:hover{
+  background-color: rgb(102, 102, 33);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.searchBar{
+text-align: center;
+padding-top: 50px;
+padding-bottom: 30px;
+
+}
+
+.inputBar{
+  width: 40%;
+  background-color:#24252A ;
+  border: 1px solid rgb(184, 184, 30);
+  border-radius:10px ;
+  color: whitesmoke;
+}
+
+.inputBar:focus{
+  border: 1px solid rgb(228, 228, 110);
+  color: whitesmoke;
+
+}
+
+.clearButton{
+  margin-left: 5px;
+  border: 1px solid rgb(184, 184, 30);
+  background-color: #24252A;
+  color: rgb(184, 184, 30);
+  border-radius: 7px;
+}
+
+.clearButton:hover{
+  background-color: rgb(184, 184, 30);
+  color: #24252A;
+}
