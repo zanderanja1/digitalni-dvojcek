@@ -8,7 +8,7 @@ require("dotenv").config();
 
 // vključimo mongoose in ga povežemo z MongoDB
 var mongoose = require("mongoose");
-console.log(process.env.MONGO_URI);
+//console.log(process.env.MONGO_URI);
 var mongoDB = process.env.MONGO_URI;
 mongoose.connect(mongoDB);
 mongoose.Promise = global.Promise;
@@ -34,12 +34,11 @@ app.use(
       // Allow requests with no origin (mobile apps, curl)
       if (!origin) return callback(null, true);
       if (allowedOrigins.indexOf(origin) === -1) {
-        var msg =
-          "The CORS policy does not allow access from the specified Origin.";
+        var msg = "The CORS policy does not allow access from the specified Origin.";
         return callback(new Error(msg), false);
       }
       return callback(null, true);
-    },
+    }
   })
 );
 
@@ -65,7 +64,7 @@ app.use(
     secret: "work hard",
     resave: true,
     saveUninitialized: false,
-    store: MongoStore.create({ mongoUrl: mongoDB }),
+    store: MongoStore.create({ mongoUrl: mongoDB })
   })
 );
 //Shranimo sejne spremenljivke v locals

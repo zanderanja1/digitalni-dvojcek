@@ -1,5 +1,5 @@
 //import androidx.compose.ui.window.application
-import com.google.gson.JsonElement
+import com.google.gson.Gson
 import it.skrape.core.htmlDocument
 import it.skrape.fetcher.HttpFetcher
 import it.skrape.fetcher.response
@@ -12,6 +12,34 @@ import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.RequestBody.Companion.toRequestBody
 import kotlin.math.roundToInt
+
+
+data class GeoapifyResponse(val results: List<Result>)
+data class Result(val lat: Double, val lon: Double)
+
+fun getCoordinates(cityName: String): Pair<Double, Double>? {
+    val client = OkHttpClient().newBuilder()
+        .build()
+    val request: Request = Request.Builder()
+        .url("https://api.geoapify.com/v1/geocode/search?text=$cityName&format=json&apiKey=203e839193a74400be37f2e1067c679c")
+        .method("GET", null)
+        .build()
+    val response = client.newCall(request).execute()
+    val responseBody = response.body?.string()
+
+    responseBody?.let {
+        val geoResult = Gson().fromJson(it, GeoapifyResponse::class.java)
+        if (geoResult.results != null && geoResult.results.isNotEmpty()) {
+            val result = geoResult.results[0]
+            val lon = result.lon
+            val lat = result.lat
+            //println("Longitude: $lon, Latitude: $lat")
+            return Pair(lat, lon)
+        }
+    }
+    return null
+}
+
 
 
 //glavni podataki za posamezno mesto
@@ -305,7 +333,13 @@ fun getByHourByDay(firstUrl: String, secondUrl: String) {
 
                 }
 
-
+                val coordinates = getCoordinates(cityName)
+                var latitude = 0.0
+                var longitude = 0.0
+                if (coordinates != null) {
+                    latitude = coordinates.first
+                    longitude = coordinates.second
+                }
 
                                 val json = """
                                     {
@@ -334,7 +368,9 @@ fun getByHourByDay(firstUrl: String, secondUrl: String) {
                                                 }
                                             ]
                                         },
-                                        "favouritesBy": []
+                                        "favouritesBy": [],
+                                        "latitude": "$latitude",
+                                        "longitude": "$longitude"
                                 }
                                 """.trimIndent()
 
@@ -853,6 +889,8 @@ fun getCitySmall() {
                 val wind = mutableListOf<String?>()
                 val weatherStatus = mutableListOf<String?>()
                 val pressure = mutableListOf<String?>()
+                val latitude = mutableListOf<Double>()
+                val longitude = mutableListOf<Double>()
 
 
                 section {
@@ -924,6 +962,18 @@ fun getCitySmall() {
 
                 }
 
+                for(name in names) {
+                    val coordinates = getCoordinates(name!!)
+                    if (coordinates != null) {
+                        latitude.add(coordinates.first)
+                        longitude.add(coordinates.second)
+                    } else {
+                        latitude.add(0.0)
+                        longitude.add(0.0)
+                    }
+
+                }
+
                 val json = """
                     {
                         "name_small": ${names.map { "\"${it?.replace("\"", "\\\"")}\"" }},
@@ -931,7 +981,9 @@ fun getCitySmall() {
                         "humidity_small": ${humidity.map { "\"${it?.replace("\"", "\\\"")}\"" }},
                         "wind_small": ${wind.map { "\"${it?.replace("\"", "\\\"")}\"" }},
                         "pressure_small": ${pressure.map { "\"${it?.replace("\"", "\\\"")}\"" }},
-                        "weatherStatus_small": ${weatherStatus.map { "\"${it?.replace("\"", "\\\"")}\"" }}
+                        "weatherStatus_small": ${weatherStatus.map { "\"${it?.replace("\"", "\\\"")}\"" }},
+                        "latitude": ${latitude.map { "\"$it\"" }},
+                        "longitude": ${longitude.map { "\"$it\"" }}
                     }
                 """.trimIndent()
 
@@ -970,37 +1022,35 @@ fun main(){
 
     val map: MutableMap<String, Pair<String, String>> = mutableMapOf()
 
-    map["6470e9c2003f5838aea6fdd9"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/6effff295cd78d21a1cb877db6a3e4ca01ffed2c9999763b90b56f481dd68e2b","https://vreme-si.com/slovenija/maribor") //Maribor
-    map["647dbee35f871cb87d5266df"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/f54b0191fd7be8763d2579fea3bb89e969220183cd4bfeef6141ff9d7b1143f4","https://vreme-si.com/slovenija/ljubljana") //Ljubljana
-    map["6470ea3f003f5838aea6fdef"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/84ba8d3df448605f61e4e12f9d8436b9470004c53b8c50c6e5f5fb719e9fb0fc","https://vreme-si.com/slovenija/ptuj") //Ptuj
-    map["647e2af03da00c9203d55403"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/1c59ed2f51f58f5d99e8595146bab6cbbb725594fc9e0df461601ac307237965","https://vreme-si.com/slovenija/koper") //Koper
-    map["647e2b233da00c9203d5542d"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/dc3e7a724bc4c2e5c2f8dacbde6f24917891b8e85f39baf8dc0b9ede0622e9a0","https://vreme-si.com/slovenija/celje") //Celje
-    map["647e2b4f3da00c9203d55449"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/fd1b12362c04486a8a92153a2bfa58de19e4890a0dfc9f803fea0732896a0493","https://vreme-si.com/slovenija/kranj") //Kranj
-    map["647e2c233da00c9203d5548b"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/ef1a4d543dd7ae383ff4d22dcc1f4576eba9eaa07772cf1186606a788e530d34","https://vreme-si.com/slovenija/kamnik") //Kamnik
-    map["647e2cbb3da00c9203d554d5"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/e7759966f76b821e20a1507d945874eb137dd4803578c66d2f73fe1844ef507d","https://vreme-si.com/slovenija/ajdovscina") //Ajdovščina
+    map["659bf9766c8d8883e0f2c51d"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/6effff295cd78d21a1cb877db6a3e4ca01ffed2c9999763b90b56f481dd68e2b","https://vreme-si.com/slovenija/maribor") //Maribor
+    map["659bf9776c8d8883e0f2c521"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/f54b0191fd7be8763d2579fea3bb89e969220183cd4bfeef6141ff9d7b1143f4","https://vreme-si.com/slovenija/ljubljana") //Ljubljana
+    map["659bf9786c8d8883e0f2c525"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/84ba8d3df448605f61e4e12f9d8436b9470004c53b8c50c6e5f5fb719e9fb0fc","https://vreme-si.com/slovenija/ptuj") //Ptuj
+    map["659bf97c6c8d8883e0f2c529"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/1c59ed2f51f58f5d99e8595146bab6cbbb725594fc9e0df461601ac307237965","https://vreme-si.com/slovenija/koper") //Koper
+    map["659bf97e6c8d8883e0f2c52d"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/dc3e7a724bc4c2e5c2f8dacbde6f24917891b8e85f39baf8dc0b9ede0622e9a0","https://vreme-si.com/slovenija/celje") //Celje
+    map["659bf97f6c8d8883e0f2c531"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/fd1b12362c04486a8a92153a2bfa58de19e4890a0dfc9f803fea0732896a0493","https://vreme-si.com/slovenija/kranj") //Kranj
+    map["659bf9826c8d8883e0f2c535"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/ef1a4d543dd7ae383ff4d22dcc1f4576eba9eaa07772cf1186606a788e530d34","https://vreme-si.com/slovenija/kamnik") //Kamnik
+    map["659bf9856c8d8883e0f2c539"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/e7759966f76b821e20a1507d945874eb137dd4803578c66d2f73fe1844ef507d","https://vreme-si.com/slovenija/ajdovscina") //Ajdovščina
 
-    map["647e2d3b3da00c9203d554d9"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/cf357e3c439ae69c87bcce8fea7536f4420e950d972dbcafb925267613027605","https://vreme-si.com/slovenija/bled")
-    map["647e2d663da00c9203d554dd"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/1eef3b264101239e6fecafaa33e1bb0b797667ab4f30cf427c2be09021a3374f","https://vreme-si.com/slovenija/crnomelj")
-    map["647e2d883da00c9203d554e1"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/f87b31177478e58ccf5f133bb8c0d3ce078f39e0fbc9b2444befddef123a51c1","https://vreme-si.com/slovenija/idrija")
-    map["647e2d9d3da00c9203d554e5"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/b572691eb04ecb6ec764a253ed34d65c0c0dc0fb3efc1cf44a4009ca9728b2af","https://vreme-si.com/slovenija/izola")
+    map["659bf9876c8d8883e0f2c53d"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/cf357e3c439ae69c87bcce8fea7536f4420e950d972dbcafb925267613027605","https://vreme-si.com/slovenija/bled")
+    map["659bf9886c8d8883e0f2c541"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/1eef3b264101239e6fecafaa33e1bb0b797667ab4f30cf427c2be09021a3374f","https://vreme-si.com/slovenija/crnomelj")
+    map["659bf98b6c8d8883e0f2c545"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/f87b31177478e58ccf5f133bb8c0d3ce078f39e0fbc9b2444befddef123a51c1","https://vreme-si.com/slovenija/idrija")
+    map["659bf98c6c8d8883e0f2c549"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/b572691eb04ecb6ec764a253ed34d65c0c0dc0fb3efc1cf44a4009ca9728b2af","https://vreme-si.com/slovenija/izola")
 
-    map["647e2c773da00c9203d554af"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/53451b46ca052568fb422badb9c8ebf81cdcd75443d78643fd1e73015856828b","https://vreme-si.com/slovenija/velenje")
-    map["647e2d3b3da00c9203d554d9"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/cf357e3c439ae69c87bcce8fea7536f4420e950d972dbcafb925267613027605","https://vreme-si.com/slovenija/bled")
-    map["647e2db83da00c9203d554e9"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/94976a7883747e1f149aac64268ca7ff77e41eceba589193d73b8c1bde1b0483","https://vreme-si.com/slovenija/jesenice")
-    map["647e2dec3da00c9203d554ed"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/ef1a4d543dd7ae383ff4d22dcc1f4576eba9eaa07772cf1186606a788e530d34","https://vreme-si.com/slovenija/kamnik")
-    map["647e2e103da00c9203d554f1"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/2271ba69261a6d325b9c33ed69dbd591ef13f964c8753b67f033f8c57561b89e","https://vreme-si.com/slovenija/kocevje")
-    map["647e2e313da00c9203d554f5"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/bdd02e7a155405bf8220e2d35a94f7e2ba189b6c8172e9f3c2bc921a9c703517","https://vreme-si.com/slovenija/lendava")
-    map["647e2e583da00c9203d554f9"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/709347608a5d5ea0f2890b90997c316cf1c9745ebbd3c8911de0ff26b247d060","https://vreme-si.com/slovenija/ormoz")
-    map["647e2e743da00c9203d554fd"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/fe71c3edc65b147a0c5ca5f17c11044b9f2a30e82d79feba76203f3b00cf5bd2","https://vreme-si.com/slovenija/piran")
-    map["647e2eac3da00c9203d5554f"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/108ad8103bb5aab753d42fee3620069bccbf426334f61f3dde02a37fa7ceee0e","https://vreme-si.com/slovenija/portoroz")
-    map["647e2ed93da00c9203d5569d"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/059f0f207827621a1dacd467a595c4051ca2ee7b040ec13abf203df36c30c2cb","https://vreme-si.com/slovenija/postojna")
-    map["647e2f153da00c9203d556f9"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/d007e506f7c8950b788f2c772f4c39a96adceedcca45dccb1b052ad029b3d99e","https://vreme-si.com/slovenija/sevnica")
-    map["647e2f3f3da00c9203d556fd"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/49df28b589c1e9ba1529f4ed81ccd6a78cea42554570f5917014ef84412e6ff2","https://vreme-si.com/slovenija/tolmin")
-    map["647e2f5c3da00c9203d55701"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/7a1a9b0b5d3b1c7955e98b35cd5d308e9f0bde39b022e9b8d3b699afac147c0a","https://vreme-si.com/slovenija/trbovlje")
-    map["647e2f793da00c9203d55705"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/53451b46ca052568fb422badb9c8ebf81cdcd75443d78643fd1e73015856828b","https://vreme-si.com/slovenija/velenje")
-    map["647e2fa33da00c9203d55709"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/434fb85ad782ae587daf865371bd1aa8bcb81ba773e72082be75047de6086543","https://vreme-si.com/slovenija/vrhnika")
-    map["647e2ff83da00c9203d55777"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/9f28e80fab42e6cca8044f937df836a826274e76fac1eaaa27be72d822ee17a7","https://vreme-si.com/slovenija/ankaran")
-    map["647e30253da00c9203d557e9"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/4d72b666f6fe7e62aa3f37bc9381f4ada9ea4d856c0ae6d1b2900206706167b1","https://vreme-si.com/slovenija/bohinj")
+    map["659bf98d6c8d8883e0f2c54d"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/53451b46ca052568fb422badb9c8ebf81cdcd75443d78643fd1e73015856828b","https://vreme-si.com/slovenija/velenje")
+    map["659bf98f6c8d8883e0f2c551"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/94976a7883747e1f149aac64268ca7ff77e41eceba589193d73b8c1bde1b0483","https://vreme-si.com/slovenija/jesenice")
+    map["659bf9906c8d8883e0f2c555"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/2271ba69261a6d325b9c33ed69dbd591ef13f964c8753b67f033f8c57561b89e","https://vreme-si.com/slovenija/kocevje")
+    map["659bf9916c8d8883e0f2c559"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/bdd02e7a155405bf8220e2d35a94f7e2ba189b6c8172e9f3c2bc921a9c703517","https://vreme-si.com/slovenija/lendava")
+    map["659bf9936c8d8883e0f2c55d"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/709347608a5d5ea0f2890b90997c316cf1c9745ebbd3c8911de0ff26b247d060","https://vreme-si.com/slovenija/ormoz")
+    map["659bf9966c8d8883e0f2c561"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/fe71c3edc65b147a0c5ca5f17c11044b9f2a30e82d79feba76203f3b00cf5bd2","https://vreme-si.com/slovenija/piran")
+    map["659bf9976c8d8883e0f2c565"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/108ad8103bb5aab753d42fee3620069bccbf426334f61f3dde02a37fa7ceee0e","https://vreme-si.com/slovenija/portoroz")
+    map["659bf9986c8d8883e0f2c569"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/059f0f207827621a1dacd467a595c4051ca2ee7b040ec13abf203df36c30c2cb","https://vreme-si.com/slovenija/postojna")
+    map["659bf99a6c8d8883e0f2c56d"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/d007e506f7c8950b788f2c772f4c39a96adceedcca45dccb1b052ad029b3d99e","https://vreme-si.com/slovenija/sevnica")
+    map["659bf99b6c8d8883e0f2c571"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/49df28b589c1e9ba1529f4ed81ccd6a78cea42554570f5917014ef84412e6ff2","https://vreme-si.com/slovenija/tolmin")
+    map["659bf99c6c8d8883e0f2c575"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/7a1a9b0b5d3b1c7955e98b35cd5d308e9f0bde39b022e9b8d3b699afac147c0a","https://vreme-si.com/slovenija/trbovlje")
+    map["659bf99d6c8d8883e0f2c579"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/53451b46ca052568fb422badb9c8ebf81cdcd75443d78643fd1e73015856828b","https://vreme-si.com/slovenija/velenje")
+    map["659bf99e6c8d8883e0f2c57d"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/434fb85ad782ae587daf865371bd1aa8bcb81ba773e72082be75047de6086543","https://vreme-si.com/slovenija/vrhnika")
+    map["659bf99f6c8d8883e0f2c581"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/9f28e80fab42e6cca8044f937df836a826274e76fac1eaaa27be72d822ee17a7","https://vreme-si.com/slovenija/ankaran")
+    map["659bf9a16c8d8883e0f2c585"] = Pair("https://weather.com/sl-SI/vreme/urozauro/l/4d72b666f6fe7e62aa3f37bc9381f4ada9ea4d856c0ae6d1b2900206706167b1","https://vreme-si.com/slovenija/bohinj")
 
     for ((id, urls) in map) {
         val url1 = urls.first
@@ -1014,10 +1064,12 @@ fun main(){
         //getByHourByDay(url1, url2)
     }
 
+   // getByHourByDay(map["65646d32f4820f2cc262106b"]!!.first, map["65646d32f4820f2cc262106b"]!!.second)
+
     //getCitySmall()
 
 
-    //putCitySmall("6467abd1a982872301c5ba8d")
+    putCitySmall("659bf51c3890356b371534a3")
 
     //getByHourByDay("https://weather.com/sl-SI/vreme/urozauro/l/4d72b666f6fe7e62aa3f37bc9381f4ada9ea4d856c0ae6d1b2900206706167b1","https://vreme-si.com/slovenija/bohinj")
     //putByHourByDay("6470e9c2003f5838aea6fdd9","https://weather.com/sl-SI/vreme/urozauro/l/6effff295cd78d21a1cb877db6a3e4ca01ffed2c9999763b90b56f481dd68e2b","https://vreme-si.com/slovenija/maribor")
