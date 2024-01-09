@@ -1,0 +1,902 @@
+[
+    {
+        "id": 1,
+        "image_name": "20231213_161216.jpg",
+        "Skyline pixels": 1859661890,
+        "Clouds pixels": 1859033962,
+        "Weather": "Oblačno",
+        "Date": "2023-12-14T12:54",
+        "Ratio of Clouds to Skyline": 0.9996623429219168
+    },
+    {
+        "id": 2,
+        "image_name": "20231214_105500.jpg",
+        "Skyline pixels": 1381781885,
+        "Clouds pixels": 1359147371,
+        "Weather": "Oblačno",
+        "Date": "2023-12-14T10:55",
+        "Ratio of Clouds to Skyline": 0.983619329327074
+    },
+    {
+        "id": 3,
+        "image_name": "20231214_105717.jpg",
+        "Skyline pixels": 1553643524,
+        "Clouds pixels": 1548933299,
+        "Weather": "Oblačno",
+        "Date": "2023-12-14T10:57",
+        "Ratio of Clouds to Skyline": 0.9969682717256317
+    },
+    {
+        "id": 4,
+        "image_name": "20231214_105749.jpg",
+        "Skyline pixels": 1728920263,
+        "Clouds pixels": 1673450011,
+        "Weather": "Oblačno",
+        "Date": "2023-12-14T10:57",
+        "Ratio of Clouds to Skyline": 0.9679162462335026
+    },
+    {
+        "id": 5,
+        "image_name": "20231214_105751.jpg",
+        "Skyline pixels": 2003256174,
+        "Clouds pixels": 1970542666,
+        "Weather": "Oblačno",
+        "Date": "2023-12-14T10:57",
+        "Ratio of Clouds to Skyline": 0.98366983293271
+    },
+    {
+        "id": 6,
+        "image_name": "20231214_130741.jpg",
+        "Skyline pixels": 1578556527,
+        "Clouds pixels": 1319020988,
+        "Weather": "Oblačno",
+        "Date": "2023-12-14T13:07",
+        "Ratio of Clouds to Skyline": 0.8355867942890587
+    },
+    {
+        "id": 7,
+        "image_name": "20231214_131150.jpg",
+        "Skyline pixels": 1677913264,
+        "Clouds pixels": 1382063997,
+        "Weather": "Oblačno",
+        "Date": "2023-12-14T13:11",
+        "Ratio of Clouds to Skyline": 0.8236802382176055
+    },
+    {
+        "id": 8,
+        "image_name": "20231214_131154.jpg",
+        "Skyline pixels": 1499801600,
+        "Clouds pixels": 1279329052,
+        "Weather": "Oblačno",
+        "Date": "2023-12-14T13:11",
+        "Ratio of Clouds to Skyline": 0.8529988579822825
+    },
+    {
+        "id": 9,
+        "image_name": "20231214_131321.jpg",
+        "Skyline pixels": 1215341279,
+        "Clouds pixels": 1189992425,
+        "Weather": "Oblačno",
+        "Date": "2023-12-14T13:13",
+        "Ratio of Clouds to Skyline": 0.9791426042725567
+    },
+    {
+        "id": 10,
+        "image_name": "20231214_131323.jpg",
+        "Skyline pixels": 1356695462,
+        "Clouds pixels": 1356837077,
+        "Weather": "Oblačno",
+        "Date": "2023-12-14T13:13",
+        "Ratio of Clouds to Skyline": 1
+    },
+    {
+        "id": 11,
+        "image_name": "20231214_142940.jpg",
+        "Skyline pixels": 1225119786,
+        "Clouds pixels": 795670252,
+        "Weather": "Pretežno oblačno",
+        "Date": "2023-12-14T14:29",
+        "Ratio of Clouds to Skyline": 0.6494632288960518
+    },
+    {
+        "id": 12,
+        "image_name": "20231214_144020.jpg",
+        "Skyline pixels": 3104574655,
+        "Clouds pixels": 1877145140,
+        "Weather": "Pretežno oblačno",
+        "Date": "2023-12-14T14:40",
+        "Ratio of Clouds to Skyline": 0.6046384283195793
+    },
+    {
+        "id": 13,
+        "image_name": "20231214_144022.jpg",
+        "Skyline pixels": 2842873291,
+        "Clouds pixels": 1622569527,
+        "Weather": "Pretežno oblačno",
+        "Date": "2023-12-14T14:40",
+        "Ratio of Clouds to Skyline": 0.5707498579471512
+    },
+    {
+        "id": 14,
+        "image_name": "20231214_144028.jpg",
+        "Skyline pixels": 2331362298,
+        "Clouds pixels": 1832936825,
+        "Weather": "Pretežno oblačno",
+        "Date": "2023-12-14T14:40",
+        "Ratio of Clouds to Skyline": 0.7862084870174048
+    },
+    {
+        "id": 15,
+        "image_name": "20231214_144031.jpg",
+        "Skyline pixels": 3017981205,
+        "Clouds pixels": 1994252238,
+        "Weather": "Pretežno oblačno",
+        "Date": "2023-12-14T14:40",
+        "Ratio of Clouds to Skyline": 0.660790144980376
+    },
+    {
+        "id": 16,
+        "image_name": "20231214_144035.jpg",
+        "Skyline pixels": 1616268399,
+        "Clouds pixels": 1546427354,
+        "Weather": "Oblačno",
+        "Date": "2023-12-14T14:40",
+        "Ratio of Clouds to Skyline": 0.9567887084575735
+    },
+    {
+        "id": 17,
+        "image_name": "20231214_144513.jpg",
+        "Skyline pixels": 3104604958,
+        "Clouds pixels": 2847768498,
+        "Weather": "Oblačno",
+        "Date": "2023-12-14T14:45",
+        "Ratio of Clouds to Skyline": 0.9172724183995844
+    },
+    {
+        "id": 18,
+        "image_name": "20231214_144517.jpg",
+        "Skyline pixels": 1953173273,
+        "Clouds pixels": 1786348667,
+        "Weather": "Oblačno",
+        "Date": "2023-12-14T14:45",
+        "Ratio of Clouds to Skyline": 0.9145879127540161
+    },
+    {
+        "id": 19,
+        "image_name": "20231214_144816.jpg",
+        "Skyline pixels": 2148330384,
+        "Clouds pixels": 2109464056,
+        "Weather": "Oblačno",
+        "Date": "2023-12-14T14:48",
+        "Ratio of Clouds to Skyline": 0.981908588972412
+    },
+    {
+        "id": 20,
+        "image_name": "20231214_144823.jpg",
+        "Skyline pixels": 2787315702,
+        "Clouds pixels": 1215126882,
+        "Weather": "Delno oblačno",
+        "Date": "2023-12-14T14:48",
+        "Ratio of Clouds to Skyline": 0.435948780803015
+    },
+    {
+        "id": 21,
+        "image_name": "20231215_095106.jpg",
+        "Skyline pixels": 3109105188,
+        "Clouds pixels": 0,
+        "Weather": "Jasno",
+        "Date": "2023-12-15T09:47",
+        "Ratio of Clouds to Skyline": 0
+    },
+    {
+        "id": 22,
+        "image_name": "20231215_095109.jpg",
+        "Skyline pixels": 2878113182,
+        "Clouds pixels": 0,
+        "Weather": "Jasno",
+        "Date": "2023-12-15T09:50",
+        "Ratio of Clouds to Skyline": 0
+    },
+    {
+        "id": 23,
+        "image_name": "20231215_095113.jpg",
+        "Skyline pixels": 2552080289,
+        "Clouds pixels": 0,
+        "Weather": "Jasno",
+        "Date": "2023-12-15T09:51",
+        "Ratio of Clouds to Skyline": 0
+    },
+    {
+        "id": 24,
+        "image_name": "20231215_095949.jpg",
+        "Skyline pixels": 1833001752,
+        "Clouds pixels": 196323303,
+        "Weather": "Jasno",
+        "Date": "2023-12-15T09:59",
+        "Ratio of Clouds to Skyline": 0.10710480924843109
+    },
+    {
+        "id": 25,
+        "image_name": "20231215_095951.jpg",
+        "Skyline pixels": 1839614126,
+        "Clouds pixels": 32816009,
+        "Weather": "Jasno",
+        "Date": "2023-12-15T09:59",
+        "Ratio of Clouds to Skyline": 0.01783852849149083
+    },
+    {
+        "id": 26,
+        "image_name": "20231215_095955.jpg",
+        "Skyline pixels": 3109010581,
+        "Clouds pixels": 3572770,
+        "Weather": "Jasno",
+        "Date": "2023-12-15T09:59",
+        "Ratio of Clouds to Skyline": 0.0011491662401646873
+    },
+    {
+        "id": 27,
+        "image_name": "20231215_095957.jpg",
+        "Skyline pixels": 2329333368,
+        "Clouds pixels": 3649655,
+        "Weather": "Jasno",
+        "Date": "2023-12-15T09:59",
+        "Ratio of Clouds to Skyline": 0.001566823817551563
+    },
+    {
+        "id": 28,
+        "image_name": "20231215_100006.jpg",
+        "Skyline pixels": 1968952129,
+        "Clouds pixels": 24733225,
+        "Weather": "Jasno",
+        "Date": "2023-12-15T10:00",
+        "Ratio of Clouds to Skyline": 0.012561618251512096
+    },
+    {
+        "id": 29,
+        "image_name": "20231215_100630.jpg",
+        "Skyline pixels": 1967859784,
+        "Clouds pixels": 127446777,
+        "Weather": "Jasno",
+        "Date": "2023-12-15T10:06",
+        "Ratio of Clouds to Skyline": 0.06476415547297958
+    },
+    {
+        "id": 30,
+        "image_name": "20231215_100632.jpg",
+        "Skyline pixels": 1826657123,
+        "Clouds pixels": 117178474,
+        "Weather": "Jasno",
+        "Date": "2023-12-15T10:06",
+        "Ratio of Clouds to Skyline": 0.06414913479085368
+    },
+    {
+        "id": 31,
+        "image_name": "20231215_100635.jpg",
+        "Skyline pixels": 2158242975,
+        "Clouds pixels": 19073484,
+        "Weather": "Jasno",
+        "Date": "2023-12-15T10:06",
+        "Ratio of Clouds to Skyline": 0.008837505424985804
+    },
+    {
+        "id": 32,
+        "image_name": "20231215_100640.jpg",
+        "Skyline pixels": 3055434461,
+        "Clouds pixels": 0,
+        "Weather": "Jasno",
+        "Date": "2023-12-15T10:06",
+        "Ratio of Clouds to Skyline": 0
+    },
+    {
+        "id": 33,
+        "image_name": "20231215_145144.jpg",
+        "Skyline pixels": 1626581654,
+        "Clouds pixels": 1637338558,
+        "Weather": "Oblačno",
+        "Date": "2023-12-15T14:51",
+        "Ratio of Clouds to Skyline": 1
+    },
+    {
+        "id": 34,
+        "image_name": "20231215_145207.jpg",
+        "Skyline pixels": 1038105739,
+        "Clouds pixels": 1040474905,
+        "Weather": "Oblačno",
+        "Date": "2023-12-15T14:52",
+        "Ratio of Clouds to Skyline": 1
+    },
+    {
+        "id": 35,
+        "image_name": "20231215_145209.jpg",
+        "Skyline pixels": 1358711552,
+        "Clouds pixels": 1357445728,
+        "Weather": "Oblačno",
+        "Date": "2023-12-15T14:52",
+        "Ratio of Clouds to Skyline": 0.9990683644382528
+    },
+    {
+        "id": 36,
+        "image_name": "20231215_145240.jpg",
+        "Skyline pixels": 1701282160,
+        "Clouds pixels": 1655926167,
+        "Weather": "Oblačno",
+        "Date": "2023-12-15T14:52",
+        "Ratio of Clouds to Skyline": 0.9733401113193357
+    },
+    {
+        "id": 37,
+        "image_name": "20231215_145242.jpg",
+        "Skyline pixels": 1831795116,
+        "Clouds pixels": 1774644706,
+        "Weather": "Oblačno",
+        "Date": "2023-12-15T14:52",
+        "Ratio of Clouds to Skyline": 0.9688008721604212
+    },
+    {
+        "id": 38,
+        "image_name": "20231215_151210.jpg",
+        "Skyline pixels": 1404608039,
+        "Clouds pixels": 1408499780,
+        "Weather": "Oblačno",
+        "Date": "2023-12-15T15:12",
+        "Ratio of Clouds to Skyline": 1
+    },
+    {
+        "id": 39,
+        "image_name": "20231215_151212.jpg",
+        "Skyline pixels": 1290756321,
+        "Clouds pixels": 1278288546,
+        "Weather": "Oblačno",
+        "Date": "2023-12-15T15:12",
+        "Ratio of Clouds to Skyline": 0.9903407213296924
+    },
+    {
+        "id": 40,
+        "image_name": "20231215_155400.jpg",
+        "Skyline pixels": 1164324908,
+        "Clouds pixels": 99338821,
+        "Weather": "Jasno",
+        "Date": "2023-12-15T15:54",
+        "Ratio of Clouds to Skyline": 0.08531881463451438
+    },
+    {
+        "id": 41,
+        "image_name": "20231215_155402.jpg",
+        "Skyline pixels": 1286622580,
+        "Clouds pixels": 55424433,
+        "Weather": "Jasno",
+        "Date": "2023-12-15T15:54",
+        "Ratio of Clouds to Skyline": 0.04307746021370152
+    },
+    {
+        "id": 42,
+        "image_name": "20231215_155453.jpg",
+        "Skyline pixels": 1546742136,
+        "Clouds pixels": 67806352,
+        "Weather": "Jasno",
+        "Date": "2023-12-15T15:54",
+        "Ratio of Clouds to Skyline": 0.04383817471692644
+    },
+    {
+        "id": 43,
+        "image_name": "20231215_155459.jpg",
+        "Skyline pixels": 2249155903,
+        "Clouds pixels": 58780321,
+        "Weather": "Jasno",
+        "Date": "2023-12-15T15:54",
+        "Ratio of Clouds to Skyline": 0.026134391538441968
+    },
+    {
+        "id": 44,
+        "image_name": "20231215_155502.jpg",
+        "Skyline pixels": 1623852596,
+        "Clouds pixels": 584050064,
+        "Weather": "Delno oblačno",
+        "Date": "2023-12-15T15:55",
+        "Ratio of Clouds to Skyline": 0.35966938467116877
+    },
+    {
+        "id": 45,
+        "image_name": "20231211_102913.jpg",
+        "Skyline pixels": 3084108823,
+        "Clouds pixels": 30096984,
+        "Weather": "Jasno",
+        "Date": "2023-12-11T10:29",
+        "Ratio of Clouds to Skyline": 0.009758729580340752
+    },
+    {
+        "id": 46,
+        "image_name": "20231211_102932.jpg",
+        "Skyline pixels": 3097692385,
+        "Clouds pixels": 181721126,
+        "Weather": "Jasno",
+        "Date": "2023-12-11T10:29",
+        "Ratio of Clouds to Skyline": 0.058663386616421564
+    },
+    {
+        "id": 47,
+        "image_name": "20231211_102947.jpg",
+        "Skyline pixels": 2077029785,
+        "Clouds pixels": 390886402,
+        "Weather": "Jasno",
+        "Date": "2023-12-11T10:29",
+        "Ratio of Clouds to Skyline": 0.1881948948555882
+    },
+    {
+        "id": 48,
+        "image_name": "20231211_125410.jpg",
+        "Skyline pixels": 1926236726,
+        "Clouds pixels": 1932359428,
+        "Weather": "Oblačno",
+        "Date": "2023-12-11T12:54",
+        "Ratio of Clouds to Skyline": 1
+    },
+    {
+        "id": 49,
+        "image_name": "20231211_134518.jpg",
+        "Skyline pixels": 1707452413,
+        "Clouds pixels": 1701261203,
+        "Weather": "Oblačno",
+        "Date": "2023-12-11T13:45",
+        "Ratio of Clouds to Skyline": 0.9963740072912943
+    },
+    {
+        "id": 50,
+        "image_name": "20231211_150316.jpg",
+        "Skyline pixels": 2756773659,
+        "Clouds pixels": 2750824516,
+        "Weather": "Oblačno",
+        "Date": "2023-12-11T15:03",
+        "Ratio of Clouds to Skyline": 0.9978419907704146
+    },
+    {
+        "id": 51,
+        "image_name": "20231211_150321.jpg",
+        "Skyline pixels": 2389365381,
+        "Clouds pixels": 2385461017,
+        "Weather": "Oblačno",
+        "Date": "2023-12-11T15:03",
+        "Ratio of Clouds to Skyline": 0.9983659410021393
+    },
+    {
+        "id": 52,
+        "image_name": "20231211_160046.jpg",
+        "Skyline pixels": 1792406019,
+        "Clouds pixels": 1788229429,
+        "Weather": "Oblačno",
+        "Date": "2023-12-11T16:00",
+        "Ratio of Clouds to Skyline": 0.9976698415672972
+    },
+    {
+        "id": 53,
+        "image_name": "20231212_104610.jpg",
+        "Skyline pixels": 2731909984,
+        "Clouds pixels": 2723231537,
+        "Weather": "Oblačno",
+        "Date": "2023-12-12T10:46",
+        "Ratio of Clouds to Skyline": 0.996823304189806
+    },
+    {
+        "id": 54,
+        "image_name": "20231212_104649.jpg",
+        "Skyline pixels": 2293262105,
+        "Clouds pixels": 2290536166,
+        "Weather": "Oblačno",
+        "Date": "2023-12-12T10:46",
+        "Ratio of Clouds to Skyline": 0.9988113268893003
+    },
+    {
+        "id": 55,
+        "image_name": "20231212_104828.jpg",
+        "Skyline pixels": 3109086548,
+        "Clouds pixels": 3094988772,
+        "Weather": "Oblačno",
+        "Date": "2023-12-12T10:48",
+        "Ratio of Clouds to Skyline": 0.9954656212420112
+    },
+    {
+        "id": 56,
+        "image_name": "20231212_104838.jpg",
+        "Skyline pixels": 3109087516,
+        "Clouds pixels": 3106228256,
+        "Weather": "Oblačno",
+        "Date": "2023-12-12T10:48",
+        "Ratio of Clouds to Skyline": 0.9990803539671091
+    },
+    {
+        "id": 57,
+        "image_name": "20231212_104849.jpg",
+        "Skyline pixels": 2104671623,
+        "Clouds pixels": 2103590889,
+        "Weather": "Oblačno",
+        "Date": "2023-12-12T10:48",
+        "Ratio of Clouds to Skyline": 0.9994865070692313
+    },
+    {
+        "id": 58,
+        "image_name": "20231212_105707.jpg",
+        "Skyline pixels": 2997938511,
+        "Clouds pixels": 2931543605,
+        "Weather": "Oblačno",
+        "Date": "2023-12-12T10:57",
+        "Ratio of Clouds to Skyline": 0.977853146168147
+    },
+    {
+        "id": 59,
+        "image_name": "20231212_142559.jpg",
+        "Skyline pixels": 1630199559,
+        "Clouds pixels": 1617715004,
+        "Weather": "Oblačno",
+        "Date": "2023-12-12T14:25",
+        "Ratio of Clouds to Skyline": 0.9923417014002517
+    },
+    {
+        "id": 60,
+        "image_name": "20231212_152056.jpg",
+        "Skyline pixels": 2050836056,
+        "Clouds pixels": 2047625794,
+        "Weather": "Oblačno",
+        "Date": "2023-12-12T15:20",
+        "Ratio of Clouds to Skyline": 0.9984346569338841
+    },
+    {
+        "id": 61,
+        "image_name": "20231212_152058.jpg",
+        "Skyline pixels": 2009481476,
+        "Clouds pixels": 2005506602,
+        "Weather": "Oblačno",
+        "Date": "2023-12-12T15:20",
+        "Ratio of Clouds to Skyline": 0.998021940462018
+    },
+    {
+        "id": 62,
+        "image_name": "20231212_152131.jpg",
+        "Skyline pixels": 1498374892,
+        "Clouds pixels": 1494675234,
+        "Weather": "Oblačno",
+        "Date": "2023-12-12T15:21",
+        "Ratio of Clouds to Skyline": 0.9975308862823631
+    },
+    {
+        "id": 63,
+        "image_name": "20231212_152134.jpg",
+        "Skyline pixels": 1205502973,
+        "Clouds pixels": 1200847439,
+        "Weather": "Oblačno",
+        "Date": "2023-12-12T15:21",
+        "Ratio of Clouds to Skyline": 0.9961380982840595
+    },
+    {
+        "id": 64,
+        "image_name": "20231213_103228.jpg",
+        "Skyline pixels": 1772808460,
+        "Clouds pixels": 1762491429,
+        "Weather": "Oblačno",
+        "Date": "2023-12-13T10:32",
+        "Ratio of Clouds to Skyline": 0.9941804028845846
+    },
+    {
+        "id": 65,
+        "image_name": "20231213_103259.jpg",
+        "Skyline pixels": 1524755563,
+        "Clouds pixels": 1520356775,
+        "Weather": "Oblačno",
+        "Date": "2023-12-13T10:33",
+        "Ratio of Clouds to Skyline": 0.9971150864395961
+    },
+    {
+        "id": 66,
+        "image_name": "20231213_103341.jpg",
+        "Skyline pixels": 2063415662,
+        "Clouds pixels": 2057142922,
+        "Weather": "Oblačno",
+        "Date": "2023-12-13T10:33",
+        "Ratio of Clouds to Skyline": 0.9969600211360613
+    },
+    {
+        "id": 67,
+        "image_name": "20231213_123658.jpg",
+        "Skyline pixels": 1654344882,
+        "Clouds pixels": 1644018253,
+        "Weather": "Oblačno",
+        "Date": "2023-12-13T12:36",
+        "Ratio of Clouds to Skyline": 0.9937578741214372
+    },
+    {
+        "id": 68,
+        "image_name": "20231213_123718.jpg",
+        "Skyline pixels": 1260835665,
+        "Clouds pixels": 1237916708,
+        "Weather": "Oblačno",
+        "Date": "2023-12-13T12:37",
+        "Ratio of Clouds to Skyline": 0.9818224074427654
+    },
+    {
+        "id": 69,
+        "image_name": "20231213_123720.jpg",
+        "Skyline pixels": 1289200699,
+        "Clouds pixels": 1289551391,
+        "Weather": "Oblačno",
+        "Date": "2023-12-13T12:37",
+        "Ratio of Clouds to Skyline": 1
+    },
+    {
+        "id": 70,
+        "image_name": "20231213_123746.jpg",
+        "Skyline pixels": 1597043600,
+        "Clouds pixels": 1589122809,
+        "Weather": "Oblačno",
+        "Date": "2023-12-13T12:37",
+        "Ratio of Clouds to Skyline": 0.9950403414158512
+    },
+    {
+        "id": 71,
+        "image_name": "20231213_123747.jpg",
+        "Skyline pixels": 1608106668,
+        "Clouds pixels": 1598740194,
+        "Weather": "Oblačno",
+        "Date": "2023-12-13T12:37",
+        "Ratio of Clouds to Skyline": 0.9941754647335372
+    },
+    {
+        "id": 72,
+        "image_name": "20231213_123750.jpg",
+        "Skyline pixels": 1791886558,
+        "Clouds pixels": 1788652764,
+        "Weather": "Oblačno",
+        "Date": "2023-12-13T12:37",
+        "Ratio of Clouds to Skyline": 0.9981953132102239
+    },
+    {
+        "id": 73,
+        "image_name": "20231213_143729.jpg",
+        "Skyline pixels": 1636793683,
+        "Clouds pixels": 1624243609,
+        "Weather": "Oblačno",
+        "Date": "2023-12-13T14:37",
+        "Ratio of Clouds to Skyline": 0.9923325253937946
+    },
+    {
+        "id": 74,
+        "image_name": "20231213_143757.jpg",
+        "Skyline pixels": 1456852985,
+        "Clouds pixels": 1459169101,
+        "Weather": "Oblačno",
+        "Date": "2023-12-13T14:37",
+        "Ratio of Clouds to Skyline": 1
+    },
+    {
+        "id": 75,
+        "image_name": "20231213_143839.jpg",
+        "Skyline pixels": 1975046159,
+        "Clouds pixels": 1966764359,
+        "Weather": "Oblačno",
+        "Date": "2023-12-13T14:38",
+        "Ratio of Clouds to Skyline": 0.9958067815467193
+    },
+    {
+        "id": 76,
+        "image_name": "20231213_143841.jpg",
+        "Skyline pixels": 1913090607,
+        "Clouds pixels": 1901576071,
+        "Weather": "Oblačno",
+        "Date": "2023-12-13T14:38",
+        "Ratio of Clouds to Skyline": 0.9939811862763487
+    },
+    {
+        "id": 77,
+        "image_name": "20231213_161041.jpg",
+        "Skyline pixels": 1376530603,
+        "Clouds pixels": 1370556171,
+        "Weather": "Oblačno",
+        "Date": "2023-12-13T16:10",
+        "Ratio of Clouds to Skyline": 0.9956597899189605
+    },
+    {
+        "id": 78,
+        "image_name": "20231213_161124.jpg",
+        "Skyline pixels": 1470238557,
+        "Clouds pixels": 1461684971,
+        "Weather": "Oblačno",
+        "Date": "2023-12-13T16:11",
+        "Ratio of Clouds to Skyline": 0.9941821781511067
+    },
+    {
+        "id": 79,
+        "image_name": "20231213_161213.jpg",
+        "Skyline pixels": 1756710775,
+        "Clouds pixels": 1752766456,
+        "Weather": "Oblačno",
+        "Date": "2023-12-13T16:12",
+        "Ratio of Clouds to Skyline": 0.9977547134928912
+    },
+    {
+        "id": 80,
+        "image_name": "20231216_144805.jpg",
+        "Skyline pixels": 1893664865,
+        "Clouds pixels": 269271499,
+        "Weather": "Delno oblačno",
+        "Date": "2023-12-16T14:48",
+        "Ratio of Clouds to Skyline": 0.1421959629588417
+    },
+    {
+        "id": 81,
+        "image_name": "20231216_144304.jpg",
+        "Skyline pixels": 2145625126,
+        "Clouds pixels": 0,
+        "Weather": "Jasno",
+        "Date": "2023-12-16T14:43",
+        "Ratio of Clouds to Skyline": 0
+    },
+    {
+        "id": 82,
+        "image_name": "20231216_143459.jpg",
+        "Skyline pixels": 2362901253,
+        "Clouds pixels": 0,
+        "Weather": "Jasno",
+        "Date": "2023-12-16T14:34",
+        "Ratio of Clouds to Skyline": 0
+    },
+    {
+        "id": 83,
+        "image_name": "20231216_143451.jpg",
+        "Skyline pixels": 2448305099,
+        "Clouds pixels": 231181009,
+        "Weather": "Jasno",
+        "Date": "2023-12-16T14:34",
+        "Ratio of Clouds to Skyline": 0.09442491832183207
+    },
+    {
+        "id": 84,
+        "image_name": "20231216_142945.jpg",
+        "Skyline pixels": 2895343629,
+        "Clouds pixels": 0,
+        "Weather": "Jasno",
+        "Date": "2023-12-16T14:29",
+        "Ratio of Clouds to Skyline": 0
+    },
+    {
+        "id": 85,
+        "image_name": "20231216_142752.jpg",
+        "Skyline pixels": 2840152546,
+        "Clouds pixels": 0,
+        "Weather": "Jasno",
+        "Date": "2023-12-16T14:27",
+        "Ratio of Clouds to Skyline": 0
+    },
+    {
+        "id": 86,
+        "image_name": "20231216_142746.jpg",
+        "Skyline pixels": 1545462313,
+        "Clouds pixels": 490969711,
+        "Weather": "Delno oblačno",
+        "Date": "2023-12-16T14:27",
+        "Ratio of Clouds to Skyline": 0.3176846868863117
+    },
+    {
+        "id": 87,
+        "image_name": "20231216_142408.jpg",
+        "Skyline pixels": 1754340918,
+        "Clouds pixels": 140057633,
+        "Weather": "Jasno",
+        "Date": "2023-12-16T14:24",
+        "Ratio of Clouds to Skyline": 0.07983490070998846
+    },
+    {
+        "id": 88,
+        "image_name": "20231216_142402.jpg",
+        "Skyline pixels": 2057222838,
+        "Clouds pixels": 347482172,
+        "Weather": "Delno oblačno",
+        "Date": "2023-12-16T14:24",
+        "Ratio of Clouds to Skyline": 0.16890837763487826
+    },
+    {
+        "id": 89,
+        "image_name": "20231216_142355.jpg",
+        "Skyline pixels": 2981371509,
+        "Clouds pixels": 0,
+        "Weather": "Jasno",
+        "Date": "2023-12-16T14:23",
+        "Ratio of Clouds to Skyline": 0
+    },
+    {
+        "id": 90,
+        "image_name": "20231216_142232.jpg",
+        "Skyline pixels": 3109155840,
+        "Clouds pixels": 0,
+        "Weather": "Jasno",
+        "Date": "2023-12-16T14:22",
+        "Ratio of Clouds to Skyline": 0
+    },
+    {
+        "id": 91,
+        "image_name": "20231217_153739.jpg",
+        "Skyline pixels": 2554437844,
+        "Clouds pixels": 34655317,
+        "Weather": "Jasno",
+        "Date": "2023-12-17T15:37",
+        "Ratio of Clouds to Skyline": 0.01356670982674339
+    },
+    {
+        "id": 92,
+        "image_name": "20231217_153722.jpg",
+        "Skyline pixels": 2818778899,
+        "Clouds pixels": 8163656,
+        "Weather": "Jasno",
+        "Date": "2023-12-17T15:37",
+        "Ratio of Clouds to Skyline": 0.0028961675578372493
+    },
+    {
+        "id": 93,
+        "image_name": "20231217_153612.jpg",
+        "Skyline pixels": 2535173816,
+        "Clouds pixels": 23449093,
+        "Weather": "Jasno",
+        "Date": "2023-12-17T15:36",
+        "Ratio of Clouds to Skyline": 0.009249501100085518
+    },
+    {
+        "id": 94,
+        "image_name": "20231217_153606.jpg",
+        "Skyline pixels": 2214160571,
+        "Clouds pixels": 41944513,
+        "Weather": "Jasno",
+        "Date": "2023-12-17T15:36",
+        "Ratio of Clouds to Skyline": 0.018943753921630103
+    },
+    {
+        "id": 95,
+        "image_name": "20231217_105554.jpg",
+        "Skyline pixels": 1512156001,
+        "Clouds pixels": 395543322,
+        "Weather": "Delno oblačno",
+        "Date": "2023-12-17T10:55",
+        "Ratio of Clouds to Skyline": 0.2615757380445035
+    },
+    {
+        "id": 96,
+        "image_name": "20231217_105541.jpg",
+        "Skyline pixels": 2400132492,
+        "Clouds pixels": 559796169,
+        "Weather": "Delno oblačno",
+        "Date": "2023-12-17T10:55",
+        "Ratio of Clouds to Skyline": 0.23323552798267772
+    },
+    {
+        "id": 97,
+        "image_name": "20231217_105530.jpg",
+        "Skyline pixels": 2754153641,
+        "Clouds pixels": 340208301,
+        "Weather": "Delno oblačno",
+        "Date": "2023-12-17T10:55",
+        "Ratio of Clouds to Skyline": 0.12352553464536367
+    },
+    {
+        "id": 98,
+        "image_name": "20231216_145639.jpg",
+        "Skyline pixels": 2151410112,
+        "Clouds pixels": 0,
+        "Weather": "Jasno",
+        "Date": "2023-12-16T14:56",
+        "Ratio of Clouds to Skyline": 0
+    },
+    {
+        "id": 99,
+        "image_name": "20231216_145529.jpg",
+        "Skyline pixels": 2336169667,
+        "Clouds pixels": 184034692,
+        "Weather": "Jasno",
+        "Date": "2023-12-16T14:55",
+        "Ratio of Clouds to Skyline": 0.07877625268387667
+    },
+    {
+        "id": 100,
+        "image_name": "20231216_144813.jpg",
+        "Skyline pixels": 1873281473,
+        "Clouds pixels": 193179169,
+        "Weather": "Delno oblačno",
+        "Date": "2023-12-16T14:48",
+        "Ratio of Clouds to Skyline": 0.10312340765887669
+    }
+]
