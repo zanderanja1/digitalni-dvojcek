@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/zanderanja/Desktop/digitalni-dvojcek/BlockChain/test.csproj": {}
+    "c:\\Users\\Jakob\\Documents\\GitHub\\digitalni-dvojcek\\BlockChain\\test.csproj": {}
   },
   "projects": {
-    "/Users/zanderanja/Desktop/digitalni-dvojcek/BlockChain/test.csproj": {
+    "c:\\Users\\Jakob\\Documents\\GitHub\\digitalni-dvojcek\\BlockChain\\test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/zanderanja/Desktop/digitalni-dvojcek/BlockChain/test.csproj",
+        "projectUniqueName": "c:\\Users\\Jakob\\Documents\\GitHub\\digitalni-dvojcek\\BlockChain\\test.csproj",
         "projectName": "test",
-        "projectPath": "/Users/zanderanja/Desktop/digitalni-dvojcek/BlockChain/test.csproj",
-        "packagesPath": "/Users/zanderanja/.nuget/packages/",
-        "outputPath": "/Users/zanderanja/Desktop/digitalni-dvojcek/BlockChain/obj/",
+        "projectPath": "c:\\Users\\Jakob\\Documents\\GitHub\\digitalni-dvojcek\\BlockChain\\test.csproj",
+        "packagesPath": "C:\\Users\\Jakob\\.nuget\\packages\\",
+        "outputPath": "c:\\Users\\Jakob\\Documents\\GitHub\\digitalni-dvojcek\\BlockChain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/zanderanja/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Jakob\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -53,7 +53,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
