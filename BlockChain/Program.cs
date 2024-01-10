@@ -9,6 +9,7 @@ using System.Security.Cryptography;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Runtime.Intrinsics.Arm;
+using System.Runtime.CompilerServices;
 
 
 
@@ -29,27 +30,27 @@ namespace Server
         public string? PreviousHash; 
         public string Hash;
         public string Data; 
-        public int Nonce = 0;
-
+        public int Nonce;
         public int Difficulity;
     
-        public Block(DateTime timeStamp, string? previousHash, string data, int difficulity)  
+        public Block(int index, DateTime timeStamp, string previousHash, string hash, string data, int nonce, int difficulity)  
         {  
-            Index = Global.counter;  
-            TimeStamp = timeStamp;  
-
-            if(previousHash != null)
-                PreviousHash = previousHash;  
-            else
-                PreviousHash = "";  
-
-            Data = data;  
+            Index = index; 
+            TimeStamp = timeStamp;
+            if(previousHash == null) {
+                PreviousHash = "";
+            } else {
+                PreviousHash = previousHash;
+            }
+            Hash = hash;
+            Data = data;
+            Nonce = nonce;
             Difficulity = difficulity;
-            Hash = Rudarjenje(Global.threads);
+           
             
         }  
         
-        public string ZracunajHash()  
+        public string CalculateHash()  
         {  
             SHA256 sha256 = SHA256.Create();  
             byte[] inputBytes;
@@ -60,62 +61,6 @@ namespace Server
         
             return Convert.ToBase64String(outputBytes);  
         }
-
-   
-        public string Rudarjenje(int numberOfThreads)
-        {
-            var nicle = new string('0', Difficulity);
-            Thread[] threads = new Thread[numberOfThreads];
-            object lockObject = new object();
-            string validHash = "";
-
-            for (int i = 0; i < numberOfThreads; i++)
-            {
-                threads[i] = new Thread(() =>
-                {
-                    while (true)
-                    {
-                        string localHash;
-                        int localNonce;
-
-                        lock (lockObject)
-                        {
-                            if (validHash != "" && validHash.Substring(0, Difficulity) == nicle)
-                            {
-                                break;
-                            }
-
-                            this.Nonce++;
-                            localHash = this.ZracunajHash();
-                            localNonce = this.Nonce;
-                        
-
-                        if (localHash.Substring(0, Difficulity) == nicle)
-                        {
-                            lock (lockObject)
-                            {
-                                if (validHash == "")
-                                {
-                                    validHash = localHash;
-                                }
-                            }
-                            break;
-                        }
-                        }
-                    }
-                });
-                threads[i].Start();
-            }
-
-            for (int i = 0; i < numberOfThreads; i++)
-            {
-                threads[i].Join();
-            }
-
-            return validHash;
-        }
-
-
        
     }  
     public class Blockchain  
@@ -136,18 +81,18 @@ namespace Server
                 return null;  
         }  
     
-        public void DodajBlock(Block block)  
+        public void AddBlock(Block block)  
         {  
             Chain.Add(block);    
         } 
 
-         public Boolean validateBlock(Block block) {
+         public Boolean ValidateBlock(Block block) {
             Block? lastBlock = GetLatestBlock();
 
             if(lastBlock != null)
             {
-                String newHash = block.ZracunajHash();
-                if(lastBlock.Index + 1 == block.Index && lastBlock.Hash == block.PreviousHash && newHash == block.Hash)
+                String newHash = block.CalculateHash();
+                if(lastBlock.Index + 1 == block.Index && lastBlock.Hash == block.PreviousHash && newHash == block.Hash && block.TimeStamp  <= DateTime.Now.AddMilliseconds(60000))
                 {
                     return true;
                 }
@@ -167,7 +112,7 @@ namespace Server
                 Block trenutniBlock = Chain[i];  
                 Block prejsnjiBlock = Chain[i - 1];  
         
-                if (trenutniBlock.Hash != trenutniBlock.ZracunajHash())  
+                if (trenutniBlock.Hash != trenutniBlock.CalculateHash())  
                 {  
                     return false;  
                 }  
@@ -175,17 +120,94 @@ namespace Server
                 if (trenutniBlock.PreviousHash != prejsnjiBlock.Hash)  
                 {  
                     return false;  
-                }  
+                } 
+
+                if(trenutniBlock.TimeStamp < prejsnjiBlock.TimeStamp.AddMilliseconds(-60000))
+                {
+                    return false;
+                }
             }  
             return true;  
         }
 
-        public int adjustDiff() {
-            var previousAdjustmentBlock = Chain[Chain.Count - Global.diffAdjustInterval];
+        
+
+        public string CalculateHash(int Index, DateTime TimeStamp, String Data, String? PreviousHash, int Difficulity, int Nonce)  
+        {  
+            SHA256 sha256 = SHA256.Create();  
+            byte[] inputBytes;
+
+            inputBytes = Encoding.ASCII.GetBytes($"{Index}+{TimeStamp}+{Data}+{PreviousHash}+{Difficulity}+{Nonce}");  
+            
+            byte[] outputBytes = sha256.ComputeHash(inputBytes);  
+        
+            return Convert.ToBase64String(outputBytes);  
+        }
+
+
+        public Block Mine(int index, DateTime timeStamp, string Data, string? PreviousHash, int Difficulity)
+        {
+            int numberOfThreads = 1;
+            Thread[] threads = new Thread[numberOfThreads];
+            object lockObject = new object();
+            string validHash = "";
+            int validNonce = 0;
+
+            for (int i = 0; i < numberOfThreads; i++)
+            {
+                threads[i] = new Thread(() =>
+                {
+                    int localNonce = 0;
+                    string localHash;
+                    var nicle = new string('0', Difficulity);
+
+                    while (true)
+                    {
+                        // Move the hash calculation outside the lock
+                        localNonce++;
+                        localHash = CalculateHash(index, timeStamp, Data, PreviousHash, Difficulity, localNonce);
+
+                        lock (lockObject)
+                        {
+                            if (validHash != "" && validHash.Substring(0, Difficulity) == nicle)
+                            {
+                                break;
+                            }
+
+                            if (localHash.Substring(0, Difficulity) == nicle)
+                            {
+                                if (validHash == "")
+                                {
+                                    validHash = localHash;
+                                    validNonce = localNonce;
+                                }
+                                break;
+                            }
+                        }
+                    }
+                });
+                threads[i].Start();
+            }
+
+            for (int i = 0; i < numberOfThreads; i++)
+            {
+                threads[i].Join();
+            }
+
+            return new Block(index, timeStamp, PreviousHash, validHash, Data, validNonce, Difficulity);
+        }
+        
+    }
+
+    class Program
+    {
+
+        public static int AdjustDiff(Blockchain blockchain) {
+            var previousAdjustmentBlock = blockchain.Chain[blockchain.Chain.Count - Global.diffAdjustInterval];
             var timeExpected = Global.blockGenerationInterval * Global.diffAdjustInterval;
-            var timeTaken = this.GetLatestBlock().TimeStamp - previousAdjustmentBlock.TimeStamp;
+            var timeTaken = blockchain.GetLatestBlock().TimeStamp - previousAdjustmentBlock.TimeStamp;
             Console.WriteLine("Time expected: " + timeExpected);
-            Console.WriteLine("Time taken: " + timeTaken);
+            Console.WriteLine("Time taken: " + timeTaken.TotalMilliseconds);
             if (timeTaken.TotalMilliseconds < (timeExpected / 2))
             {
                 return previousAdjustmentBlock.Difficulity + 1;
@@ -199,44 +221,36 @@ namespace Server
             }
                
         }
-        private static TcpListener? tcpListener;  
-        private static List<TcpClient> tcpClientsList = new List<TcpClient>();  
- 
-        public static string? jsonString;
 
-        public void generateAndValidateBlock(Blockchain blockchain) {
+        public static void generateAndValidateBlock(Blockchain blockchain) {
             Block latest = blockchain.GetLatestBlock();
-            String? prevHash = null;
+            string? prevHash = null;
             if(latest != null) {
                 prevHash = latest.Hash;
             }
-            Block block = new Block(DateTime.Now, prevHash, "podatek " + Global.counter, blockchain.Difficulty);
-            if(blockchain.validateBlock(block)) {
+            Block block = blockchain.Mine(Global.counter, DateTime.Now, "podatek " + Global.counter, prevHash, blockchain.Difficulty);
+            if(blockchain.ValidateBlock(block)) {
                 Global.counter++;
                 Global.generated++;
-                blockchain.DodajBlock(block);
+                blockchain.AddBlock(block);
                 Console.WriteLine("Added new block: " + block.Difficulity);
                 if(Global.generated == Global.diffAdjustInterval)
                 {
                     Console.WriteLine("Adjusting difficulity");
-                    Difficulty = adjustDiff();
-                    Console.WriteLine("New difficulity: " + Difficulty);
+                    blockchain.Difficulty = AdjustDiff(blockchain);
+                    Console.WriteLine("New difficulity: " + blockchain.Difficulty);
                     Global.generated = 0;
                 }
             } else {
                 Console.WriteLine("Block not valid");
             }
         }
-
-
-        static void Main(string[] args)  
-        {  
-             
-
+        static void Main(string[] args)
+        {
             Blockchain verigaBlokov = new Blockchain();
             var startTime = DateTime.Now;
             for(int i = 0; i < 22; i++) {
-                verigaBlokov.generateAndValidateBlock(verigaBlokov);
+                generateAndValidateBlock(verigaBlokov);
             }
             
 
@@ -246,9 +260,12 @@ namespace Server
                 Console.WriteLine(verigaBlokov.Chain[i].Hash + "  " + verigaBlokov.Chain[i].PreviousHash);
             }
 
-            jsonString = JsonSerializer.Serialize(verigaBlokov);
+            bool valid = verigaBlokov.IsValid();
+            Console.WriteLine(valid ? "Chain valid" : "Chain not valid");
+        }
 
-        }  
         
-    }  
+    }
+
+    
 } 
