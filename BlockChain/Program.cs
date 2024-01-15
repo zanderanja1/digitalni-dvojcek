@@ -10,6 +10,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Runtime.Intrinsics.Arm;
 using System.Runtime.CompilerServices;
+using MPI;
 
 
 
@@ -196,6 +197,17 @@ namespace Server
 
             return new Block(index, timeStamp, PreviousHash, validHash, Data, validNonce, Difficulity);
         }
+
+        public int CalculateCumulativeDifficulty(Blockchain chain)
+        {
+            int cumulativeDifficulty = 0;
+            foreach (Block block in chain.Chain)
+            {
+                cumulativeDifficulty += (int)Math.Pow(2, block.Difficulity);
+            }
+            return cumulativeDifficulty;
+        }
+
         
     }
 
@@ -247,7 +259,7 @@ namespace Server
         }
         static void Main(string[] args)
         {
-            Blockchain verigaBlokov = new Blockchain();
+            /* Blockchain verigaBlokov = new Blockchain();
             var startTime = DateTime.Now;
             for(int i = 0; i < 22; i++) {
                 generateAndValidateBlock(verigaBlokov);
@@ -261,7 +273,14 @@ namespace Server
             }
 
             bool valid = verigaBlokov.IsValid();
-            Console.WriteLine(valid ? "Chain valid" : "Chain not valid");
+            Console.WriteLine(valid ? "Chain valid" : "Chain not valid"); */
+
+            MPI.Environment.Run(ref args, communicator =>
+            {
+                Console.WriteLine("Hello, from process number "
+                                        + communicator.Rank + " of "
+                                        + communicator.Size);
+            });
         }
 
         

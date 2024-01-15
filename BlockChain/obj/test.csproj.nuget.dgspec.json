@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Jakob\\Documents\\GitHub\\digitalni-dvojcek\\BlockChain\\test.csproj": {}
+    "C:\\Users\\Jakob\\Documents\\GitHub\\digitalni-dvojcek\\BlockChain\\test.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Jakob\\Documents\\GitHub\\digitalni-dvojcek\\BlockChain\\test.csproj": {
+    "C:\\Users\\Jakob\\Documents\\GitHub\\digitalni-dvojcek\\BlockChain\\test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Jakob\\Documents\\GitHub\\digitalni-dvojcek\\BlockChain\\test.csproj",
+        "projectUniqueName": "C:\\Users\\Jakob\\Documents\\GitHub\\digitalni-dvojcek\\BlockChain\\test.csproj",
         "projectName": "test",
-        "projectPath": "c:\\Users\\Jakob\\Documents\\GitHub\\digitalni-dvojcek\\BlockChain\\test.csproj",
+        "projectPath": "C:\\Users\\Jakob\\Documents\\GitHub\\digitalni-dvojcek\\BlockChain\\test.csproj",
         "packagesPath": "C:\\Users\\Jakob\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Jakob\\Documents\\GitHub\\digitalni-dvojcek\\BlockChain\\obj\\",
+        "outputPath": "C:\\Users\\Jakob\\Documents\\GitHub\\digitalni-dvojcek\\BlockChain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Jakob\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -37,6 +37,12 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "MPI.NET": {
+              "target": "Package",
+              "version": "[1.4.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
