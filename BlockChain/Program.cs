@@ -11,6 +11,7 @@ using System.Text.Json.Serialization;
 using System.Runtime.Intrinsics.Arm;
 using System.Runtime.CompilerServices;
 using MPI;
+using System.Data;
 
 
 
@@ -22,8 +23,11 @@ namespace Server
         public static int counter = 0;
         public static int generated = 0;
         public static int diffAdjustInterval = 10;
-        public static int blockGenerationInterval = 10000;
+        public static int blockGenerationInterval = 5000;
+        public static int syncInterval = 20000;
     }
+
+    [Serializable]
     public class Block  
     {  
         public int Index; 
@@ -32,9 +36,9 @@ namespace Server
         public string Hash;
         public string Data; 
         public int Nonce;
-        public int Difficulity;
+        public int Difficulty;
     
-        public Block(int index, DateTime timeStamp, string previousHash, string hash, string data, int nonce, int difficulity)  
+        public Block(int index, DateTime timeStamp, string previousHash, string hash, string data, int nonce, int difficulty)  
         {  
             Index = index; 
             TimeStamp = timeStamp;
@@ -46,7 +50,7 @@ namespace Server
             Hash = hash;
             Data = data;
             Nonce = nonce;
-            Difficulity = difficulity;
+            Difficulty = difficulty;
            
             
         }  
@@ -56,7 +60,7 @@ namespace Server
             SHA256 sha256 = SHA256.Create();  
             byte[] inputBytes;
 
-            inputBytes = Encoding.ASCII.GetBytes($"{Index}+{TimeStamp}+{Data}+{PreviousHash}+{Difficulity}+{Nonce}");  
+            inputBytes = Encoding.ASCII.GetBytes($"{Index}+{TimeStamp}+{Data}+{PreviousHash}+{Difficulty}+{Nonce}");  
             
             byte[] outputBytes = sha256.ComputeHash(inputBytes);  
         
@@ -64,6 +68,8 @@ namespace Server
         }
        
     }  
+
+    [Serializable]
     public class Blockchain  
     {  
         public IList<Block> Chain { set;  get; }  
@@ -133,12 +139,12 @@ namespace Server
 
         
 
-        public string CalculateHash(int Index, DateTime TimeStamp, String Data, String? PreviousHash, int Difficulity, int Nonce)  
+        public string CalculateHash(int Index, DateTime TimeStamp, String Data, String? PreviousHash, int Difficulty, int Nonce)  
         {  
             SHA256 sha256 = SHA256.Create();  
             byte[] inputBytes;
 
-            inputBytes = Encoding.ASCII.GetBytes($"{Index}+{TimeStamp}+{Data}+{PreviousHash}+{Difficulity}+{Nonce}");  
+            inputBytes = Encoding.ASCII.GetBytes($"{Index}+{TimeStamp}+{Data}+{PreviousHash}+{Difficulty}+{Nonce}");  
             
             byte[] outputBytes = sha256.ComputeHash(inputBytes);  
         
@@ -146,7 +152,7 @@ namespace Server
         }
 
 
-        public Block Mine(int index, DateTime timeStamp, string Data, string? PreviousHash, int Difficulity)
+        public Block Mine(int index, DateTime timeStamp, string Data, string? PreviousHash, int Difficulty)
         {
             int numberOfThreads = 1;
             Thread[] threads = new Thread[numberOfThreads];
@@ -160,22 +166,22 @@ namespace Server
                 {
                     int localNonce = 0;
                     string localHash;
-                    var nicle = new string('0', Difficulity);
+                    var nicle = new string('0', Difficulty);
 
                     while (true)
                     {
                         // Move the hash calculation outside the lock
                         localNonce++;
-                        localHash = CalculateHash(index, timeStamp, Data, PreviousHash, Difficulity, localNonce);
+                        localHash = CalculateHash(index, timeStamp, Data, PreviousHash, Difficulty, localNonce);
 
                         lock (lockObject)
                         {
-                            if (validHash != "" && validHash.Substring(0, Difficulity) == nicle)
+                            if (validHash != "" && validHash.Substring(0, Difficulty) == nicle)
                             {
                                 break;
                             }
 
-                            if (localHash.Substring(0, Difficulity) == nicle)
+                            if (localHash.Substring(0, Difficulty) == nicle)
                             {
                                 if (validHash == "")
                                 {
@@ -195,15 +201,15 @@ namespace Server
                 threads[i].Join();
             }
 
-            return new Block(index, timeStamp, PreviousHash, validHash, Data, validNonce, Difficulity);
+            return new Block(index, timeStamp, PreviousHash, validHash, Data, validNonce, Difficulty);
         }
 
-        public int CalculateCumulativeDifficulty(Blockchain chain)
+        public int CalculateCumulativeDifficulty()
         {
             int cumulativeDifficulty = 0;
-            foreach (Block block in chain.Chain)
+            foreach (Block block in Chain)
             {
-                cumulativeDifficulty += (int)Math.Pow(2, block.Difficulity);
+                cumulativeDifficulty += (int)Math.Pow(2, block.Difficulty);
             }
             return cumulativeDifficulty;
         }
@@ -222,19 +228,19 @@ namespace Server
             Console.WriteLine("Time taken: " + timeTaken.TotalMilliseconds);
             if (timeTaken.TotalMilliseconds < (timeExpected / 2))
             {
-                return previousAdjustmentBlock.Difficulity + 1;
+                return previousAdjustmentBlock.Difficulty + 1;
             }
             else if(timeTaken.TotalMilliseconds > (timeExpected * 2))
             {
-                return previousAdjustmentBlock.Difficulity;
+                return previousAdjustmentBlock.Difficulty - 1;
             }
             else{
-                return previousAdjustmentBlock.Difficulity;
+                return previousAdjustmentBlock.Difficulty;
             }
                
         }
 
-        public static void generateAndValidateBlock(Blockchain blockchain) {
+        public static void generateAndValidateBlock(Blockchain blockchain, int rank) {
             Block latest = blockchain.GetLatestBlock();
             string? prevHash = null;
             if(latest != null) {
@@ -245,46 +251,102 @@ namespace Server
                 Global.counter++;
                 Global.generated++;
                 blockchain.AddBlock(block);
-                Console.WriteLine("Added new block: " + block.Difficulity);
+                Console.WriteLine("Added new block: " + block.Difficulty + ", on node " + rank);
                 if(Global.generated == Global.diffAdjustInterval)
                 {
-                    Console.WriteLine("Adjusting difficulity");
+                    //Console.WriteLine("Adjusting Difficulty");
                     blockchain.Difficulty = AdjustDiff(blockchain);
-                    Console.WriteLine("New difficulity: " + blockchain.Difficulty);
+                    //Console.WriteLine("New Difficulty: " + blockchain.Difficulty);
                     Global.generated = 0;
                 }
             } else {
-                Console.WriteLine("Block not valid");
+                Console.WriteLine("Block not valid on node " + rank);
             }
         }
         static void Main(string[] args)
         {
-            /* Blockchain verigaBlokov = new Blockchain();
-            var startTime = DateTime.Now;
-            for(int i = 0; i < 22; i++) {
-                generateAndValidateBlock(verigaBlokov);
-            }
-            
-
-            var endTime = DateTime.Now; 
-            Console.WriteLine($"Duration: {endTime - startTime}"); 
-            for(int i = 0; i < verigaBlokov.Chain.Count; i++) {
-                Console.WriteLine(verigaBlokov.Chain[i].Hash + "  " + verigaBlokov.Chain[i].PreviousHash);
-            }
-
-            bool valid = verigaBlokov.IsValid();
-            Console.WriteLine(valid ? "Chain valid" : "Chain not valid"); */
-
             MPI.Environment.Run(ref args, communicator =>
             {
-                Console.WriteLine("Hello, from process number "
-                                        + communicator.Rank + " of "
-                                        + communicator.Size);
+                Blockchain verigaBlokov = new Blockchain();
+
+                var timer = new System.Timers.Timer(Global.syncInterval);
+                timer.Elapsed += (sender, e) => SendChainToAllNodes(verigaBlokov, communicator);
+                timer.Start();
+
+                /* while(true)
+                {
+                    generateAndValidateBlock(verigaBlokov, communicator.Rank);
+
+                    if (communicator.ImmediateProbe(Intracommunicator.anySource, Intracommunicator.anyTag) != null)
+                    {
+                        var receivedChain = communicator.Receive<Blockchain>(Intracommunicator.anySource, Intracommunicator.anyTag);
+                        Console.WriteLine("Received chain on node " + communicator.Rank);
+                    }
+                }
+
+                
+                */
+
+                while(true)
+                {
+                    if (communicator.Rank != 0) // All nodes except the central node mine blocks
+                    {
+                        generateAndValidateBlock(verigaBlokov, communicator.Rank);
+                    }
+
+                    if (communicator.Rank == 0) // The central node listens for incoming chains and handles them
+                    {
+                        if (communicator.ImmediateProbe(Intracommunicator.anySource, Intracommunicator.anyTag) != null)
+                        {
+                            var receiveRequest = communicator.ImmediateReceive<Blockchain>(Intracommunicator.anySource, Intracommunicator.anyTag);
+                            var status = receiveRequest.Wait();
+                            var receivedChain = (Blockchain)receiveRequest.GetValue();
+                            Console.WriteLine("Received chain on central node from node " + status.Source);
+                            verigaBlokov = HandleReceivedChain(receivedChain, verigaBlokov, status.Source);
+                        }
+                    }
+                }
             });
         }
 
-        
+        static void SendChainToAllNodes(Blockchain verigaBlokov, Intracommunicator communicator)
+        {
+            if(verigaBlokov.IsValid())
+            {
+                for (int i = 0; i < communicator.Size; i++)
+                {
+                    if (i != communicator.Rank)
+                    {
+                        // Send the chain to process i
+                        communicator.Send(verigaBlokov, i, 0);
+                    }
+                }
+            }
+        }
+
+        static Blockchain HandleReceivedChain(Blockchain received, Blockchain current, int rank)
+        {
+            int currentCumuluativeDiff = current.CalculateCumulativeDifficulty();
+            int receivedCumulativeDiff = received.CalculateCumulativeDifficulty();
+
+            Console.WriteLine("My difficulty " + currentCumuluativeDiff);
+            Console.WriteLine("Node " + rank + " difficulty " + receivedCumulativeDiff);
+
+            if(receivedCumulativeDiff > currentCumuluativeDiff)
+            {
+                Console.WriteLine("Rewriting my blockchain with " + rank);
+                return received;
+            }
+            else
+            {
+                Console.WriteLine("Keeping the current chain");
+                return current;
+            }
+
+        }
+
     }
 
     
+
 } 
