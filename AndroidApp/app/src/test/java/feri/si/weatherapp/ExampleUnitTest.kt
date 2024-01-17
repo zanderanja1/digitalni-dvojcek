@@ -1,4 +1,4 @@
-package feri.um.si.weatherapp
+package feri.si.weatherapp
 
 import org.junit.Test
 
