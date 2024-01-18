@@ -38,6 +38,10 @@ class CameraActivity : AppCompatActivity() {
     fun requestPermissions() {
         activityResultLauncher.launch(REQUIRED_PERMISSIONS)
     }
+    private fun allPermissionsGranted() = REQUIRED_PERMISSIONS.all {
+        ContextCompat.checkSelfPermission(
+            baseContext, it) == PackageManager.PERMISSION_GRANTED
+    }
     private val activityResultLauncher =
         registerForActivityResult(
             ActivityResultContracts.RequestMultiplePermissions())
@@ -113,13 +117,16 @@ class CameraActivity : AppCompatActivity() {
                     val msg = "Photo capture succeeded: ${output.savedUri}"
                     Toast.makeText(baseContext, msg, Toast.LENGTH_SHORT).show()
                     Log.d(TAG, msg)
+                    val resultIntent = Intent()
+                    resultIntent.putExtra("uri",output.savedUri.toString())
+
+                    setResult(Activity.RESULT_OK, resultIntent)
+                    finish()
                 }
             }
         )
 
     }
-
-    private fun captureVideo() {}
 
     private fun startCamera() {
         val cameraProviderFuture = ProcessCameraProvider.getInstance(this)
@@ -158,10 +165,7 @@ class CameraActivity : AppCompatActivity() {
 
 
 
-    private fun allPermissionsGranted() = REQUIRED_PERMISSIONS.all {
-        ContextCompat.checkSelfPermission(
-            baseContext, it) == PackageManager.PERMISSION_GRANTED
-    }
+
 
     override fun onDestroy() {
         super.onDestroy()

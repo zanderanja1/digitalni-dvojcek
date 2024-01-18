@@ -43,12 +43,20 @@ dependencies {
     implementation("com.google.android.material:material:1.11.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
 
+    implementation("com.google.android.gms:play-services-cronet:18.0.1")
+
+    implementation("com.github.dhaval2404:imagepicker:2.1")
+
     implementation("androidx.camera:camera-core:1.2.1")
     implementation("androidx.camera:camera-video:1.2.1")
     implementation("androidx.camera:camera-lifecycle:1.2.1")
     implementation("androidx.camera:camera-camera2:1.2.1")
     implementation("androidx.camera:camera-view:1.2.1")
     implementation("androidx.camera:camera-extensions:1.2.1")
+
+    implementation("androidx.activity:activity-ktx:1.8.2")
+    implementation("androidx.fragment:fragment-ktx:1.6.2")
+    implementation("com.android.volley:volley:1.2.1")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
