@@ -12,6 +12,7 @@ using System.Runtime.Intrinsics.Arm;
 using System.Runtime.CompilerServices;
 using MPI;
 using System.Data;
+using System.Diagnostics;
 
 
 
@@ -93,6 +94,11 @@ namespace Server
             Chain.Add(block);    
         } 
 
+        public int GetLength()
+        {
+            return Chain.Count;
+        }
+
          public Boolean ValidateBlock(Block block) {
             Block? lastBlock = GetLatestBlock();
 
@@ -152,7 +158,7 @@ namespace Server
         }
 
 
-        public Block Mine(int index, DateTime timeStamp, string Data, string? PreviousHash, int Difficulty)
+        /* public Block Mine(int index, DateTime timeStamp, string Data, string? PreviousHash, int Difficulty)
         {
             int numberOfThreads = 1;
             Thread[] threads = new Thread[numberOfThreads];
@@ -202,7 +208,72 @@ namespace Server
             }
 
             return new Block(index, timeStamp, PreviousHash, validHash, Data, validNonce, Difficulty);
+        } */
+
+        public Block Mine(int index, DateTime timeStamp, string Data, string? PreviousHash, int Difficulty, int numThreads)
+        {
+            Thread[] threads = new Thread[numThreads];
+            object lockObject = new object();
+            string validHash = "";
+            int validNonce = 0;
+            int nonceRange = 100000;
+            var nicle = new string('0', Difficulty);
+            bool solutionFound = false;
+
+            for (int i = 0; i < numThreads; i++)
+            {
+                int startNonce = i * nonceRange;
+                threads[i] = new Thread(() =>
+                {
+                    int localNonce = startNonce;
+                    string localHash;
+
+                    while (true)
+                    {
+                        if (solutionFound)
+                        {
+                            return;
+                        }
+
+                        for (int j = 0; j < nonceRange; j++)
+                        {
+                            if (solutionFound)
+                            {
+                                return;
+                            }
+                            localNonce++;
+                            localHash = CalculateHash(index, timeStamp, Data, PreviousHash, Difficulty, localNonce);
+                            
+                            if (localHash.Substring(0, Difficulty) == nicle)
+                            {
+                                lock (lockObject)
+                                {
+                                    if (!solutionFound && (validHash == "" || validHash.Substring(0, Difficulty) != nicle))
+                                    {
+                                        validHash = localHash;
+                                        validNonce = localNonce;
+                                        solutionFound = true;
+                                    }
+                                }
+                                return;
+                            }
+                        }
+                        startNonce += nonceRange * numThreads;
+                        localNonce = startNonce;
+                    }
+                });
+                threads[i].Start();
+            }
+
+            for (int i = 0; i < numThreads; i++)
+            {
+                threads[i].Join();
+            }
+
+            return new Block(index, timeStamp, PreviousHash, validHash, Data, validNonce, Difficulty);
         }
+
+
 
         public int CalculateCumulativeDifficulty()
         {
@@ -240,18 +311,21 @@ namespace Server
                
         }
 
-        public static void generateAndValidateBlock(Blockchain blockchain, int rank) {
+        public static void generateAndValidateBlock(Blockchain blockchain, Intracommunicator communicator, int rank, int numThreads) 
+        {
             Block latest = blockchain.GetLatestBlock();
             string? prevHash = null;
-            if(latest != null) {
+            if(latest != null) 
+            {
                 prevHash = latest.Hash;
             }
-            Block block = blockchain.Mine(Global.counter, DateTime.Now, "podatek " + Global.counter, prevHash, blockchain.Difficulty);
-            if(blockchain.ValidateBlock(block)) {
+            Block block = blockchain.Mine(Global.counter, DateTime.Now, "podatek " + Global.counter, prevHash, blockchain.Difficulty, numThreads);
+            if(blockchain.ValidateBlock(block)) 
+            {
                 Global.counter++;
                 Global.generated++;
                 blockchain.AddBlock(block);
-                Console.WriteLine("Added new block: " + block.Difficulty + ", on node " + rank);
+                Console.WriteLine("Added new block: " + block.Difficulty + ", on node " + rank + " with nonce " + block.Nonce);
                 if(Global.generated == Global.diffAdjustInterval)
                 {
                     //Console.WriteLine("Adjusting Difficulty");
@@ -259,43 +333,81 @@ namespace Server
                     //Console.WriteLine("New Difficulty: " + blockchain.Difficulty);
                     Global.generated = 0;
                 }
-            } else {
+
+                // If 10 blocks have been mined, send the chain to the central node
+                if (blockchain.GetLength() % 10 == 0)
+                {
+                    communicator.Send(blockchain, 0, 0);
+                }
+            } 
+            else 
+            {
                 Console.WriteLine("Block not valid on node " + rank);
             }
         }
+
+      
+
         static void Main(string[] args)
         {
+            int numThreads = 1; // Default value
+
+            // Check if any arguments were passed
+            for (int i = 0; i < args.Length; i++)
+            {
+                if (args[i] == "-numThreads" && i + 1 < args.Length)
+                {
+                    // Parse the next argument as an integer
+                    if (int.TryParse(args[i + 1], out numThreads))
+                    {
+                        Console.WriteLine("Number of threads: " + numThreads);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid number of threads. Please enter a valid integer.");
+                    }
+                }
+            }
             MPI.Environment.Run(ref args, communicator =>
             {
                 Blockchain verigaBlokov = new Blockchain();
+                Stopwatch stopwatch = new Stopwatch();
 
-                var timer = new System.Timers.Timer(Global.syncInterval);
-                timer.Elapsed += (sender, e) => SendChainToAllNodes(verigaBlokov, communicator);
-                timer.Start();
-
-                /* while(true)
-                {
-                    generateAndValidateBlock(verigaBlokov, communicator.Rank);
-
-                    if (communicator.ImmediateProbe(Intracommunicator.anySource, Intracommunicator.anyTag) != null)
-                    {
-                        var receivedChain = communicator.Receive<Blockchain>(Intracommunicator.anySource, Intracommunicator.anyTag);
-                        Console.WriteLine("Received chain on node " + communicator.Rank);
-                    }
-                }
-
-                
-                */
+                stopwatch.Start();
 
                 while(true)
                 {
                     if (communicator.Rank != 0) // All nodes except the central node mine blocks
                     {
-                        generateAndValidateBlock(verigaBlokov, communicator.Rank);
+                        // Check for stop signal from central node
+                        if (communicator.ImmediateProbe(0, 1) != null)
+                        {
+                            var stopSignal = communicator.Receive<bool>(0, 1);
+                            if (stopSignal)
+                            {
+                                break;
+                            }
+                        }
+
+                        generateAndValidateBlock(verigaBlokov,communicator, communicator.Rank, numThreads);
                     }
 
                     if (communicator.Rank == 0) // The central node listens for incoming chains and handles them
                     {
+                        if (verigaBlokov.GetLength() >= 20)
+                        {
+                            stopwatch.Stop();
+                            Console.WriteLine("Time taken: " + stopwatch.Elapsed);
+
+                            // Send stop signal to all other nodes
+                            for (int i = 1; i < communicator.Size; i++)
+                            {
+                                communicator.Send(true, i, 1);
+                            }
+
+                            break;
+                        }
+
                         if (communicator.ImmediateProbe(Intracommunicator.anySource, Intracommunicator.anyTag) != null)
                         {
                             var receiveRequest = communicator.ImmediateReceive<Blockchain>(Intracommunicator.anySource, Intracommunicator.anyTag);
@@ -308,6 +420,7 @@ namespace Server
                 }
             });
         }
+
 
         static void SendChainToAllNodes(Blockchain verigaBlokov, Intracommunicator communicator)
         {
