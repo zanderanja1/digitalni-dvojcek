@@ -22,6 +22,7 @@ var photosRouter = require("./routes/photoRoutes");
 var citiesRouter = require("./routes/cityRoutes");
 var citiesSmallRouter = require("./routes/citySmallRoutes");
 var stationRouter = require("./routes/stationRoutes");
+var cloudsRouter = require("./routes/cloudRoutes");
 
 var app = express();
 
@@ -80,6 +81,7 @@ app.use("/photos", photosRouter);
 app.use("/cities", citiesRouter);
 app.use("/citiesSmall", citiesSmallRouter);
 app.use("/stations", stationRouter);
+app.use("/clouds", cloudsRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
