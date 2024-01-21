@@ -7,9 +7,8 @@ project.ext.assetsDir = new File("../assets")
 
 import org.gradle.internal.os.OperatingSystem
 
-tasks.register('run', JavaExec) {
-    dependsOn classes
-    mainClass = project.mainClassName
+task run(dependsOn: classes, type: JavaExec) {
+    main = project.mainClassName
     classpath = sourceSets.main.runtimeClasspath
     standardInput = System.in
     workingDir = project.assetsDir
@@ -21,9 +20,8 @@ tasks.register('run', JavaExec) {
     }
 }
 
-tasks.register('debug', JavaExec) {
-    dependsOn classes
-    mainClass = project.mainClassName
+task debug(dependsOn: classes, type: JavaExec) {
+    main = project.mainClassName
     classpath = sourceSets.main.runtimeClasspath
     standardInput = System.in
     workingDir = project.assetsDir
@@ -31,7 +29,7 @@ tasks.register('debug', JavaExec) {
     debug = true
 }
 
-tasks.register('dist', Jar) {
+task dist(type: Jar) {
     duplicatesStrategy(DuplicatesStrategy.EXCLUDE)
     manifest {
         attributes 'Main-Class': project.mainClassName
