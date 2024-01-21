@@ -14,6 +14,7 @@ router.get("/:id", cloudController.show);
  * POST
  */
 router.post("/", upload.single("image"), cloudController.create);
+router.post("/simulated", cloudController.createSimulated);
 
 /*
  * DELETE

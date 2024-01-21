@@ -98,6 +98,39 @@ module.exports = {
     }
   },
 
+  createSimulated: function (req, res) {
+    console.log("Here");
+    try {
+      let ratio = req.body.ratio;
+      if (ratio < 0.25) weather = "Sunny";
+      else if (ratio < 0.5) weather = "Partly cloudy";
+      else if (ratio < 0.75) weather = "Mostly cloudy";
+      else weather = "Cloudy";
+      var cloud = new CloudModel({
+        ratio: ratio,
+        weather: weather,
+        location: {
+          latitude: req.body.latitude,
+          longitude: req.body.longitude
+        },
+        date: Date.now(),
+        postedBy: req.body.postedBy
+      });
+      cloud.save(function (err, cloud) {
+        if (err) {
+          return res.status(500).json({
+            message: "Error when creating cloud",
+            error: err
+          });
+        }
+
+        return res.status(201).json(cloud);
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  },
+
   remove: function (req, res) {
     var id = req.params.id;
 

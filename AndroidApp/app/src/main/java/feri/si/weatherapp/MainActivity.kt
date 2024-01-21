@@ -86,7 +86,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         viewBinding.simulateButton.setOnClickListener {
-            fetchClouds()
+            val intent = Intent(this, SimulateActivity::class.java)
+            getCloud.launch(intent)
         }
     }
 

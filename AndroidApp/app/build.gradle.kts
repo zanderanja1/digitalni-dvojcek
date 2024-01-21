@@ -43,6 +43,8 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.22")
+
 
     implementation("com.google.android.gms:play-services-cronet:18.0.1")
 
@@ -65,5 +67,6 @@ dependencies {
 
     implementation("io.github.serpro69:kotlin-faker:1.15.0")
     implementation("com.squareup.okhttp3:okhttp:3.12.0")
+    implementation ("org.osmdroid:osmdroid-android:6.1.17")
 
 }
