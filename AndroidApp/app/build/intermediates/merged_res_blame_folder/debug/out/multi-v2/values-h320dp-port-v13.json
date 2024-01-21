@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "feri.si.weatherapp-mergeDebugResources-47:/values-h320dp-port-v13/values-h320dp-port-v13.xml",
+            "map": [
+                {
+                    "source": "/Users/zanderanja/.gradle/caches/transforms-3/85e738ef0b50e0bb265be5e09305896a/transformed/material-1.11.0/res/values-h320dp-port-v13/values-h320dp-port-v13.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "63",
+                        "endOffsets": "114"
+                    }
+                }
+            ]
+        }
+    ]
+}

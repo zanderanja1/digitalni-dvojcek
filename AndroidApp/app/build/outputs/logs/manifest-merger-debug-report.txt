@@ -1,0 +1,550 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:2:1-59:12
+INJECTED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:2:1-59:12
+INJECTED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:2:1-59:12
+INJECTED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:2:1-59:12
+MERGED from [androidx.databinding:viewbinding:8.1.2] /Users/zanderanja/.gradle/caches/transforms-3/dc1a8d493f522868fb0f4487ac800c4c/transformed/viewbinding-8.1.2/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.material:material:1.11.0] /Users/zanderanja/.gradle/caches/transforms-3/85e738ef0b50e0bb265be5e09305896a/transformed/material-1.11.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/zanderanja/.gradle/caches/transforms-3/71aa75418979fbb2336871ae19d96591/transformed/constraintlayout-2.1.4/AndroidManifest.xml:2:1-11:12
+MERGED from [com.github.dhaval2404:imagepicker:2.1] /Users/zanderanja/.gradle/caches/transforms-3/c59975aebc12f2c0325e5ca577d48b03/transformed/imagepicker-2.1/AndroidManifest.xml:2:1-42:12
+MERGED from [androidx.camera:camera-view:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/6138cba1bc75e788625b0c7044802ac1/transformed/camera-view-1.2.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/zanderanja/.gradle/caches/transforms-3/30179f5de36a0158b17ec62ef253841e/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.yalantis:ucrop:2.2.6] /Users/zanderanja/.gradle/caches/transforms-3/070138f65088cfb67f068d555e57e502/transformed/ucrop-2.2.6/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/zanderanja/.gradle/caches/transforms-3/e8e82ebe359b8fbf9ac53ef44116a504/transformed/appcompat-1.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/zanderanja/.gradle/caches/transforms-3/9a64ce7051d8f86a22006b84987c2904/transformed/viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-cronet:18.0.1] /Users/zanderanja/.gradle/caches/transforms-3/10c9303beff73f13128a0a55fed9d377/transformed/play-services-cronet-18.0.1/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-base:18.0.1] /Users/zanderanja/.gradle/caches/transforms-3/6463d43adb8bbac6f42b373678954437/transformed/play-services-base-18.0.1/AndroidManifest.xml:16:1-24:12
+MERGED from [com.google.android.gms:play-services-tasks:18.0.1] /Users/zanderanja/.gradle/caches/transforms-3/2ada0477f334683496c1ad0f516dd670/transformed/play-services-tasks-18.0.1/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-basement:18.0.0] /Users/zanderanja/.gradle/caches/transforms-3/d090a36c36b9f707811efd9bb2ac60cc/transformed/play-services-basement-18.0.0/AndroidManifest.xml:16:1-26:12
+MERGED from [androidx.fragment:fragment:1.6.2] /Users/zanderanja/.gradle/caches/transforms-3/0a1ce1ca54c49e5dd0094dddfe2b2ab9/transformed/fragment-1.6.2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.fragment:fragment-ktx:1.6.2] /Users/zanderanja/.gradle/caches/transforms-3/4f98d21eccc50893f7854c1f9b9e5b46/transformed/fragment-ktx-1.6.2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.8.2] /Users/zanderanja/.gradle/caches/transforms-3/723ff000af63eced8ea48e906777c233/transformed/activity-1.8.2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity-ktx:1.8.2] /Users/zanderanja/.gradle/caches/transforms-3/adfbe25bfc6f4d4ebcb052a5ba700cb9/transformed/activity-ktx-1.8.2/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.camera:camera-video:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/0575c4fafc25a70d09215e806bdad053/transformed/camera-video-1.2.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.camera:camera-lifecycle:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/11212a5b3cc38267420715761011483c/transformed/camera-lifecycle-1.2.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.camera:camera-extensions:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/85bcd90db7ff098e504f7edb96d15086/transformed/camera-extensions-1.2.1/AndroidManifest.xml:17:1-34:12
+MERGED from [androidx.camera:camera-camera2:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/e9a47dc0536a52e28b1f07bfb0d07913/transformed/camera-camera2-1.2.1/AndroidManifest.xml:17:1-36:12
+MERGED from [androidx.camera:camera-core:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/deeccc514b81ca8a95aa7f2d5b6eb7f1/transformed/camera-core-1.2.1/AndroidManifest.xml:17:1-36:12
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/9b2a07e3c9d244940dec7ade4af7d01d/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/ebc0b730567c3dc79bfe196b146769aa/transformed/savedstate-1.2.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /Users/zanderanja/.gradle/caches/transforms-3/76803ed64edeffa5d0f90bff07bfb7e3/transformed/emoji2-views-helper-1.2.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/zanderanja/.gradle/caches/transforms-3/1389f324a0f60e7e6ff4a1d7ff19776c/transformed/emoji2-1.2.0/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.1] /Users/zanderanja/.gradle/caches/transforms-3/e91f06d9a3d12517bd1097064d1211e8/transformed/lifecycle-livedata-core-2.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] /Users/zanderanja/.gradle/caches/transforms-3/bd9fb51751d91e7e80d367bef6dae9bb/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/zanderanja/.gradle/caches/transforms-3/399f4aba0798b9875bb725c9ebe97c31/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/zanderanja/.gradle/caches/transforms-3/dfde5cb6971ecbf96d7c2b41fba7d833/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/zanderanja/.gradle/caches/transforms-3/ca6ae9e52c5c25b929cbe279f6801940/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.1] /Users/zanderanja/.gradle/caches/transforms-3/c00521c6bb8c04b797bc01f5456476d2/transformed/lifecycle-livedata-2.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.1] /Users/zanderanja/.gradle/caches/transforms-3/c6941dfc81fddd7039da9c9ee70d881b/transformed/lifecycle-viewmodel-2.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] /Users/zanderanja/.gradle/caches/transforms-3/f7f4ecd9313c9552cf78bf859bb05ad4/transformed/lifecycle-viewmodel-savedstate-2.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core-ktx:1.9.0] /Users/zanderanja/.gradle/caches/transforms-3/d2fd75236c3ed0cdadf7f4f26a0f3dc5/transformed/core-ktx-1.9.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /Users/zanderanja/.gradle/caches/transforms-3/258ed0a78629fd3db89f96a8714f7c24/transformed/drawerlayout-1.1.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/zanderanja/.gradle/caches/transforms-3/5c54dd32298567b18392a52c9e471955/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.transition:transition:1.2.0] /Users/zanderanja/.gradle/caches/transforms-3/9269f11b2baf4c77b1f262fd0be37f40/transformed/transition-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/zanderanja/.gradle/caches/transforms-3/eb73a948b8e756d3bec89e885eb5529f/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/zanderanja/.gradle/caches/transforms-3/75ebca8751b73fcdbc720ba254da1365/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/zanderanja/.gradle/caches/transforms-3/07fad54b627b1746ee14a040957d02f4/transformed/recyclerview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/zanderanja/.gradle/caches/transforms-3/9dd8c570ddd4aac1095e8e8397222255/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.1.0] /Users/zanderanja/.gradle/caches/transforms-3/3ad2289970d1deae894447686a66d853/transformed/customview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core:1.9.0] /Users/zanderanja/.gradle/caches/transforms-3/362367ac62f3c0b52264c50760ebc3d9/transformed/core-1.9.0/AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.1] /Users/zanderanja/.gradle/caches/transforms-3/597fd7042b13df8c3904855d839e6de6/transformed/lifecycle-runtime-2.6.1/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.6.1] /Users/zanderanja/.gradle/caches/transforms-3/66667170da2760a469c6cc67fdf696dc/transformed/lifecycle-livedata-core-ktx-2.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1] /Users/zanderanja/.gradle/caches/transforms-3/8706056f2534663a4973e574257a1458/transformed/lifecycle-viewmodel-ktx-2.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.6.1] /Users/zanderanja/.gradle/caches/transforms-3/87ac312460298fdaff9ef0329d999669/transformed/lifecycle-runtime-ktx-2.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.volley:volley:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/dbe5485177f6da5ec8e4e82b74d4defe/transformed/volley-1.2.1/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/zanderanja/.gradle/caches/transforms-3/2005237f772771e860ad6ee5dbc93f13/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/zanderanja/.gradle/caches/transforms-3/629c0d13742271e9bae969faa8d6fd6a/transformed/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.exifinterface:exifinterface:1.3.2] /Users/zanderanja/.gradle/caches/transforms-3/24f4ac48ce13112ad34296ba7b3289a1/transformed/exifinterface-1.3.2/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.documentfile:documentfile:1.0.1] /Users/zanderanja/.gradle/caches/transforms-3/65acd9a81318322168316534c72500c8/transformed/documentfile-1.0.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/zanderanja/.gradle/caches/transforms-3/14f680d5f1c79413f24f7fb0817f3b3c/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/zanderanja/.gradle/caches/transforms-3/006023d9e513fe123f61b7702fcfe0c5/transformed/profileinstaller-1.3.0/AndroidManifest.xml:17:1-55:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/zanderanja/.gradle/caches/transforms-3/422ee600ab01ba2a920b54652cc503bf/transformed/startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/zanderanja/.gradle/caches/transforms-3/6a93196dc59a2c38a2f40a569bd98daa/transformed/tracing-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/zanderanja/.gradle/caches/transforms-3/7bdb31689b36714b551291178e1bc95b/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/zanderanja/.gradle/caches/transforms-3/6254fc806444bf3c23b526136d5cbb14/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /Users/zanderanja/.gradle/caches/transforms-3/33b5c0f39ce4275de874929a536b139e/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/zanderanja/.gradle/caches/transforms-3/cbf7e1276b79639e74826f134a642702/transformed/core-runtime-2.2.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] /Users/zanderanja/.gradle/caches/transforms-3/75f7d1d3eb8f436eedef322c154bd1dc/transformed/annotation-experimental-1.3.0/AndroidManifest.xml:17:1-22:12
+MERGED from [org.chromium.net:cronet-api:72.3626.96] /Users/zanderanja/.gradle/caches/transforms-3/04e7bb8f99e8a6daeb87ad817e426d36/transformed/cronet-api-72.3626.96/AndroidManifest.xml:15:1-22:12
+	package
+		INJECTED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:2:11-69
+uses-feature#android.hardware.camera.any
+ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:5:5-64
+	android:name
+		ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:5:19-61
+uses-permission#android.permission.CAMERA
+ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:7:5-65
+	android:name
+		ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:7:22-62
+uses-permission#android.permission.POST_NOTIFICATIONS
+ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:8:5-77
+	android:name
+		ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:8:22-74
+uses-permission#android.permission.RECORD_AUDIO
+ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:9:5-71
+	android:name
+		ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:9:22-68
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:10:5-12:38
+	android:maxSdkVersion
+		ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:12:9-35
+	android:name
+		ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:11:9-65
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:13:5-79
+	android:name
+		ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:13:22-76
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:14:5-81
+	android:name
+		ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:14:22-78
+uses-permission#android.permission.INTERNET
+ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:15:5-67
+MERGED from [org.chromium.net:cronet-api:72.3626.96] /Users/zanderanja/.gradle/caches/transforms-3/04e7bb8f99e8a6daeb87ad817e426d36/transformed/cronet-api-72.3626.96/AndroidManifest.xml:19:5-66
+MERGED from [org.chromium.net:cronet-api:72.3626.96] /Users/zanderanja/.gradle/caches/transforms-3/04e7bb8f99e8a6daeb87ad817e426d36/transformed/cronet-api-72.3626.96/AndroidManifest.xml:19:5-66
+	android:name
+		ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:15:22-64
+application
+ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:17:5-57:19
+INJECTED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:17:5-57:19
+MERGED from [com.google.android.material:material:1.11.0] /Users/zanderanja/.gradle/caches/transforms-3/85e738ef0b50e0bb265be5e09305896a/transformed/material-1.11.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.11.0] /Users/zanderanja/.gradle/caches/transforms-3/85e738ef0b50e0bb265be5e09305896a/transformed/material-1.11.0/AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/zanderanja/.gradle/caches/transforms-3/71aa75418979fbb2336871ae19d96591/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/zanderanja/.gradle/caches/transforms-3/71aa75418979fbb2336871ae19d96591/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
+MERGED from [com.github.dhaval2404:imagepicker:2.1] /Users/zanderanja/.gradle/caches/transforms-3/c59975aebc12f2c0325e5ca577d48b03/transformed/imagepicker-2.1/AndroidManifest.xml:21:5-40:19
+MERGED from [com.github.dhaval2404:imagepicker:2.1] /Users/zanderanja/.gradle/caches/transforms-3/c59975aebc12f2c0325e5ca577d48b03/transformed/imagepicker-2.1/AndroidManifest.xml:21:5-40:19
+MERGED from [com.google.android.gms:play-services-cronet:18.0.1] /Users/zanderanja/.gradle/caches/transforms-3/10c9303beff73f13128a0a55fed9d377/transformed/play-services-cronet-18.0.1/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-cronet:18.0.1] /Users/zanderanja/.gradle/caches/transforms-3/10c9303beff73f13128a0a55fed9d377/transformed/play-services-cronet-18.0.1/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-base:18.0.1] /Users/zanderanja/.gradle/caches/transforms-3/6463d43adb8bbac6f42b373678954437/transformed/play-services-base-18.0.1/AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-base:18.0.1] /Users/zanderanja/.gradle/caches/transforms-3/6463d43adb8bbac6f42b373678954437/transformed/play-services-base-18.0.1/AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-tasks:18.0.1] /Users/zanderanja/.gradle/caches/transforms-3/2ada0477f334683496c1ad0f516dd670/transformed/play-services-tasks-18.0.1/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-tasks:18.0.1] /Users/zanderanja/.gradle/caches/transforms-3/2ada0477f334683496c1ad0f516dd670/transformed/play-services-tasks-18.0.1/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-basement:18.0.0] /Users/zanderanja/.gradle/caches/transforms-3/d090a36c36b9f707811efd9bb2ac60cc/transformed/play-services-basement-18.0.0/AndroidManifest.xml:20:5-24:19
+MERGED from [com.google.android.gms:play-services-basement:18.0.0] /Users/zanderanja/.gradle/caches/transforms-3/d090a36c36b9f707811efd9bb2ac60cc/transformed/play-services-basement-18.0.0/AndroidManifest.xml:20:5-24:19
+MERGED from [androidx.camera:camera-extensions:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/85bcd90db7ff098e504f7edb96d15086/transformed/camera-extensions-1.2.1/AndroidManifest.xml:28:5-32:19
+MERGED from [androidx.camera:camera-extensions:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/85bcd90db7ff098e504f7edb96d15086/transformed/camera-extensions-1.2.1/AndroidManifest.xml:28:5-32:19
+MERGED from [androidx.camera:camera-camera2:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/e9a47dc0536a52e28b1f07bfb0d07913/transformed/camera-camera2-1.2.1/AndroidManifest.xml:23:5-34:19
+MERGED from [androidx.camera:camera-camera2:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/e9a47dc0536a52e28b1f07bfb0d07913/transformed/camera-camera2-1.2.1/AndroidManifest.xml:23:5-34:19
+MERGED from [androidx.camera:camera-core:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/deeccc514b81ca8a95aa7f2d5b6eb7f1/transformed/camera-core-1.2.1/AndroidManifest.xml:23:5-34:19
+MERGED from [androidx.camera:camera-core:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/deeccc514b81ca8a95aa7f2d5b6eb7f1/transformed/camera-core-1.2.1/AndroidManifest.xml:23:5-34:19
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/zanderanja/.gradle/caches/transforms-3/1389f324a0f60e7e6ff4a1d7ff19776c/transformed/emoji2-1.2.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/zanderanja/.gradle/caches/transforms-3/1389f324a0f60e7e6ff4a1d7ff19776c/transformed/emoji2-1.2.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] /Users/zanderanja/.gradle/caches/transforms-3/bd9fb51751d91e7e80d367bef6dae9bb/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] /Users/zanderanja/.gradle/caches/transforms-3/bd9fb51751d91e7e80d367bef6dae9bb/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.core:core:1.9.0] /Users/zanderanja/.gradle/caches/transforms-3/362367ac62f3c0b52264c50760ebc3d9/transformed/core-1.9.0/AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.9.0] /Users/zanderanja/.gradle/caches/transforms-3/362367ac62f3c0b52264c50760ebc3d9/transformed/core-1.9.0/AndroidManifest.xml:28:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/zanderanja/.gradle/caches/transforms-3/14f680d5f1c79413f24f7fb0817f3b3c/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/zanderanja/.gradle/caches/transforms-3/14f680d5f1c79413f24f7fb0817f3b3c/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/zanderanja/.gradle/caches/transforms-3/006023d9e513fe123f61b7702fcfe0c5/transformed/profileinstaller-1.3.0/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/zanderanja/.gradle/caches/transforms-3/006023d9e513fe123f61b7702fcfe0c5/transformed/profileinstaller-1.3.0/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/zanderanja/.gradle/caches/transforms-3/422ee600ab01ba2a920b54652cc503bf/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/zanderanja/.gradle/caches/transforms-3/422ee600ab01ba2a920b54652cc503bf/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+	android:extractNativeLibs
+		INJECTED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.9.0] /Users/zanderanja/.gradle/caches/transforms-3/362367ac62f3c0b52264c50760ebc3d9/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
+	android:supportsRtl
+		ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:25:9-35
+	android:label
+		ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:23:9-41
+	android:fullBackupContent
+		ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:21:9-54
+	android:roundIcon
+		ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:24:9-54
+	tools:targetApi
+		ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:28:9-29
+	android:icon
+		ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:22:9-43
+	android:allowBackup
+		ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:19:9-35
+	android:theme
+		ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:26:9-51
+	android:dataExtractionRules
+		ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:20:9-65
+	android:usesCleartextTraffic
+		ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:27:9-44
+	android:name
+		ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:18:9-38
+activity#feri.si.weatherapp.RecyclerView
+ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:29:9-31:40
+	android:exported
+		ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:31:13-37
+	android:name
+		ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:30:13-41
+activity#feri.si.weatherapp.InputActivity
+ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:32:9-34:40
+	android:exported
+		ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:34:13-37
+	android:name
+		ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:33:13-42
+activity#feri.si.weatherapp.ImageSelectActivity
+ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:35:9-37:40
+	android:exported
+		ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:37:13-37
+	android:name
+		ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:36:13-48
+activity#feri.si.weatherapp.CameraActivity
+ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:38:9-40:40
+	android:exported
+		ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:40:13-37
+	android:name
+		ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:39:13-43
+activity#feri.si.weatherapp.LiveCameraActivity
+ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:41:9-43:40
+	android:exported
+		ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:43:13-37
+	android:name
+		ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:42:13-47
+activity#feri.si.weatherapp.MainActivity
+ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:44:9-52:20
+	android:exported
+		ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:46:13-36
+	android:name
+		ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:45:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:47:13-51:29
+action#android.intent.action.MAIN
+ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:48:17-69
+	android:name
+		ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:48:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:50:17-77
+	android:name
+		ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:50:27-74
+meta-data#MAP_API
+ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:54:9-56:63
+	android:value
+		ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:56:13-60
+	android:name
+		ADDED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml:55:13-35
+uses-sdk
+INJECTED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml
+INJECTED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml
+MERGED from [androidx.databinding:viewbinding:8.1.2] /Users/zanderanja/.gradle/caches/transforms-3/dc1a8d493f522868fb0f4487ac800c4c/transformed/viewbinding-8.1.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.databinding:viewbinding:8.1.2] /Users/zanderanja/.gradle/caches/transforms-3/dc1a8d493f522868fb0f4487ac800c4c/transformed/viewbinding-8.1.2/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.material:material:1.11.0] /Users/zanderanja/.gradle/caches/transforms-3/85e738ef0b50e0bb265be5e09305896a/transformed/material-1.11.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.11.0] /Users/zanderanja/.gradle/caches/transforms-3/85e738ef0b50e0bb265be5e09305896a/transformed/material-1.11.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/zanderanja/.gradle/caches/transforms-3/71aa75418979fbb2336871ae19d96591/transformed/constraintlayout-2.1.4/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/zanderanja/.gradle/caches/transforms-3/71aa75418979fbb2336871ae19d96591/transformed/constraintlayout-2.1.4/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.dhaval2404:imagepicker:2.1] /Users/zanderanja/.gradle/caches/transforms-3/c59975aebc12f2c0325e5ca577d48b03/transformed/imagepicker-2.1/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.dhaval2404:imagepicker:2.1] /Users/zanderanja/.gradle/caches/transforms-3/c59975aebc12f2c0325e5ca577d48b03/transformed/imagepicker-2.1/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.camera:camera-view:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/6138cba1bc75e788625b0c7044802ac1/transformed/camera-view-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.camera:camera-view:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/6138cba1bc75e788625b0c7044802ac1/transformed/camera-view-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/zanderanja/.gradle/caches/transforms-3/30179f5de36a0158b17ec62ef253841e/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/zanderanja/.gradle/caches/transforms-3/30179f5de36a0158b17ec62ef253841e/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [com.github.yalantis:ucrop:2.2.6] /Users/zanderanja/.gradle/caches/transforms-3/070138f65088cfb67f068d555e57e502/transformed/ucrop-2.2.6/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.yalantis:ucrop:2.2.6] /Users/zanderanja/.gradle/caches/transforms-3/070138f65088cfb67f068d555e57e502/transformed/ucrop-2.2.6/AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/zanderanja/.gradle/caches/transforms-3/e8e82ebe359b8fbf9ac53ef44116a504/transformed/appcompat-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/zanderanja/.gradle/caches/transforms-3/e8e82ebe359b8fbf9ac53ef44116a504/transformed/appcompat-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/zanderanja/.gradle/caches/transforms-3/9a64ce7051d8f86a22006b84987c2904/transformed/viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/zanderanja/.gradle/caches/transforms-3/9a64ce7051d8f86a22006b84987c2904/transformed/viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.gms:play-services-cronet:18.0.1] /Users/zanderanja/.gradle/caches/transforms-3/10c9303beff73f13128a0a55fed9d377/transformed/play-services-cronet-18.0.1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-cronet:18.0.1] /Users/zanderanja/.gradle/caches/transforms-3/10c9303beff73f13128a0a55fed9d377/transformed/play-services-cronet-18.0.1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-base:18.0.1] /Users/zanderanja/.gradle/caches/transforms-3/6463d43adb8bbac6f42b373678954437/transformed/play-services-base-18.0.1/AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-base:18.0.1] /Users/zanderanja/.gradle/caches/transforms-3/6463d43adb8bbac6f42b373678954437/transformed/play-services-base-18.0.1/AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-tasks:18.0.1] /Users/zanderanja/.gradle/caches/transforms-3/2ada0477f334683496c1ad0f516dd670/transformed/play-services-tasks-18.0.1/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-tasks:18.0.1] /Users/zanderanja/.gradle/caches/transforms-3/2ada0477f334683496c1ad0f516dd670/transformed/play-services-tasks-18.0.1/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-basement:18.0.0] /Users/zanderanja/.gradle/caches/transforms-3/d090a36c36b9f707811efd9bb2ac60cc/transformed/play-services-basement-18.0.0/AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-basement:18.0.0] /Users/zanderanja/.gradle/caches/transforms-3/d090a36c36b9f707811efd9bb2ac60cc/transformed/play-services-basement-18.0.0/AndroidManifest.xml:18:5-43
+MERGED from [androidx.fragment:fragment:1.6.2] /Users/zanderanja/.gradle/caches/transforms-3/0a1ce1ca54c49e5dd0094dddfe2b2ab9/transformed/fragment-1.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.6.2] /Users/zanderanja/.gradle/caches/transforms-3/0a1ce1ca54c49e5dd0094dddfe2b2ab9/transformed/fragment-1.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment-ktx:1.6.2] /Users/zanderanja/.gradle/caches/transforms-3/4f98d21eccc50893f7854c1f9b9e5b46/transformed/fragment-ktx-1.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment-ktx:1.6.2] /Users/zanderanja/.gradle/caches/transforms-3/4f98d21eccc50893f7854c1f9b9e5b46/transformed/fragment-ktx-1.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.8.2] /Users/zanderanja/.gradle/caches/transforms-3/723ff000af63eced8ea48e906777c233/transformed/activity-1.8.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.8.2] /Users/zanderanja/.gradle/caches/transforms-3/723ff000af63eced8ea48e906777c233/transformed/activity-1.8.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity-ktx:1.8.2] /Users/zanderanja/.gradle/caches/transforms-3/adfbe25bfc6f4d4ebcb052a5ba700cb9/transformed/activity-ktx-1.8.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-ktx:1.8.2] /Users/zanderanja/.gradle/caches/transforms-3/adfbe25bfc6f4d4ebcb052a5ba700cb9/transformed/activity-ktx-1.8.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.camera:camera-video:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/0575c4fafc25a70d09215e806bdad053/transformed/camera-video-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.camera:camera-video:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/0575c4fafc25a70d09215e806bdad053/transformed/camera-video-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.camera:camera-lifecycle:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/11212a5b3cc38267420715761011483c/transformed/camera-lifecycle-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.camera:camera-lifecycle:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/11212a5b3cc38267420715761011483c/transformed/camera-lifecycle-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.camera:camera-extensions:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/85bcd90db7ff098e504f7edb96d15086/transformed/camera-extensions-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.camera:camera-extensions:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/85bcd90db7ff098e504f7edb96d15086/transformed/camera-extensions-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.camera:camera-camera2:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/e9a47dc0536a52e28b1f07bfb0d07913/transformed/camera-camera2-1.2.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.camera:camera-camera2:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/e9a47dc0536a52e28b1f07bfb0d07913/transformed/camera-camera2-1.2.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.camera:camera-core:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/deeccc514b81ca8a95aa7f2d5b6eb7f1/transformed/camera-core-1.2.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.camera:camera-core:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/deeccc514b81ca8a95aa7f2d5b6eb7f1/transformed/camera-core-1.2.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/9b2a07e3c9d244940dec7ade4af7d01d/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/9b2a07e3c9d244940dec7ade4af7d01d/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/ebc0b730567c3dc79bfe196b146769aa/transformed/savedstate-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/ebc0b730567c3dc79bfe196b146769aa/transformed/savedstate-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /Users/zanderanja/.gradle/caches/transforms-3/76803ed64edeffa5d0f90bff07bfb7e3/transformed/emoji2-views-helper-1.2.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /Users/zanderanja/.gradle/caches/transforms-3/76803ed64edeffa5d0f90bff07bfb7e3/transformed/emoji2-views-helper-1.2.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/zanderanja/.gradle/caches/transforms-3/1389f324a0f60e7e6ff4a1d7ff19776c/transformed/emoji2-1.2.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/zanderanja/.gradle/caches/transforms-3/1389f324a0f60e7e6ff4a1d7ff19776c/transformed/emoji2-1.2.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.1] /Users/zanderanja/.gradle/caches/transforms-3/e91f06d9a3d12517bd1097064d1211e8/transformed/lifecycle-livedata-core-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.1] /Users/zanderanja/.gradle/caches/transforms-3/e91f06d9a3d12517bd1097064d1211e8/transformed/lifecycle-livedata-core-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] /Users/zanderanja/.gradle/caches/transforms-3/bd9fb51751d91e7e80d367bef6dae9bb/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] /Users/zanderanja/.gradle/caches/transforms-3/bd9fb51751d91e7e80d367bef6dae9bb/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/zanderanja/.gradle/caches/transforms-3/399f4aba0798b9875bb725c9ebe97c31/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/zanderanja/.gradle/caches/transforms-3/399f4aba0798b9875bb725c9ebe97c31/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/zanderanja/.gradle/caches/transforms-3/dfde5cb6971ecbf96d7c2b41fba7d833/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/zanderanja/.gradle/caches/transforms-3/dfde5cb6971ecbf96d7c2b41fba7d833/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/zanderanja/.gradle/caches/transforms-3/ca6ae9e52c5c25b929cbe279f6801940/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/zanderanja/.gradle/caches/transforms-3/ca6ae9e52c5c25b929cbe279f6801940/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.1] /Users/zanderanja/.gradle/caches/transforms-3/c00521c6bb8c04b797bc01f5456476d2/transformed/lifecycle-livedata-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.1] /Users/zanderanja/.gradle/caches/transforms-3/c00521c6bb8c04b797bc01f5456476d2/transformed/lifecycle-livedata-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.1] /Users/zanderanja/.gradle/caches/transforms-3/c6941dfc81fddd7039da9c9ee70d881b/transformed/lifecycle-viewmodel-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.1] /Users/zanderanja/.gradle/caches/transforms-3/c6941dfc81fddd7039da9c9ee70d881b/transformed/lifecycle-viewmodel-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] /Users/zanderanja/.gradle/caches/transforms-3/f7f4ecd9313c9552cf78bf859bb05ad4/transformed/lifecycle-viewmodel-savedstate-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] /Users/zanderanja/.gradle/caches/transforms-3/f7f4ecd9313c9552cf78bf859bb05ad4/transformed/lifecycle-viewmodel-savedstate-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core-ktx:1.9.0] /Users/zanderanja/.gradle/caches/transforms-3/d2fd75236c3ed0cdadf7f4f26a0f3dc5/transformed/core-ktx-1.9.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.9.0] /Users/zanderanja/.gradle/caches/transforms-3/d2fd75236c3ed0cdadf7f4f26a0f3dc5/transformed/core-ktx-1.9.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /Users/zanderanja/.gradle/caches/transforms-3/258ed0a78629fd3db89f96a8714f7c24/transformed/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /Users/zanderanja/.gradle/caches/transforms-3/258ed0a78629fd3db89f96a8714f7c24/transformed/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/zanderanja/.gradle/caches/transforms-3/5c54dd32298567b18392a52c9e471955/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/zanderanja/.gradle/caches/transforms-3/5c54dd32298567b18392a52c9e471955/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] /Users/zanderanja/.gradle/caches/transforms-3/9269f11b2baf4c77b1f262fd0be37f40/transformed/transition-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] /Users/zanderanja/.gradle/caches/transforms-3/9269f11b2baf4c77b1f262fd0be37f40/transformed/transition-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/zanderanja/.gradle/caches/transforms-3/eb73a948b8e756d3bec89e885eb5529f/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/zanderanja/.gradle/caches/transforms-3/eb73a948b8e756d3bec89e885eb5529f/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/zanderanja/.gradle/caches/transforms-3/75ebca8751b73fcdbc720ba254da1365/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/zanderanja/.gradle/caches/transforms-3/75ebca8751b73fcdbc720ba254da1365/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/zanderanja/.gradle/caches/transforms-3/07fad54b627b1746ee14a040957d02f4/transformed/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/zanderanja/.gradle/caches/transforms-3/07fad54b627b1746ee14a040957d02f4/transformed/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/zanderanja/.gradle/caches/transforms-3/9dd8c570ddd4aac1095e8e8397222255/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/zanderanja/.gradle/caches/transforms-3/9dd8c570ddd4aac1095e8e8397222255/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.1.0] /Users/zanderanja/.gradle/caches/transforms-3/3ad2289970d1deae894447686a66d853/transformed/customview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] /Users/zanderanja/.gradle/caches/transforms-3/3ad2289970d1deae894447686a66d853/transformed/customview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.9.0] /Users/zanderanja/.gradle/caches/transforms-3/362367ac62f3c0b52264c50760ebc3d9/transformed/core-1.9.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.9.0] /Users/zanderanja/.gradle/caches/transforms-3/362367ac62f3c0b52264c50760ebc3d9/transformed/core-1.9.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.1] /Users/zanderanja/.gradle/caches/transforms-3/597fd7042b13df8c3904855d839e6de6/transformed/lifecycle-runtime-2.6.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.1] /Users/zanderanja/.gradle/caches/transforms-3/597fd7042b13df8c3904855d839e6de6/transformed/lifecycle-runtime-2.6.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.6.1] /Users/zanderanja/.gradle/caches/transforms-3/66667170da2760a469c6cc67fdf696dc/transformed/lifecycle-livedata-core-ktx-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.6.1] /Users/zanderanja/.gradle/caches/transforms-3/66667170da2760a469c6cc67fdf696dc/transformed/lifecycle-livedata-core-ktx-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1] /Users/zanderanja/.gradle/caches/transforms-3/8706056f2534663a4973e574257a1458/transformed/lifecycle-viewmodel-ktx-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1] /Users/zanderanja/.gradle/caches/transforms-3/8706056f2534663a4973e574257a1458/transformed/lifecycle-viewmodel-ktx-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.6.1] /Users/zanderanja/.gradle/caches/transforms-3/87ac312460298fdaff9ef0329d999669/transformed/lifecycle-runtime-ktx-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.6.1] /Users/zanderanja/.gradle/caches/transforms-3/87ac312460298fdaff9ef0329d999669/transformed/lifecycle-runtime-ktx-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.volley:volley:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/dbe5485177f6da5ec8e4e82b74d4defe/transformed/volley-1.2.1/AndroidManifest.xml:5:5-43
+MERGED from [com.android.volley:volley:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/dbe5485177f6da5ec8e4e82b74d4defe/transformed/volley-1.2.1/AndroidManifest.xml:5:5-43
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/zanderanja/.gradle/caches/transforms-3/2005237f772771e860ad6ee5dbc93f13/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/zanderanja/.gradle/caches/transforms-3/2005237f772771e860ad6ee5dbc93f13/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/zanderanja/.gradle/caches/transforms-3/629c0d13742271e9bae969faa8d6fd6a/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/zanderanja/.gradle/caches/transforms-3/629c0d13742271e9bae969faa8d6fd6a/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.exifinterface:exifinterface:1.3.2] /Users/zanderanja/.gradle/caches/transforms-3/24f4ac48ce13112ad34296ba7b3289a1/transformed/exifinterface-1.3.2/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.2] /Users/zanderanja/.gradle/caches/transforms-3/24f4ac48ce13112ad34296ba7b3289a1/transformed/exifinterface-1.3.2/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.documentfile:documentfile:1.0.1] /Users/zanderanja/.gradle/caches/transforms-3/65acd9a81318322168316534c72500c8/transformed/documentfile-1.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.1] /Users/zanderanja/.gradle/caches/transforms-3/65acd9a81318322168316534c72500c8/transformed/documentfile-1.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/zanderanja/.gradle/caches/transforms-3/14f680d5f1c79413f24f7fb0817f3b3c/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/zanderanja/.gradle/caches/transforms-3/14f680d5f1c79413f24f7fb0817f3b3c/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/zanderanja/.gradle/caches/transforms-3/006023d9e513fe123f61b7702fcfe0c5/transformed/profileinstaller-1.3.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/zanderanja/.gradle/caches/transforms-3/006023d9e513fe123f61b7702fcfe0c5/transformed/profileinstaller-1.3.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/zanderanja/.gradle/caches/transforms-3/422ee600ab01ba2a920b54652cc503bf/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/zanderanja/.gradle/caches/transforms-3/422ee600ab01ba2a920b54652cc503bf/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/zanderanja/.gradle/caches/transforms-3/6a93196dc59a2c38a2f40a569bd98daa/transformed/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/zanderanja/.gradle/caches/transforms-3/6a93196dc59a2c38a2f40a569bd98daa/transformed/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/zanderanja/.gradle/caches/transforms-3/7bdb31689b36714b551291178e1bc95b/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/zanderanja/.gradle/caches/transforms-3/7bdb31689b36714b551291178e1bc95b/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/zanderanja/.gradle/caches/transforms-3/6254fc806444bf3c23b526136d5cbb14/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/zanderanja/.gradle/caches/transforms-3/6254fc806444bf3c23b526136d5cbb14/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/zanderanja/.gradle/caches/transforms-3/33b5c0f39ce4275de874929a536b139e/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/zanderanja/.gradle/caches/transforms-3/33b5c0f39ce4275de874929a536b139e/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/zanderanja/.gradle/caches/transforms-3/cbf7e1276b79639e74826f134a642702/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/zanderanja/.gradle/caches/transforms-3/cbf7e1276b79639e74826f134a642702/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] /Users/zanderanja/.gradle/caches/transforms-3/75f7d1d3eb8f436eedef322c154bd1dc/transformed/annotation-experimental-1.3.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] /Users/zanderanja/.gradle/caches/transforms-3/75f7d1d3eb8f436eedef322c154bd1dc/transformed/annotation-experimental-1.3.0/AndroidManifest.xml:20:5-44
+MERGED from [org.chromium.net:cronet-api:72.3626.96] /Users/zanderanja/.gradle/caches/transforms-3/04e7bb8f99e8a6daeb87ad817e426d36/transformed/cronet-api-72.3626.96/AndroidManifest.xml:18:5-74
+MERGED from [org.chromium.net:cronet-api:72.3626.96] /Users/zanderanja/.gradle/caches/transforms-3/04e7bb8f99e8a6daeb87ad817e426d36/transformed/cronet-api-72.3626.96/AndroidManifest.xml:18:5-74
+	android:targetSdkVersion
+		INJECTED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/AndroidManifest.xml
+queries
+ADDED from [com.github.dhaval2404:imagepicker:2.1] /Users/zanderanja/.gradle/caches/transforms-3/c59975aebc12f2c0325e5ca577d48b03/transformed/imagepicker-2.1/AndroidManifest.xml:9:5-19:15
+MERGED from [androidx.camera:camera-extensions:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/85bcd90db7ff098e504f7edb96d15086/transformed/camera-extensions-1.2.1/AndroidManifest.xml:22:5-26:15
+MERGED from [androidx.camera:camera-extensions:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/85bcd90db7ff098e504f7edb96d15086/transformed/camera-extensions-1.2.1/AndroidManifest.xml:22:5-26:15
+intent#action:name:android.media.action.IMAGE_CAPTURE
+ADDED from [com.github.dhaval2404:imagepicker:2.1] /Users/zanderanja/.gradle/caches/transforms-3/c59975aebc12f2c0325e5ca577d48b03/transformed/imagepicker-2.1/AndroidManifest.xml:12:9-14:18
+action#android.media.action.IMAGE_CAPTURE
+ADDED from [com.github.dhaval2404:imagepicker:2.1] /Users/zanderanja/.gradle/caches/transforms-3/c59975aebc12f2c0325e5ca577d48b03/transformed/imagepicker-2.1/AndroidManifest.xml:13:13-73
+	android:name
+		ADDED from [com.github.dhaval2404:imagepicker:2.1] /Users/zanderanja/.gradle/caches/transforms-3/c59975aebc12f2c0325e5ca577d48b03/transformed/imagepicker-2.1/AndroidManifest.xml:13:21-70
+intent#action:name:android.intent.action.OPEN_DOCUMENT_TREE
+ADDED from [com.github.dhaval2404:imagepicker:2.1] /Users/zanderanja/.gradle/caches/transforms-3/c59975aebc12f2c0325e5ca577d48b03/transformed/imagepicker-2.1/AndroidManifest.xml:16:9-18:18
+action#android.intent.action.OPEN_DOCUMENT_TREE
+ADDED from [com.github.dhaval2404:imagepicker:2.1] /Users/zanderanja/.gradle/caches/transforms-3/c59975aebc12f2c0325e5ca577d48b03/transformed/imagepicker-2.1/AndroidManifest.xml:17:13-79
+	android:name
+		ADDED from [com.github.dhaval2404:imagepicker:2.1] /Users/zanderanja/.gradle/caches/transforms-3/c59975aebc12f2c0325e5ca577d48b03/transformed/imagepicker-2.1/AndroidManifest.xml:17:21-76
+activity#com.github.dhaval2404.imagepicker.ImagePickerActivity
+ADDED from [com.github.dhaval2404:imagepicker:2.1] /Users/zanderanja/.gradle/caches/transforms-3/c59975aebc12f2c0325e5ca577d48b03/transformed/imagepicker-2.1/AndroidManifest.xml:22:9-25:68
+	android:screenOrientation
+		ADDED from [com.github.dhaval2404:imagepicker:2.1] /Users/zanderanja/.gradle/caches/transforms-3/c59975aebc12f2c0325e5ca577d48b03/transformed/imagepicker-2.1/AndroidManifest.xml:24:13-52
+	android:theme
+		ADDED from [com.github.dhaval2404:imagepicker:2.1] /Users/zanderanja/.gradle/caches/transforms-3/c59975aebc12f2c0325e5ca577d48b03/transformed/imagepicker-2.1/AndroidManifest.xml:25:13-65
+	android:name
+		ADDED from [com.github.dhaval2404:imagepicker:2.1] /Users/zanderanja/.gradle/caches/transforms-3/c59975aebc12f2c0325e5ca577d48b03/transformed/imagepicker-2.1/AndroidManifest.xml:23:13-81
+activity#com.yalantis.ucrop.UCropActivity
+ADDED from [com.github.dhaval2404:imagepicker:2.1] /Users/zanderanja/.gradle/caches/transforms-3/c59975aebc12f2c0325e5ca577d48b03/transformed/imagepicker-2.1/AndroidManifest.xml:26:9-29:72
+	android:screenOrientation
+		ADDED from [com.github.dhaval2404:imagepicker:2.1] /Users/zanderanja/.gradle/caches/transforms-3/c59975aebc12f2c0325e5ca577d48b03/transformed/imagepicker-2.1/AndroidManifest.xml:28:13-49
+	android:theme
+		ADDED from [com.github.dhaval2404:imagepicker:2.1] /Users/zanderanja/.gradle/caches/transforms-3/c59975aebc12f2c0325e5ca577d48b03/transformed/imagepicker-2.1/AndroidManifest.xml:29:13-69
+	android:name
+		ADDED from [com.github.dhaval2404:imagepicker:2.1] /Users/zanderanja/.gradle/caches/transforms-3/c59975aebc12f2c0325e5ca577d48b03/transformed/imagepicker-2.1/AndroidManifest.xml:27:13-60
+provider#com.github.dhaval2404.imagepicker.ImagePickerFileProvider
+ADDED from [com.github.dhaval2404:imagepicker:2.1] /Users/zanderanja/.gradle/caches/transforms-3/c59975aebc12f2c0325e5ca577d48b03/transformed/imagepicker-2.1/AndroidManifest.xml:31:9-39:20
+	android:grantUriPermissions
+		ADDED from [com.github.dhaval2404:imagepicker:2.1] /Users/zanderanja/.gradle/caches/transforms-3/c59975aebc12f2c0325e5ca577d48b03/transformed/imagepicker-2.1/AndroidManifest.xml:35:13-47
+	android:authorities
+		ADDED from [com.github.dhaval2404:imagepicker:2.1] /Users/zanderanja/.gradle/caches/transforms-3/c59975aebc12f2c0325e5ca577d48b03/transformed/imagepicker-2.1/AndroidManifest.xml:33:13-72
+	android:exported
+		ADDED from [com.github.dhaval2404:imagepicker:2.1] /Users/zanderanja/.gradle/caches/transforms-3/c59975aebc12f2c0325e5ca577d48b03/transformed/imagepicker-2.1/AndroidManifest.xml:34:13-37
+	android:name
+		ADDED from [com.github.dhaval2404:imagepicker:2.1] /Users/zanderanja/.gradle/caches/transforms-3/c59975aebc12f2c0325e5ca577d48b03/transformed/imagepicker-2.1/AndroidManifest.xml:32:13-85
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from [com.github.dhaval2404:imagepicker:2.1] /Users/zanderanja/.gradle/caches/transforms-3/c59975aebc12f2c0325e5ca577d48b03/transformed/imagepicker-2.1/AndroidManifest.xml:36:13-38:71
+	android:resource
+		ADDED from [com.github.dhaval2404:imagepicker:2.1] /Users/zanderanja/.gradle/caches/transforms-3/c59975aebc12f2c0325e5ca577d48b03/transformed/imagepicker-2.1/AndroidManifest.xml:38:17-68
+	android:name
+		ADDED from [com.github.dhaval2404:imagepicker:2.1] /Users/zanderanja/.gradle/caches/transforms-3/c59975aebc12f2c0325e5ca577d48b03/transformed/imagepicker-2.1/AndroidManifest.xml:37:17-67
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:18.0.1] /Users/zanderanja/.gradle/caches/transforms-3/6463d43adb8bbac6f42b373678954437/transformed/play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:18.0.1] /Users/zanderanja/.gradle/caches/transforms-3/6463d43adb8bbac6f42b373678954437/transformed/play-services-base-18.0.1/AndroidManifest.xml:22:19-43
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:18.0.1] /Users/zanderanja/.gradle/caches/transforms-3/6463d43adb8bbac6f42b373678954437/transformed/play-services-base-18.0.1/AndroidManifest.xml:21:19-78
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:18.0.1] /Users/zanderanja/.gradle/caches/transforms-3/6463d43adb8bbac6f42b373678954437/transformed/play-services-base-18.0.1/AndroidManifest.xml:20:19-85
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:18.0.0] /Users/zanderanja/.gradle/caches/transforms-3/d090a36c36b9f707811efd9bb2ac60cc/transformed/play-services-basement-18.0.0/AndroidManifest.xml:21:9-23:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:18.0.0] /Users/zanderanja/.gradle/caches/transforms-3/d090a36c36b9f707811efd9bb2ac60cc/transformed/play-services-basement-18.0.0/AndroidManifest.xml:23:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:18.0.0] /Users/zanderanja/.gradle/caches/transforms-3/d090a36c36b9f707811efd9bb2ac60cc/transformed/play-services-basement-18.0.0/AndroidManifest.xml:22:13-58
+intent#action:name:androidx.camera.extensions.action.VENDOR_ACTION
+ADDED from [androidx.camera:camera-extensions:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/85bcd90db7ff098e504f7edb96d15086/transformed/camera-extensions-1.2.1/AndroidManifest.xml:23:9-25:18
+action#androidx.camera.extensions.action.VENDOR_ACTION
+ADDED from [androidx.camera:camera-extensions:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/85bcd90db7ff098e504f7edb96d15086/transformed/camera-extensions-1.2.1/AndroidManifest.xml:24:13-86
+	android:name
+		ADDED from [androidx.camera:camera-extensions:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/85bcd90db7ff098e504f7edb96d15086/transformed/camera-extensions-1.2.1/AndroidManifest.xml:24:21-83
+uses-library#androidx.camera.extensions.impl
+ADDED from [androidx.camera:camera-extensions:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/85bcd90db7ff098e504f7edb96d15086/transformed/camera-extensions-1.2.1/AndroidManifest.xml:29:9-31:40
+	android:required
+		ADDED from [androidx.camera:camera-extensions:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/85bcd90db7ff098e504f7edb96d15086/transformed/camera-extensions-1.2.1/AndroidManifest.xml:31:13-37
+	android:name
+		ADDED from [androidx.camera:camera-extensions:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/85bcd90db7ff098e504f7edb96d15086/transformed/camera-extensions-1.2.1/AndroidManifest.xml:30:13-59
+service#androidx.camera.core.impl.MetadataHolderService
+ADDED from [androidx.camera:camera-camera2:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/e9a47dc0536a52e28b1f07bfb0d07913/transformed/camera-camera2-1.2.1/AndroidManifest.xml:24:9-33:19
+MERGED from [androidx.camera:camera-core:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/deeccc514b81ca8a95aa7f2d5b6eb7f1/transformed/camera-core-1.2.1/AndroidManifest.xml:29:9-33:78
+MERGED from [androidx.camera:camera-core:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/deeccc514b81ca8a95aa7f2d5b6eb7f1/transformed/camera-core-1.2.1/AndroidManifest.xml:29:9-33:78
+	tools:node
+		ADDED from [androidx.camera:camera-camera2:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/e9a47dc0536a52e28b1f07bfb0d07913/transformed/camera-camera2-1.2.1/AndroidManifest.xml:29:13-31
+	android:enabled
+		ADDED from [androidx.camera:camera-camera2:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/e9a47dc0536a52e28b1f07bfb0d07913/transformed/camera-camera2-1.2.1/AndroidManifest.xml:26:13-36
+	android:exported
+		ADDED from [androidx.camera:camera-camera2:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/e9a47dc0536a52e28b1f07bfb0d07913/transformed/camera-camera2-1.2.1/AndroidManifest.xml:27:13-37
+	tools:ignore
+		ADDED from [androidx.camera:camera-camera2:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/e9a47dc0536a52e28b1f07bfb0d07913/transformed/camera-camera2-1.2.1/AndroidManifest.xml:28:13-75
+	android:name
+		ADDED from [androidx.camera:camera-camera2:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/e9a47dc0536a52e28b1f07bfb0d07913/transformed/camera-camera2-1.2.1/AndroidManifest.xml:25:13-75
+meta-data#androidx.camera.core.impl.MetadataHolderService.DEFAULT_CONFIG_PROVIDER
+ADDED from [androidx.camera:camera-camera2:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/e9a47dc0536a52e28b1f07bfb0d07913/transformed/camera-camera2-1.2.1/AndroidManifest.xml:30:13-32:89
+	android:value
+		ADDED from [androidx.camera:camera-camera2:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/e9a47dc0536a52e28b1f07bfb0d07913/transformed/camera-camera2-1.2.1/AndroidManifest.xml:32:17-86
+	android:name
+		ADDED from [androidx.camera:camera-camera2:1.2.1] /Users/zanderanja/.gradle/caches/transforms-3/e9a47dc0536a52e28b1f07bfb0d07913/transformed/camera-camera2-1.2.1/AndroidManifest.xml:31:17-103
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/zanderanja/.gradle/caches/transforms-3/1389f324a0f60e7e6ff4a1d7ff19776c/transformed/emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] /Users/zanderanja/.gradle/caches/transforms-3/bd9fb51751d91e7e80d367bef6dae9bb/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] /Users/zanderanja/.gradle/caches/transforms-3/bd9fb51751d91e7e80d367bef6dae9bb/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/zanderanja/.gradle/caches/transforms-3/006023d9e513fe123f61b7702fcfe0c5/transformed/profileinstaller-1.3.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/zanderanja/.gradle/caches/transforms-3/006023d9e513fe123f61b7702fcfe0c5/transformed/profileinstaller-1.3.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/zanderanja/.gradle/caches/transforms-3/422ee600ab01ba2a920b54652cc503bf/transformed/startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/zanderanja/.gradle/caches/transforms-3/422ee600ab01ba2a920b54652cc503bf/transformed/startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/zanderanja/.gradle/caches/transforms-3/1389f324a0f60e7e6ff4a1d7ff19776c/transformed/emoji2-1.2.0/AndroidManifest.xml:28:13-31
+	android:authorities
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/zanderanja/.gradle/caches/transforms-3/1389f324a0f60e7e6ff4a1d7ff19776c/transformed/emoji2-1.2.0/AndroidManifest.xml:26:13-68
+	android:exported
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/zanderanja/.gradle/caches/transforms-3/1389f324a0f60e7e6ff4a1d7ff19776c/transformed/emoji2-1.2.0/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/zanderanja/.gradle/caches/transforms-3/1389f324a0f60e7e6ff4a1d7ff19776c/transformed/emoji2-1.2.0/AndroidManifest.xml:25:13-67
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/zanderanja/.gradle/caches/transforms-3/1389f324a0f60e7e6ff4a1d7ff19776c/transformed/emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/zanderanja/.gradle/caches/transforms-3/1389f324a0f60e7e6ff4a1d7ff19776c/transformed/emoji2-1.2.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/zanderanja/.gradle/caches/transforms-3/1389f324a0f60e7e6ff4a1d7ff19776c/transformed/emoji2-1.2.0/AndroidManifest.xml:30:17-75
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.6.1] /Users/zanderanja/.gradle/caches/transforms-3/bd9fb51751d91e7e80d367bef6dae9bb/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.6.1] /Users/zanderanja/.gradle/caches/transforms-3/bd9fb51751d91e7e80d367bef6dae9bb/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.6.1] /Users/zanderanja/.gradle/caches/transforms-3/bd9fb51751d91e7e80d367bef6dae9bb/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:30:17-78
+permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.9.0] /Users/zanderanja/.gradle/caches/transforms-3/362367ac62f3c0b52264c50760ebc3d9/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.9.0] /Users/zanderanja/.gradle/caches/transforms-3/362367ac62f3c0b52264c50760ebc3d9/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.9.0] /Users/zanderanja/.gradle/caches/transforms-3/362367ac62f3c0b52264c50760ebc3d9/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
+permission#feri.si.weatherapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.9.0] /Users/zanderanja/.gradle/caches/transforms-3/362367ac62f3c0b52264c50760ebc3d9/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.9.0] /Users/zanderanja/.gradle/caches/transforms-3/362367ac62f3c0b52264c50760ebc3d9/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.9.0] /Users/zanderanja/.gradle/caches/transforms-3/362367ac62f3c0b52264c50760ebc3d9/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
+uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.9.0] /Users/zanderanja/.gradle/caches/transforms-3/362367ac62f3c0b52264c50760ebc3d9/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.9.0] /Users/zanderanja/.gradle/caches/transforms-3/362367ac62f3c0b52264c50760ebc3d9/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
+uses-permission#feri.si.weatherapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.9.0] /Users/zanderanja/.gradle/caches/transforms-3/362367ac62f3c0b52264c50760ebc3d9/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.9.0] /Users/zanderanja/.gradle/caches/transforms-3/362367ac62f3c0b52264c50760ebc3d9/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
+meta-data#androidx.profileinstaller.ProfileInstallerInitializer
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/zanderanja/.gradle/caches/transforms-3/006023d9e513fe123f61b7702fcfe0c5/transformed/profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/zanderanja/.gradle/caches/transforms-3/006023d9e513fe123f61b7702fcfe0c5/transformed/profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/zanderanja/.gradle/caches/transforms-3/006023d9e513fe123f61b7702fcfe0c5/transformed/profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
+receiver#androidx.profileinstaller.ProfileInstallReceiver
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/zanderanja/.gradle/caches/transforms-3/006023d9e513fe123f61b7702fcfe0c5/transformed/profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
+	android:enabled
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/zanderanja/.gradle/caches/transforms-3/006023d9e513fe123f61b7702fcfe0c5/transformed/profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/zanderanja/.gradle/caches/transforms-3/006023d9e513fe123f61b7702fcfe0c5/transformed/profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
+	android:permission
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/zanderanja/.gradle/caches/transforms-3/006023d9e513fe123f61b7702fcfe0c5/transformed/profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
+	android:directBootAware
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/zanderanja/.gradle/caches/transforms-3/006023d9e513fe123f61b7702fcfe0c5/transformed/profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/zanderanja/.gradle/caches/transforms-3/006023d9e513fe123f61b7702fcfe0c5/transformed/profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
+intent-filter#action:name:androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/zanderanja/.gradle/caches/transforms-3/006023d9e513fe123f61b7702fcfe0c5/transformed/profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
+action#androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/zanderanja/.gradle/caches/transforms-3/006023d9e513fe123f61b7702fcfe0c5/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/zanderanja/.gradle/caches/transforms-3/006023d9e513fe123f61b7702fcfe0c5/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
+intent-filter#action:name:androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/zanderanja/.gradle/caches/transforms-3/006023d9e513fe123f61b7702fcfe0c5/transformed/profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
+action#androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/zanderanja/.gradle/caches/transforms-3/006023d9e513fe123f61b7702fcfe0c5/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/zanderanja/.gradle/caches/transforms-3/006023d9e513fe123f61b7702fcfe0c5/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
+intent-filter#action:name:androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/zanderanja/.gradle/caches/transforms-3/006023d9e513fe123f61b7702fcfe0c5/transformed/profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
+action#androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/zanderanja/.gradle/caches/transforms-3/006023d9e513fe123f61b7702fcfe0c5/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/zanderanja/.gradle/caches/transforms-3/006023d9e513fe123f61b7702fcfe0c5/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
+intent-filter#action:name:androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/zanderanja/.gradle/caches/transforms-3/006023d9e513fe123f61b7702fcfe0c5/transformed/profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
+action#androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/zanderanja/.gradle/caches/transforms-3/006023d9e513fe123f61b7702fcfe0c5/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/zanderanja/.gradle/caches/transforms-3/006023d9e513fe123f61b7702fcfe0c5/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:25-92
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [org.chromium.net:cronet-api:72.3626.96] /Users/zanderanja/.gradle/caches/transforms-3/04e7bb8f99e8a6daeb87ad817e426d36/transformed/cronet-api-72.3626.96/AndroidManifest.xml:20:5-78
+	android:name
+		ADDED from [org.chromium.net:cronet-api:72.3626.96] /Users/zanderanja/.gradle/caches/transforms-3/04e7bb8f99e8a6daeb87ad817e426d36/transformed/cronet-api-72.3626.96/AndroidManifest.xml:20:22-76

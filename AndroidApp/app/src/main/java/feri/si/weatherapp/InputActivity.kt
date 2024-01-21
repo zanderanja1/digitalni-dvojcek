@@ -1,6 +1,7 @@
 package feri.si.weatherapp
 
 import android.Manifest
+import android.app.NotificationManager
 import android.content.Context
 import android.content.Intent
 import android.content.pm.ApplicationInfo
@@ -193,6 +194,7 @@ class InputActivity : AppCompatActivity() {
                 data.putExtra("imageUri", image.toString())
                 setResult(RESULT_OK, data)
                 finish()
+
             } catch (e: Exception) {
                 Toast.makeText(this,e.toString(), Toast.LENGTH_LONG).show()
             }
