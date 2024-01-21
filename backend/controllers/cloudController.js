@@ -1,4 +1,6 @@
 const { spawn } = require("child_process");
+const fs = require("fs");
+const path = require("path");
 
 var CloudModel = require("../models/cloudModel.js");
 
@@ -52,40 +54,48 @@ module.exports = {
    * cloudController.create()
    */
   create: function (req, res) {
-    let image = req.body.image;
+    try {
+      let imagePath = path.resolve(__dirname, "..", "public", "images", req.file.filename);
+      let imageFile = fs.readFileSync(imagePath);
+      let base64Image = Buffer.from(imageFile).toString("base64");
+      const python = spawn("python", ["../Recognizer/script.py"]);
 
-    const python = spawn("python", ["./path_to_your_script.py"]);
-
-    python.stdin.write(image);
-    python.stdin.end();
-
-    python.stdout.on("data", (data) => {
-      // Get ratio from python script
-      let ratio = parseFloat(data.toString());
-      let weather = "Sunny";
-
-      var cloud = new CloudModel({
-        ratio: ratio,
-        weather: weather,
-        location: {
-          latitude: req.body.latitude,
-          longitude: req.body.longitude
-        },
-        date: Date.now(),
-        postedBy: req.body.postedBy
+      python.stdin.write(base64Image, () => {
+        python.stdin.end();
       });
 
-      cloud.save(function (err, cloud) {
-        if (err) {
-          return res.status(500).json({
-            message: "Error when creating cloud",
-            error: err
-          });
-        }
+      python.stdout.on("data", (data) => {
+        // Get ratio from python script
+        let ratio = parseFloat(data.toString());
+        let weather = "";
+        if (ratio < 0.25) weather = "Sunny";
+        else if (ratio < 0.5) weather = "Partly cloudy";
+        else if (ratio < 0.75) weather = "Mostly cloudy";
+        else weather = "Cloudy";
+        var cloud = new CloudModel({
+          ratio: ratio,
+          weather: weather,
+          location: {
+            latitude: req.body.latitude,
+            longitude: req.body.longitude
+          },
+          date: Date.now(),
+          postedBy: req.body.postedBy
+        });
+        cloud.save(function (err, cloud) {
+          if (err) {
+            return res.status(500).json({
+              message: "Error when creating cloud",
+              error: err
+            });
+          }
 
-        return res.status(201).json(cloud);
+          return res.status(201).json(cloud);
+        });
       });
-    });
+    } catch (e) {
+      console.log(e);
+    }
   },
 
   remove: function (req, res) {

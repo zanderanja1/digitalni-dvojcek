@@ -3,6 +3,7 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
+var cors = require("cors");
 
 require("dotenv").config();
 
@@ -26,9 +27,9 @@ var cloudsRouter = require("./routes/cloudRoutes");
 
 var app = express();
 
-var cors = require("cors");
 var allowedOrigins = ["http://localhost:3000", "http://localhost:3001"];
-app.use(
+app.use(cors());
+/* app.use(
   cors({
     credentials: true,
     origin: function (origin, callback) {
@@ -41,7 +42,7 @@ app.use(
       return callback(null, true);
     }
   })
-);
+); */
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));

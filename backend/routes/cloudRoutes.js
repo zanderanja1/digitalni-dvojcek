@@ -1,4 +1,6 @@
 var express = require("express");
+const multer = require("multer");
+const upload = multer({ dest: "public/images" });
 var router = express.Router();
 var cloudController = require("../controllers/cloudController.js");
 
@@ -11,7 +13,7 @@ router.get("/:id", cloudController.show);
 /*
  * POST
  */
-router.post("/", cloudController.create);
+router.post("/", upload.single("image"), cloudController.create);
 
 /*
  * DELETE

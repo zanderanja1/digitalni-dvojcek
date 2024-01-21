@@ -7,14 +7,14 @@ import torch
 import torchvision
 import torch.nn.functional as torch_F
 import torch
-import torch.nn as nn
-import torch.optim as optim
 from torchvision import models
 
 import sys
 import base64
 from PIL import Image
 from io import BytesIO
+import os
+
 
 skyline_size = 512
 clouds_size = 256
@@ -28,7 +28,8 @@ def recognize_image():
 
     # Recognize skyline
     model_skyline = torchvision.models.segmentation.fcn_resnet50(weights = None, num_classes = 1, aux_loss = None)
-    model_skyline.load_state_dict(torch.load('skyline_model.pth'))
+    path = os.path.dirname(os.path.abspath(__file__))
+    model_skyline.load_state_dict(torch.load(path + '/skyline_model.pth'))
     preprocess_skyline = transforms.Compose([
         transforms.Resize((skyline_size, skyline_size)),
         transforms.ToTensor(),
@@ -41,7 +42,7 @@ def recognize_image():
 
     # Recognize clouds
     model_clouds = models.segmentation.deeplabv3_resnet50(weights = None, num_classes=1, aux_loss=None)
-    model_clouds.load_state_dict(torch.load('clouds_model.pth'))
+    model_clouds.load_state_dict(torch.load(path +'/clouds_model.pth'))
     preprocess_clouds = transforms.Compose([
         transforms.Resize((clouds_size, clouds_size)),
         transforms.ToTensor(),
@@ -82,7 +83,7 @@ def recognize_image():
     plt.title('Clouds Mask')
 
     plt.show() """
-
+    print(ratio)
     return ratio
 
 recognize_image()
