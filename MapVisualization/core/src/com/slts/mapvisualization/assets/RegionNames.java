@@ -1,4 +1,4 @@
-package com.mygdx.game.assets;
+package com.slts.mapvisualization.assets;
 
 public class RegionNames {
     public static final String CLOUD = "cloud";

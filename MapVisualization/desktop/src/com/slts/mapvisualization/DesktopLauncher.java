@@ -1,8 +1,8 @@
-package com.mygdx.game;
+package com.slts.mapvisualization;
 
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
-import com.mygdx.game.ProjectTest;
+import com.slts.mapvisualization.ProjectTest;
 
 // Please note that on macOS your application needs to be started with the -XstartOnFirstThread JVM argument
 public class DesktopLauncher {
@@ -11,7 +11,7 @@ public class DesktopLauncher {
 		config.setForegroundFPS(60);
 		config.setTitle("ProjectTest");
 		config.setWindowedMode(900, 900);
-		config.setResizable(false);
+		config.setResizable(true);
 		new Lwjgl3Application(new ProjectTest(), config);
 	}
 }

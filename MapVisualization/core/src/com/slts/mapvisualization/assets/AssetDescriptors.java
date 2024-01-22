@@ -1,4 +1,4 @@
-package com.mygdx.game.assets;
+package com.slts.mapvisualization.assets;
 
 import com.badlogic.gdx.assets.AssetDescriptor;
 import com.badlogic.gdx.audio.Sound;
