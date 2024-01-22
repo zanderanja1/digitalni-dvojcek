@@ -3,7 +3,10 @@ import android.app.Activity
 import android.app.NotificationManager
 import android.content.Context
 import android.content.Intent
+import android.location.Address
+import android.location.Geocoder
 import android.net.Uri
+import android.os.AsyncTask
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -212,11 +215,31 @@ class MainActivity : AppCompatActivity() {
 
             val latitude = locationObject.getString("latitude")
             val longitude = locationObject.getString("longitude")
+            var address:Address? = null
+            val geocoder = Geocoder(this@MainActivity, Locale.getDefault())
+            var addresses = geocoder.getFromLocation(latitude.toDouble(), longitude.toDouble(), 1)
+            if (addresses != null) {
+                if (addresses.isNotEmpty()) {
+                    address = addresses?.get(0)
+                }
+            }
+
 
             val formattedDate = outputFormat.format(date)
-
-            val outputString = "Cloudiness ratio: ${ratio.subSequence(0,5)}, Weather: ${weather}, Date: ${formattedDate}"
+            val cloudRatio = ratio.subSequence(0, 5).toString().toFloat()
+            var icon = ""
+            if (cloudRatio >= 0.8)
+                icon = "☁️"
+            else if (cloudRatio >= 0.6)
+                icon = "⛅️️"
+            else if (cloudRatio >= 0.4)
+                icon = "🌤️"
+            else
+                icon = "️☀️"
+            val outputString =
+                "$icon️  Cloudiness ratio: ${cloudRatio * 100}%,  ${weather},  ${formattedDate}\n${address?.adminArea}, ${address?.thoroughfare}, ${address?.countryName}"
             locationArray.add(outputString)
+
         }
 
         return locationArray.toTypedArray()
@@ -234,4 +257,6 @@ class MainActivity : AppCompatActivity() {
         return outputString
     }
 
+
 }
+

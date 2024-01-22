@@ -5,7 +5,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -23,7 +25,7 @@ public final class ActivityInputBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final Button addButton;
+  public final ImageButton addButton;
 
   @NonNull
   public final TextView addressText;
@@ -35,6 +37,12 @@ public final class ActivityInputBinding implements ViewBinding {
   public final Guideline guideline;
 
   @NonNull
+  public final Guideline guideline4;
+
+  @NonNull
+  public final Guideline guideline5;
+
+  @NonNull
   public final Button imageCaptureButton;
 
   @NonNull
@@ -44,24 +52,31 @@ public final class ActivityInputBinding implements ViewBinding {
   public final ImageView imageView;
 
   @NonNull
+  public final LinearLayout linearLayout;
+
+  @NonNull
   public final TextView textView;
 
   @NonNull
   public final TextView textView2;
 
-  private ActivityInputBinding(@NonNull ConstraintLayout rootView, @NonNull Button addButton,
+  private ActivityInputBinding(@NonNull ConstraintLayout rootView, @NonNull ImageButton addButton,
       @NonNull TextView addressText, @NonNull TextView coordinatesText,
-      @NonNull Guideline guideline, @NonNull Button imageCaptureButton,
-      @NonNull Button imageSelectButton, @NonNull ImageView imageView, @NonNull TextView textView,
+      @NonNull Guideline guideline, @NonNull Guideline guideline4, @NonNull Guideline guideline5,
+      @NonNull Button imageCaptureButton, @NonNull Button imageSelectButton,
+      @NonNull ImageView imageView, @NonNull LinearLayout linearLayout, @NonNull TextView textView,
       @NonNull TextView textView2) {
     this.rootView = rootView;
     this.addButton = addButton;
     this.addressText = addressText;
     this.coordinatesText = coordinatesText;
     this.guideline = guideline;
+    this.guideline4 = guideline4;
+    this.guideline5 = guideline5;
     this.imageCaptureButton = imageCaptureButton;
     this.imageSelectButton = imageSelectButton;
     this.imageView = imageView;
+    this.linearLayout = linearLayout;
     this.textView = textView;
     this.textView2 = textView2;
   }
@@ -94,7 +109,7 @@ public final class ActivityInputBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.addButton;
-      Button addButton = ViewBindings.findChildViewById(rootView, id);
+      ImageButton addButton = ViewBindings.findChildViewById(rootView, id);
       if (addButton == null) {
         break missingId;
       }
@@ -117,6 +132,18 @@ public final class ActivityInputBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.guideline4;
+      Guideline guideline4 = ViewBindings.findChildViewById(rootView, id);
+      if (guideline4 == null) {
+        break missingId;
+      }
+
+      id = R.id.guideline5;
+      Guideline guideline5 = ViewBindings.findChildViewById(rootView, id);
+      if (guideline5 == null) {
+        break missingId;
+      }
+
       id = R.id.image_capture_button;
       Button imageCaptureButton = ViewBindings.findChildViewById(rootView, id);
       if (imageCaptureButton == null) {
@@ -135,6 +162,12 @@ public final class ActivityInputBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.linearLayout;
+      LinearLayout linearLayout = ViewBindings.findChildViewById(rootView, id);
+      if (linearLayout == null) {
+        break missingId;
+      }
+
       id = R.id.textView;
       TextView textView = ViewBindings.findChildViewById(rootView, id);
       if (textView == null) {
@@ -148,8 +181,8 @@ public final class ActivityInputBinding implements ViewBinding {
       }
 
       return new ActivityInputBinding((ConstraintLayout) rootView, addButton, addressText,
-          coordinatesText, guideline, imageCaptureButton, imageSelectButton, imageView, textView,
-          textView2);
+          coordinatesText, guideline, guideline4, guideline5, imageCaptureButton, imageSelectButton,
+          imageView, linearLayout, textView, textView2);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

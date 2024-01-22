@@ -4,7 +4,7 @@ package feri.si.weatherapp.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ImageButton;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.camera.view.PreviewView;
@@ -21,13 +21,13 @@ public final class ActivityCameraBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final Button imageCaptureButton;
+  public final ImageButton imageCaptureButton;
 
   @NonNull
   public final PreviewView viewFinder;
 
   private ActivityCameraBinding(@NonNull ConstraintLayout rootView,
-      @NonNull Button imageCaptureButton, @NonNull PreviewView viewFinder) {
+      @NonNull ImageButton imageCaptureButton, @NonNull PreviewView viewFinder) {
     this.rootView = rootView;
     this.imageCaptureButton = imageCaptureButton;
     this.viewFinder = viewFinder;
@@ -61,7 +61,7 @@ public final class ActivityCameraBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.image_capture_button;
-      Button imageCaptureButton = ViewBindings.findChildViewById(rootView, id);
+      ImageButton imageCaptureButton = ViewBindings.findChildViewById(rootView, id);
       if (imageCaptureButton == null) {
         break missingId;
       }

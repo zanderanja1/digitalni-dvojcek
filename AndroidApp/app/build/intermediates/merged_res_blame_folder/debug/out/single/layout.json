@@ -24,6 +24,10 @@
         "source": "/Users/zanderanja/.gradle/daemon/8.0/feri.si.weatherapp-main-51:/layout/activity_input.xml"
     },
     {
+        "merged": "feri.si.weatherapp-mergeDebugResources-48:/layout/activity_main.xml",
+        "source": "feri.si.weatherapp-main-51:/layout/activity_main.xml"
+    },
+    {
         "merged": "feri.si.weatherapp-mergeDebugResources-48:/layout/item.xml",
         "source": "feri.si.weatherapp-main-51:/layout/item.xml"
     },

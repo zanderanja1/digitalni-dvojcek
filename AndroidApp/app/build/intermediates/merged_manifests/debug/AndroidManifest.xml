@@ -55,26 +55,32 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:testOnly="true"
-        android:theme="@style/Theme.MyApplication"
+        android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true" >
         <activity
             android:name="feri.si.weatherapp.RecyclerView"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/AppTheme" />
         <activity
             android:name="feri.si.weatherapp.InputActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/AppTheme" />
         <activity
             android:name="feri.si.weatherapp.ImageSelectActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/AppTheme" />
         <activity
             android:name="feri.si.weatherapp.CameraActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/AppTheme" />
         <activity
             android:name="feri.si.weatherapp.LiveCameraActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/AppTheme" />
         <activity
             android:name="feri.si.weatherapp.MainActivity"
-            android:exported="true" >
+            android:exported="true"
+            android:theme="@style/AppTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

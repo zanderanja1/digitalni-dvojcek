@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:theme="@style/AppTheme">
 
 
     <TextView
@@ -10,10 +11,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:background="#D6C3F8"
+
         android:clickable="true"
+        android:fontFamily="sans-serif"
         android:padding="16dp"
-        android:fontFamily="sans-serif" />
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/round_corners"
+        android:textColor="@color/md_theme_light_background" />
 
 
 </LinearLayout>

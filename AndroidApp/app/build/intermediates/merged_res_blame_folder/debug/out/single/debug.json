@@ -16,6 +16,10 @@
         "source": "/Users/zanderanja/.gradle/daemon/8.0/feri.si.weatherapp-main-51:/layout/activity_camera.xml"
     },
     {
+        "merged": "/Users/zanderanja/.gradle/daemon/8.0/feri.si.weatherapp-merged_res-49:/drawable_baseline_add_24.xml.flat",
+        "source": "/Users/zanderanja/.gradle/daemon/8.0/feri.si.weatherapp-main-51:/drawable/baseline_add_24.xml"
+    },
+    {
         "merged": "/Users/zanderanja/.gradle/daemon/8.0/feri.si.weatherapp-merged_res-49:/layout_activity_input.xml.flat",
         "source": "/Users/zanderanja/.gradle/daemon/8.0/feri.si.weatherapp-main-51:/layout/activity_input.xml"
     },
@@ -34,6 +38,10 @@
     {
         "merged": "/Users/zanderanja/.gradle/daemon/8.0/feri.si.weatherapp-merged_res-49:/layout_activity_main.xml.flat",
         "source": "/Users/zanderanja/.gradle/daemon/8.0/feri.si.weatherapp-main-51:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/zanderanja/.gradle/daemon/8.0/feri.si.weatherapp-merged_res-49:/drawable_baseline_dataset_24.xml.flat",
+        "source": "/Users/zanderanja/.gradle/daemon/8.0/feri.si.weatherapp-main-51:/drawable/baseline_dataset_24.xml"
     },
     {
         "merged": "/Users/zanderanja/.gradle/daemon/8.0/feri.si.weatherapp-merged_res-49:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
@@ -84,6 +92,14 @@
         "source": "/Users/zanderanja/.gradle/daemon/8.0/feri.si.weatherapp-main-51:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
+        "merged": "/Users/zanderanja/.gradle/daemon/8.0/feri.si.weatherapp-merged_res-49:/drawable_baseline_image_search_24.xml.flat",
+        "source": "/Users/zanderanja/.gradle/daemon/8.0/feri.si.weatherapp-main-51:/drawable/baseline_image_search_24.xml"
+    },
+    {
+        "merged": "/Users/zanderanja/.gradle/daemon/8.0/feri.si.weatherapp-merged_res-49:/drawable_round_corners.xml.flat",
+        "source": "/Users/zanderanja/.gradle/daemon/8.0/feri.si.weatherapp-main-51:/drawable/round_corners.xml"
+    },
+    {
         "merged": "/Users/zanderanja/.gradle/daemon/8.0/feri.si.weatherapp-merged_res-49:/mipmap-anydpi-v26_ic_launcher.xml.flat",
         "source": "/Users/zanderanja/.gradle/daemon/8.0/feri.si.weatherapp-main-51:/mipmap-anydpi-v26/ic_launcher.xml"
     },
@@ -94,6 +110,10 @@
     {
         "merged": "/Users/zanderanja/.gradle/daemon/8.0/feri.si.weatherapp-merged_res-49:/mipmap-xhdpi_ic_launcher_round.webp.flat",
         "source": "/Users/zanderanja/.gradle/daemon/8.0/feri.si.weatherapp-main-51:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "feri.si.weatherapp-merged_res-49:/layout_activity_main.xml.flat",
+        "source": "feri.si.weatherapp-main-51:/layout/activity_main.xml"
     },
     {
         "merged": "/Users/zanderanja/.gradle/daemon/8.0/feri.si.weatherapp-merged_res-49:/layout_item.xml.flat",

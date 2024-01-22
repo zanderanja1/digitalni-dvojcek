@@ -100,7 +100,7 @@ class InputActivity : AppCompatActivity() {
 
             Log.v("lokacija network", "network: $location")
 
-            viewBinding.textView.text = "Latitude: ${location?.latitude}, Longitutde: ${location?.longitude}"
+            viewBinding.textView.text = "Latitude: ${location?.latitude}\nLongitutde: ${location?.longitude}"
             val latitude = location?.latitude
             val longitude = location?.longitude
             val API_CALL = "https://api.weatherapi.com/v1/current.json?key=$apiKey&q=$latitude $longitude&aqi=no"
@@ -110,7 +110,7 @@ class InputActivity : AppCompatActivity() {
                 Request.Method.GET, API_CALL,
                 { response ->
                     Log.v("response", response.toString())
-                    // Display the first 500 characters of the response string.
+
                     viewBinding.textView2.text = "${parseWeatherApiResponse(response)}"
                 },
                 {  response -> viewBinding.textView2.text = "That didn't work! "

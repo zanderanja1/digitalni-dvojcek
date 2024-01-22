@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "feri.si.weatherapp-mergeDebugResources-47:/values-night-v8/values-night-v8.xml",
+            "outputFile": "/Users/zanderanja/.gradle/daemon/8.0/feri.si.weatherapp-mergeDebugResources-47:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
                     "source": "/Users/zanderanja/.gradle/caches/transforms-3/85e738ef0b50e0bb265be5e09305896a/transformed/material-1.11.0/res/values-night-v8/values-night-v8.xml",
@@ -54,6 +54,60 @@
                         "startOffsets": "176,246,330,414,510,612,714,3569",
                         "endColumns": "69,83,83,95,101,101,93,88",
                         "endOffsets": "241,325,409,505,607,709,803,3653"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "feri.si.weatherapp-mergeDebugResources-47:/values-night-v8/values-night-v8.xml",
+            "map": [
+                {
+                    "source": "/Users/zanderanja/.gradle/caches/transforms-3/85e738ef0b50e0bb265be5e09305896a/transformed/material-1.11.0/res/values-night-v8/values-night-v8.xml",
+                    "from": {
+                        "startLines": "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1",
+                        "startColumns": "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1",
+                        "startOffsets": "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1"
+                    },
+                    "to": {
+                        "startLines": "37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,63,64,65,66,67,68,69,70",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "2880,2955,3066,3155,3256,3363,3470,3569,3676,3779,3867,3991,4093,4195,4311,4413,4527,4655,4771,4893,5029,5149,5283,5403,5515,5730,5847,5971,6101,6223,6361,6495,6611",
+                        "endColumns": "74,110,88,100,106,106,98,106,102,87,123,101,101,115,101,113,127,115,121,135,119,133,119,111,125,116,123,129,121,137,133,115,119",
+                        "endOffsets": "2950,3061,3150,3251,3358,3465,3564,3671,3774,3862,3986,4088,4190,4306,4408,4522,4650,4766,4888,5024,5144,5278,5398,5510,5636,5842,5966,6096,6218,6356,6490,6606,6726"
+                    }
+                },
+                {
+                    "source": "/Users/zanderanja/digitalni-dvojcek-4/AndroidApp/app/src/main/res/values-night/themes.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "17",
+                        "endLines": "29",
+                        "endColumns": "12",
+                        "endOffsets": "2205"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "29",
+                        "endColumns": "12",
+                        "endOffsets": "2243"
+                    }
+                },
+                {
+                    "source": "/Users/zanderanja/.gradle/caches/transforms-3/e8e82ebe359b8fbf9ac53ef44116a504/transformed/appcompat-1.6.1/res/values-night-v8/values-night-v8.xml",
+                    "from": {
+                        "startLines": "-1,-1,-1,-1,-1,-1,-1,-1",
+                        "startColumns": "-1,-1,-1,-1,-1,-1,-1,-1",
+                        "startOffsets": "-1,-1,-1,-1,-1,-1,-1,-1"
+                    },
+                    "to": {
+                        "startLines": "30,31,32,33,34,35,36,62",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "2248,2318,2402,2486,2582,2684,2786,5641",
+                        "endColumns": "69,83,83,95,101,101,93,88",
+                        "endOffsets": "2313,2397,2481,2577,2679,2781,2875,5725"
                     }
                 }
             ]

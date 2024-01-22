@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.constraintlayout.widget.Guideline;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
@@ -22,6 +23,15 @@ public final class ActivityMainBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final Guideline guideline2;
+
+  @NonNull
+  public final Guideline guideline3;
+
+  @NonNull
+  public final Guideline guideline6;
+
+  @NonNull
   public final Button inputButton;
 
   @NonNull
@@ -33,18 +43,18 @@ public final class ActivityMainBinding implements ViewBinding {
   @NonNull
   public final Button simulateButton;
 
-  @NonNull
-  public final TextView textView4;
-
-  private ActivityMainBinding(@NonNull ConstraintLayout rootView, @NonNull Button inputButton,
+  private ActivityMainBinding(@NonNull ConstraintLayout rootView, @NonNull Guideline guideline2,
+      @NonNull Guideline guideline3, @NonNull Guideline guideline6, @NonNull Button inputButton,
       @NonNull TextView mainTitle, @NonNull RecyclerView recycleView,
-      @NonNull Button simulateButton, @NonNull TextView textView4) {
+      @NonNull Button simulateButton) {
     this.rootView = rootView;
+    this.guideline2 = guideline2;
+    this.guideline3 = guideline3;
+    this.guideline6 = guideline6;
     this.inputButton = inputButton;
     this.mainTitle = mainTitle;
     this.recycleView = recycleView;
     this.simulateButton = simulateButton;
-    this.textView4 = textView4;
   }
 
   @Override
@@ -74,6 +84,24 @@ public final class ActivityMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.guideline2;
+      Guideline guideline2 = ViewBindings.findChildViewById(rootView, id);
+      if (guideline2 == null) {
+        break missingId;
+      }
+
+      id = R.id.guideline3;
+      Guideline guideline3 = ViewBindings.findChildViewById(rootView, id);
+      if (guideline3 == null) {
+        break missingId;
+      }
+
+      id = R.id.guideline6;
+      Guideline guideline6 = ViewBindings.findChildViewById(rootView, id);
+      if (guideline6 == null) {
+        break missingId;
+      }
+
       id = R.id.inputButton;
       Button inputButton = ViewBindings.findChildViewById(rootView, id);
       if (inputButton == null) {
@@ -98,14 +126,8 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.textView4;
-      TextView textView4 = ViewBindings.findChildViewById(rootView, id);
-      if (textView4 == null) {
-        break missingId;
-      }
-
-      return new ActivityMainBinding((ConstraintLayout) rootView, inputButton, mainTitle,
-          recycleView, simulateButton, textView4);
+      return new ActivityMainBinding((ConstraintLayout) rootView, guideline2, guideline3,
+          guideline6, inputButton, mainTitle, recycleView, simulateButton);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
