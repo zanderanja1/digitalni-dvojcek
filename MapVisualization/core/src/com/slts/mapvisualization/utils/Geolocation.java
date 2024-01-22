@@ -1,4 +1,4 @@
-package com.mygdx.game.utils;
+package com.slts.mapvisualization.utils;
 
 public class Geolocation {
     public double lat;

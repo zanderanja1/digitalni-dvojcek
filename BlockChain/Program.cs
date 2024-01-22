@@ -21,6 +21,7 @@ namespace Server
     public struct Global
     {
         public static int threads = 1;
+        public static int hashes = 0;
         public static int counter = 0;
         public static int generated = 0;
         public static int diffAdjustInterval = 10;
@@ -118,6 +119,14 @@ namespace Server
                 return true;
             }
          }
+
+         public int GetNonces() {
+            int sum = 0;
+            for(int i = 0; i < Chain.Count; i++) {
+                sum += Chain[i].Nonce;
+            }
+            return sum;
+         }
         public bool IsValid()  
         {  
             for (int i = 1; i < Chain.Count; i++)  
@@ -214,19 +223,89 @@ namespace Server
         {
             Thread[] threads = new Thread[numThreads];
             object lockObject = new object();
+            object lockObject2 = new object();
+            string validHash = "";
+            int validNonce = 0;
+            int nonceRange = 100000;
+            var nicle = new string('0', Difficulty);
+            bool solutionFound = false;
+            int nonceCount = 0;
+            
+
+            for (int i = 0; i < numThreads; i++)
+            {
+                int localI = i;
+                threads[i] = new Thread(() =>
+                {
+                    string localHash;
+                    while (true)
+                    {
+                        var localNonce = 0;
+                        lock (lockObject2)
+                        {
+                            localNonce = nonceCount * nonceRange;
+                            nonceCount++;
+                        }
+                        if (solutionFound)
+                        {
+                            break;
+                        }
+                        for (int j = 0; j < nonceRange; j++)
+                        {
+                            if (solutionFound)
+                            {
+                                break;
+                            }
+                            localNonce++;
+                            localHash = CalculateHash(index, timeStamp, Data, PreviousHash, Difficulty, localNonce);
+                            
+                            if (localHash.Substring(0, Difficulty) == nicle)
+                            {
+                                lock (lockObject)
+                                {
+                                    if (!solutionFound && (validHash == "" || validHash.Substring(0, Difficulty) != nicle))
+                                    {
+                                        validHash = localHash;
+                                        validNonce = localNonce;
+                                        solutionFound = true;
+                                    }
+                                }
+                                break;
+                            }
+                        }
+                    }
+                });
+                threads[i].Start();
+            }
+
+            for (int i = 0; i < numThreads; i++)
+            {
+                threads[i].Join();
+            }
+
+            return new Block(index, timeStamp, PreviousHash, validHash, Data, validNonce, Difficulty);
+        }
+
+        /* public Block Mine(int index, DateTime timeStamp, string Data, string? PreviousHash, int Difficulty, int numThreads)
+        {
+            Thread[] threads = new Thread[numThreads];
+            object lockObject = new object();
             string validHash = "";
             int validNonce = 0;
             int nonceRange = 100000;
             var nicle = new string('0', Difficulty);
             bool solutionFound = false;
 
+
             for (int i = 0; i < numThreads; i++)
             {
                 int startNonce = i * nonceRange;
+                int localI = i;
                 threads[i] = new Thread(() =>
                 {
                     int localNonce = startNonce;
                     string localHash;
+                    //Console.WriteLine("Thread " + localI +" started");
 
                     while (true)
                     {
@@ -234,7 +313,7 @@ namespace Server
                         {
                             return;
                         }
-
+                        //Console.WriteLine("Thread " + localI + " start " + startNonce);
                         for (int j = 0; j < nonceRange; j++)
                         {
                             if (solutionFound)
@@ -250,6 +329,7 @@ namespace Server
                                 {
                                     if (!solutionFound && (validHash == "" || validHash.Substring(0, Difficulty) != nicle))
                                     {
+                                        //Console.WriteLine("Found solution on thread " + localI);
                                         validHash = localHash;
                                         validNonce = localNonce;
                                         solutionFound = true;
@@ -271,7 +351,7 @@ namespace Server
             }
 
             return new Block(index, timeStamp, PreviousHash, validHash, Data, validNonce, Difficulty);
-        }
+        } */
 
 
 
@@ -295,8 +375,8 @@ namespace Server
             var previousAdjustmentBlock = blockchain.Chain[blockchain.Chain.Count - Global.diffAdjustInterval];
             var timeExpected = Global.blockGenerationInterval * Global.diffAdjustInterval;
             var timeTaken = blockchain.GetLatestBlock().TimeStamp - previousAdjustmentBlock.TimeStamp;
-            Console.WriteLine("Time expected: " + timeExpected);
-            Console.WriteLine("Time taken: " + timeTaken.TotalMilliseconds);
+            //Console.WriteLine("Time expected: " + timeExpected);
+            //Console.WriteLine("Time taken: " + timeTaken.TotalMilliseconds);
             if (timeTaken.TotalMilliseconds < (timeExpected / 2))
             {
                 return previousAdjustmentBlock.Difficulty + 1;
@@ -325,7 +405,7 @@ namespace Server
                 Global.counter++;
                 Global.generated++;
                 blockchain.AddBlock(block);
-                Console.WriteLine("Added new block: " + block.Difficulty + ", on node " + rank + " with nonce " + block.Nonce);
+                //Console.WriteLine("Added new block: " + block.Difficulty + ", on node " + rank + " with nonce " + block.Nonce);
                 if(Global.generated == Global.diffAdjustInterval)
                 {
                     //Console.WriteLine("Adjusting Difficulty");
@@ -342,7 +422,7 @@ namespace Server
             } 
             else 
             {
-                Console.WriteLine("Block not valid on node " + rank);
+                //Console.WriteLine("Block not valid on node " + rank);
             }
         }
 
@@ -360,11 +440,11 @@ namespace Server
                     // Parse the next argument as an integer
                     if (int.TryParse(args[i + 1], out numThreads))
                     {
-                        Console.WriteLine("Number of threads: " + numThreads);
+                        //Console.WriteLine("Number of threads: " + numThreads);
                     }
                     else
                     {
-                        Console.WriteLine("Invalid number of threads. Please enter a valid integer.");
+                        //Console.WriteLine("Invalid number of threads. Please enter a valid integer.");
                     }
                 }
             }
@@ -385,6 +465,12 @@ namespace Server
                             var stopSignal = communicator.Receive<bool>(0, 1);
                             if (stopSignal)
                             {
+                                // Send confirmation message back to central node
+                                communicator.Send(true, 0, 1);
+
+                                // Send data to central node
+                                var data = verigaBlokov.GetNonces();
+                                communicator.Send(data, 0, 2);
                                 break;
                             }
                         }
@@ -397,13 +483,30 @@ namespace Server
                         if (verigaBlokov.GetLength() >= 20)
                         {
                             stopwatch.Stop();
-                            Console.WriteLine("Time taken: " + stopwatch.Elapsed);
+                            
 
-                            // Send stop signal to all other nodes
                             for (int i = 1; i < communicator.Size; i++)
                             {
                                 communicator.Send(true, i, 1);
                             }
+
+                            // Wait for all nodes to send back a confirmation message and receive data
+                            for (int i = 1; i < communicator.Size; i++)
+                            {
+                                communicator.Receive<bool>(i, 1);
+
+                                // Receive data from node
+                                var data = communicator.Receive<int>(i, 2); // Replace DataType with the type of your data
+                                Global.hashes += data;
+
+                                // Handle received data here
+                            }
+
+                            Console.WriteLine("Time taken: " + stopwatch.Elapsed.TotalSeconds);
+                            Console.WriteLine("Cumulative difficulty " + verigaBlokov.CalculateCumulativeDifficulty());
+                            Console.WriteLine("Hashes " + Global.hashes);
+                            double speed = Global.hashes/stopwatch.Elapsed.TotalSeconds;
+                            Console.WriteLine("Speed " + speed);
 
                             break;
                         }
@@ -413,7 +516,8 @@ namespace Server
                             var receiveRequest = communicator.ImmediateReceive<Blockchain>(Intracommunicator.anySource, Intracommunicator.anyTag);
                             var status = receiveRequest.Wait();
                             var receivedChain = (Blockchain)receiveRequest.GetValue();
-                            Console.WriteLine("Received chain on central node from node " + status.Source);
+                            //Console.WriteLine("Received chain on central node from node " + status.Source);
+                            
                             verigaBlokov = HandleReceivedChain(receivedChain, verigaBlokov, status.Source);
                         }
                     }
@@ -421,38 +525,22 @@ namespace Server
             });
         }
 
-
-        static void SendChainToAllNodes(Blockchain verigaBlokov, Intracommunicator communicator)
-        {
-            if(verigaBlokov.IsValid())
-            {
-                for (int i = 0; i < communicator.Size; i++)
-                {
-                    if (i != communicator.Rank)
-                    {
-                        // Send the chain to process i
-                        communicator.Send(verigaBlokov, i, 0);
-                    }
-                }
-            }
-        }
-
         static Blockchain HandleReceivedChain(Blockchain received, Blockchain current, int rank)
         {
             int currentCumuluativeDiff = current.CalculateCumulativeDifficulty();
             int receivedCumulativeDiff = received.CalculateCumulativeDifficulty();
 
-            Console.WriteLine("My difficulty " + currentCumuluativeDiff);
-            Console.WriteLine("Node " + rank + " difficulty " + receivedCumulativeDiff);
+            //Console.WriteLine("My difficulty " + currentCumuluativeDiff);
+            //Console.WriteLine("Node " + rank + " difficulty " + receivedCumulativeDiff);
 
             if(receivedCumulativeDiff > currentCumuluativeDiff)
             {
-                Console.WriteLine("Rewriting my blockchain with " + rank);
+                //Console.WriteLine("Rewriting my blockchain with " + rank);
                 return received;
             }
             else
             {
-                Console.WriteLine("Keeping the current chain");
+                //Console.WriteLine("Keeping the current chain");
                 return current;
             }
 

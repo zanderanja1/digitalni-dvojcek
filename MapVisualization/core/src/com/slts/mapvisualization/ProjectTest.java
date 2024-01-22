@@ -1,4 +1,4 @@
-package com.mygdx.game;
+package com.slts.mapvisualization;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
@@ -39,12 +39,12 @@ import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.utils.viewport.FitViewport;
-import com.mygdx.game.lang.Context;
-import com.mygdx.game.lang.Renderer;
-import com.mygdx.game.utils.Constants;
-import com.mygdx.game.utils.Geolocation;
-import com.mygdx.game.utils.MapRasterTiles;
-import com.mygdx.game.utils.ZoomXY;
+import com.slts.mapvisualization.assets.AssetDescriptors;
+import com.slts.mapvisualization.assets.RegionNames;
+import com.slts.mapvisualization.utils.Constants;
+import com.slts.mapvisualization.utils.ZoomXY;
+import com.slts.mapvisualization.utils.Geolocation;
+import com.slts.mapvisualization.utils.MapRasterTiles;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -52,8 +52,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-import com.mygdx.game.assets.AssetDescriptors;
-import com.mygdx.game.assets.RegionNames;
+
 
 public class ProjectTest extends ApplicationAdapter implements GestureDetector.GestureListener {
 
@@ -79,7 +78,6 @@ public class ProjectTest extends ApplicationAdapter implements GestureDetector.G
     private FitViewport hudViewport;
     private Stage hudStage;
     private Skin skin;
-    private boolean showLangExample = false;
 
     // animation
     private Stage stage;
@@ -196,15 +194,6 @@ public class ProjectTest extends ApplicationAdapter implements GestureDetector.G
         }
         shapeRenderer.end();
 
-        // lang
-        if(showLangExample){
-            Renderer renderer = new Renderer();
-            try {
-                renderer.render(new FileInputStream(new File("program.txt")), new Context(shapeRenderer, camera, beginTile));
-            } catch (FileNotFoundException e) {
-                throw new RuntimeException(e);
-            }
-        }
     }
 
     private void drawMarkers() {
@@ -375,15 +364,6 @@ public class ProjectTest extends ApplicationAdapter implements GestureDetector.G
         Table table = new Table();
         table.defaults().pad(20);
 
-        TextButton langButton = new TextButton("Lang", skin, "toggle");
-        langButton.addListener(new ClickListener() {
-            @Override
-            public void clicked(InputEvent event, float x, float y) {
-                showLangExample = !showLangExample;
-            }
-        });
-
-
         TextButton quitButton = new TextButton("Quit", skin);
         quitButton.addListener(new ClickListener() {
             @Override
@@ -395,7 +375,6 @@ public class ProjectTest extends ApplicationAdapter implements GestureDetector.G
         Table buttonTable = new Table();
         buttonTable.defaults().padLeft(30).padRight(30);
 
-        buttonTable.add(langButton).padBottom(15).expandX().fill().row();
         buttonTable.add(quitButton).fillX();
 
 
