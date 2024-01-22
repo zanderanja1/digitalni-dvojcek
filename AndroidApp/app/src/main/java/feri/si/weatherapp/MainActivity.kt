@@ -117,7 +117,7 @@ class MainActivity : AppCompatActivity() {
                     Log.d("InputSend",requestBodyString)*/
 
                     val request = Request.Builder()
-                        .url("http://192.168.1.102:3001/clouds")
+                        .url("http://192.168.0.27:3001/clouds")
                         .post(requestBody)
                         .build()
 
@@ -157,7 +157,7 @@ class MainActivity : AppCompatActivity() {
 
     fun fetchClouds() {
         val request = Request.Builder()
-            .url("http://192.168.1.102:3001/clouds")
+            .url("http://192.168.0.27:3001/clouds")
             .build()
         client.newCall(request).enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {
@@ -177,7 +177,7 @@ class MainActivity : AppCompatActivity() {
     }
     fun fetchCloudsAsync(callback: (String) -> Unit) {
         val request = Request.Builder()
-            .url("http://192.168.1.102:3001/clouds")
+            .url("http://192.168.0.27:3001/clouds")
             .build()
 
         client.newCall(request).enqueue(object : Callback {
