@@ -4,6 +4,7 @@ import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputMultiplexer;
+import com.badlogic.gdx.Net;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -26,6 +27,7 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
+import com.badlogic.gdx.net.HttpRequestBuilder;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
@@ -35,22 +37,23 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
-import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
-import com.badlogic.gdx.utils.Array;
+
+import com.badlogic.gdx.utils.JsonReader;
+import com.badlogic.gdx.utils.JsonValue;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.slts.mapvisualization.assets.AssetDescriptors;
 import com.slts.mapvisualization.assets.RegionNames;
+import com.slts.mapvisualization.utils.City;
 import com.slts.mapvisualization.utils.Constants;
 import com.slts.mapvisualization.utils.ZoomXY;
 import com.slts.mapvisualization.utils.Geolocation;
 import com.slts.mapvisualization.utils.MapRasterTiles;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 
@@ -60,17 +63,17 @@ public class ProjectTest extends ApplicationAdapter implements GestureDetector.G
     private Vector3 touchPosition;
     private Image weatherIcon;
 
-    private String weather = "Info";
-    private Label weatherText;
     private BitmapFont font;
     private TiledMap tiledMap;
     private TextureAtlas weatherAtlas;
-    private Map<String, Circle> textBounds = new HashMap<>();
+    private Map<City, Circle> textBounds = new HashMap<>();
+    private Map<City, Circle> detailBounds = new HashMap<>();
     private SpriteBatch batch;
     private TiledMapRenderer tiledMapRenderer;
     private OrthographicCamera camera;
     private Texture[] mapTiles;
     private ZoomXY beginTile;
+    private List<City> cities;
 
     private SpriteBatch spriteBatch;
 
@@ -89,7 +92,7 @@ public class ProjectTest extends ApplicationAdapter implements GestureDetector.G
 
     // center geolocation
     //46.059802, 14.753392
-    private final Geolocation CENTER_GEOLOCATION = new Geolocation(46.059802, 14.753392);
+    private final Geolocation CENTER_GEOLOCATION = new Geolocation(46.11666666, 14.8166666);
     //private final Geolocation CENTER_GEOLOCATION = new Geolocation(46.559070, 15.638100);
 
     // test marker
@@ -105,9 +108,14 @@ public class ProjectTest extends ApplicationAdapter implements GestureDetector.G
         assetManager.finishLoading();
         weatherAtlas = assetManager.get(AssetDescriptors.WEATHER);
         font = new BitmapFont(Gdx.files.internal("ui/font/default.fnt"));
-        font.getData().setScale(5);
+        font.getData().setScale(7);
 
-        Constants.initializeCityMap();
+        try {
+            cities = getCitiesFromServer(Constants.REQUEST_URL);
+        } catch (Exception e) {
+            e.printStackTrace();
+            // Handle the exception appropriately
+        }
 
         camera = new OrthographicCamera();
         camera.setToOrtho(false, Constants.MAP_WIDTH, Constants.MAP_HEIGHT);
@@ -155,10 +163,6 @@ public class ProjectTest extends ApplicationAdapter implements GestureDetector.G
         hudStage = new Stage(hudViewport, spriteBatch);
         hudStage.addActor(createButtons());
 
-        for (Actor a : weatherInfo()) {
-            hudStage.addActor(a);
-        }
-
         Gdx.input.setInputProcessor(new InputMultiplexer(hudStage, new GestureDetector(this)));
 
         // boat
@@ -170,7 +174,6 @@ public class ProjectTest extends ApplicationAdapter implements GestureDetector.G
     @Override
     public void render() {
         ScreenUtils.clear(0, 0, 0, 1);
-
         //handleInputMapResize();
 
         camera.update();
@@ -182,7 +185,6 @@ public class ProjectTest extends ApplicationAdapter implements GestureDetector.G
         hudStage.act(Gdx.graphics.getDeltaTime());
         stage.act(Gdx.graphics.getDeltaTime());
 
-        updateWeatherInfo();
         hudStage.draw();
         stage.draw();
 
@@ -194,15 +196,87 @@ public class ProjectTest extends ApplicationAdapter implements GestureDetector.G
         }
         shapeRenderer.end();
 
+        for (Map.Entry<City, Circle> entry : detailBounds.entrySet()) {
+            City city = entry.getKey();
+            Circle bounds = entry.getValue();
+
+            // Draw the city details within the detail bounds
+            batch.begin();
+            font.getData().setScale(3);
+            font.draw(batch, city.getWeatherStatus(), bounds.x, bounds.y + bounds.radius - 20);
+            font.draw(batch, city.getWind(), bounds.x, bounds.y + bounds.radius - 70);
+            font.draw(batch, "Vlaznost" + city.getHumidity(), bounds.x, bounds.y + bounds.radius - 120);
+            batch.end();
+        }
+        shapeRenderer.end();
+
     }
 
     private void drawMarkers() {
-        for (Map.Entry<String, Geolocation> entry : Constants.cityMap.entrySet()) {
+        font.getData().setScale(5);
+        for(City city : cities) {
+            // Load the image into a Texture
+            TextureRegion weatherTexture = weatherAtlas.findRegion(RegionNames.SUN);
+
+            switch (city.getWeatherStatus()) {
+                case "Oblacno":
+                    weatherTexture = weatherAtlas.findRegion(RegionNames.CLOUD);
+                    break;
+                case "Soncno":
+                    weatherTexture = weatherAtlas.findRegion(RegionNames.SUN);
+                    break;
+                case "Pretezno jasno":
+                    weatherTexture = weatherAtlas.findRegion(RegionNames.SUN);
+                    break;
+                case "Pretezno soncno":
+                    weatherTexture = weatherAtlas.findRegion(RegionNames.SUN);
+                    break;
+                case "Jasno":
+                    weatherTexture = weatherAtlas.findRegion(RegionNames.SUN);
+                    break;
+                case "Delno oblacno":
+                    weatherTexture = weatherAtlas.findRegion(RegionNames.CLOUDY);
+                    break;
+                case "Pretezno oblacno":
+                    weatherTexture = weatherAtlas.findRegion(RegionNames.CLOUDY);
+                    break;
+                case "Rahel dez":
+                    weatherTexture = weatherAtlas.findRegion(RegionNames.RAINING);
+                    break;
+                case "Zmrznjen dez":
+                    weatherTexture = weatherAtlas.findRegion(RegionNames.RAINING);
+                    break;
+                case "Rahel zmrznjen dez":
+                    weatherTexture = weatherAtlas.findRegion(RegionNames.RAINING);
+                    break;
+                case "Dez / Sneg":
+                    weatherTexture = weatherAtlas.findRegion(RegionNames.SNOW);
+                    break;
+                case "Dez / Zmrznjen dez":
+                    weatherTexture = weatherAtlas.findRegion(RegionNames.RAINING);
+                    break;
+                case "Rahel sneg":
+                    weatherTexture = weatherAtlas.findRegion(RegionNames.SNOW);
+                    break;
+                case "Sneg":
+                    weatherTexture = weatherAtlas.findRegion(RegionNames.SNOW);
+                    break;
+                case "Snezna ploha":
+                    weatherTexture = weatherAtlas.findRegion(RegionNames.SNOW);
+                    break;
+                case "Ledeno rosenje":
+                    weatherTexture = weatherAtlas.findRegion(RegionNames.RAINING);
+                    break;
+                default:
+                    weatherTexture = weatherAtlas.findRegion(RegionNames.CLOUD);
+                    break;
+
+            }
+
             shapeRenderer.setProjectionMatrix(camera.combined);
             shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
-            Geolocation geoLocation = entry.getValue();
-            String cityName = entry.getKey();
-
+            Geolocation geoLocation = new Geolocation(Double.parseDouble(city.getLatitude()), Double.parseDouble(city.getLongitude()));
+            String cityName = city.getName();
 
             Vector2 marker = MapRasterTiles.getPixelPosition(geoLocation.lat, geoLocation.lng, beginTile.x, beginTile.y);
 
@@ -214,24 +288,30 @@ public class ProjectTest extends ApplicationAdapter implements GestureDetector.G
             // Draw text for city name next to the rectangle
             batch.setProjectionMatrix(camera.combined);
             batch.begin();
-            if(cityName == "Piran" || cityName == "Izola") {
+            if(cityName.equals("Piran") || cityName.equals("Izola")) {
                 batch.end();
                 continue;
             }
-            else {
-                font.draw(batch, cityName, marker.x + 25, marker.y + 20);
-                addClickableText(cityName,marker.x +25 , marker.y + 20 , font);
 
+            else {
+                addInfoBox(city,marker.x , marker.y , font);
+                // Draw the image
+                batch.draw(weatherTexture, marker.x, marker.y, Constants.ICON_WIDTH, Constants.ICON_HEIGHT);
+
+                // Draw the temperature next to the image
+                font.draw(batch, city.getTemperature(), marker.x + Constants.ICON_WIDTH + 5, marker.y + Constants.ICON_HEIGHT - 20f);
+
+                // Draw the city name below the image
+                font.draw(batch, city.getName(), marker.x, marker.y - 20);
             }
             batch.end();
         }
-
     }
-    private void addClickableText(String text, float x, float y, BitmapFont font) {
-        GlyphLayout layout = new GlyphLayout(font, text);
 
+
+    private void addInfoBox(City city, float x, float y, BitmapFont font) {
         Circle bounds = new Circle(x - 30 , y, 30);
-        textBounds.put(text, bounds);
+        textBounds.put(city, bounds);
     }
 
     @Override
@@ -242,17 +322,14 @@ public class ProjectTest extends ApplicationAdapter implements GestureDetector.G
         float touchX = touchPos.x;
         float touchY = touchPos.y;
 
-        for (Map.Entry<String, Circle> entry : textBounds.entrySet()) {
-            if (entry.getValue().contains(touchX, touchY)) {
-
-                Gdx.app.log("Click", "Clicked on text: " + entry.getKey());
-                System.out.println(entry.getKey());
-
-                weather = "vreme v " + entry.getKey() + ": soncno\n temperatura: 19ºC";
-
-
-
+        for (Map.Entry<City, Circle> entry : textBounds.entrySet()) {
+            if (entry.getValue().contains(touchX, touchY) && !detailBounds.containsKey(entry.getKey())) {
+                Gdx.app.log("Click", "Clicked on text: " + entry.getKey().getName());
+                Circle bounds = new Circle(entry.getValue().x, entry.getValue().y + 150, 200);
+                detailBounds.put(entry.getKey(), bounds);
                 break;
+            } else if (entry.getValue().contains(touchX, touchY) && detailBounds.containsKey(entry.getKey())){
+                detailBounds.remove(entry.getKey());
             }
         }
 
@@ -264,8 +341,6 @@ public class ProjectTest extends ApplicationAdapter implements GestureDetector.G
         shapeRenderer.dispose();
         hudStage.dispose();
     }
-
-
 
     @Override
     public boolean tap(float x, float y, int count, int button) {
@@ -320,16 +395,16 @@ public class ProjectTest extends ApplicationAdapter implements GestureDetector.G
             camera.zoom -= 0.02;
         }
         if (Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
-            camera.translate(-3, 0, 0);
+            camera.translate(-50, 0, 0);
         }
         if (Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
-            camera.translate(3, 0, 0);
+            camera.translate(50, 0, 0);
         }
         if (Gdx.input.isKeyPressed(Input.Keys.DOWN)) {
-            camera.translate(0, -3, 0);
+            camera.translate(0, -50, 0);
         }
         if (Gdx.input.isKeyPressed(Input.Keys.UP)) {
-            camera.translate(0, 3, 0);
+            camera.translate(0, 50, 0);
         }
 
         camera.zoom = MathUtils.clamp(camera.zoom, 0.5f, 2f);
@@ -339,25 +414,6 @@ public class ProjectTest extends ApplicationAdapter implements GestureDetector.G
 
         camera.position.x = MathUtils.clamp(camera.position.x, effectiveViewportWidth / 2f, Constants.MAP_WIDTH - effectiveViewportWidth / 2f);
         camera.position.y = MathUtils.clamp(camera.position.y, effectiveViewportHeight / 2f, Constants.MAP_HEIGHT - effectiveViewportHeight / 2f);
-    }
-    private Array<Actor> weatherInfo(){
-        Array<Actor> info = new Array<Actor>();
-        weatherText = new Label(weather, skin);
-        weatherText.setPosition(50f,100f);
-        weatherText.setScaleX(5f);
-
-        weatherIcon = new Image(weatherAtlas.findRegion(RegionNames.SUN));
-        weatherIcon.setPosition(50f,130f);
-        weatherIcon.setSize(30f,30f);
-
-        info.add(weatherText);
-        info.add(weatherIcon);
-        return info;
-    }
-    private void updateWeatherInfo(){
-
-        weatherText.setText(weather);
-
     }
 
     private Actor createButtons() {
@@ -377,7 +433,6 @@ public class ProjectTest extends ApplicationAdapter implements GestureDetector.G
 
         buttonTable.add(quitButton).fillX();
 
-
         table.add(buttonTable);
         table.left();
         table.top();
@@ -386,4 +441,70 @@ public class ProjectTest extends ApplicationAdapter implements GestureDetector.G
 
         return table;
     }
+
+    public static List<City> getCitiesFromServer(String urlStr) throws Exception {
+        final List<City> cities = new ArrayList<>();
+
+        HttpRequestBuilder requestBuilder = new HttpRequestBuilder();
+        Net.HttpRequest httpRequest = requestBuilder.newRequest().method(Net.HttpMethods.GET).url(urlStr).build();
+
+
+
+        Gdx.net.sendHttpRequest(httpRequest, new Net.HttpResponseListener() {
+            public void handleHttpResponse(Net.HttpResponse httpResponse) {
+                String response = "";
+                try {
+                    response = new String(httpResponse.getResult(), "UTF-8");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                System.out.println(response);
+
+                JsonReader jsonReader = new JsonReader();
+
+
+                JsonValue jsonResponse = jsonReader.parse(response);
+
+                for (JsonValue cityJson : jsonResponse) {
+                    String name = cityJson.getString("name");
+                    name = name.replace("Č", "C");
+                    name = name.replace("č", "c");
+                    name = name.replace("Š", "S");
+                    name = name.replace("š", "s");
+                    name = name.replace("Ž", "Ž");
+                    name = name.replace("ž", "z");
+
+                    String weatherStatus = cityJson.getString("weatherStatus");
+                    weatherStatus = weatherStatus.replace("Č", "C");
+                    weatherStatus = weatherStatus.replace("č", "c");
+                    weatherStatus = weatherStatus.replace("Š", "S");
+                    weatherStatus = weatherStatus.replace("š", "s");
+                    weatherStatus = weatherStatus.replace("Ž", "Ž");
+                    weatherStatus = weatherStatus.replace("ž", "z");
+
+                    City city = new City();
+                    city.setName(name);
+                    city.setTemperature(cityJson.getString("temperature"));
+                    city.setHumidity(cityJson.getString("humidity"));
+                    city.setWind(cityJson.getString("wind"));
+                    city.setWeatherStatus(weatherStatus);
+                    city.setLatitude(cityJson.getString("latitude"));
+                    city.setLongitude(cityJson.getString("longitude"));
+                    System.out.println(city.getName());
+                    cities.add(city);
+                }
+            }
+
+            public void failed(Throwable t) {
+                System.out.println("Data fetching failed");
+            }
+
+            public void cancelled() {
+                // Handle cancellation
+            }
+        });
+
+        return cities;
+    }
+
 }
