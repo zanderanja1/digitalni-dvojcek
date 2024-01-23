@@ -8,12 +8,14 @@ android {
     namespace = "feri.si.weatherapp"
     compileSdk = 34
 
+
     defaultConfig {
         applicationId = "feri.si.weatherapp"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
+        multiDexEnabled = true
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -49,6 +51,7 @@ dependencies {
     implementation("com.google.android.gms:play-services-cronet:18.0.1")
 
     implementation("com.github.dhaval2404:imagepicker:2.1")
+
 
     implementation("androidx.camera:camera-core:1.2.1")
     implementation("androidx.camera:camera-video:1.2.1")

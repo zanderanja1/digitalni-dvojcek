@@ -1,6 +1,7 @@
 package feri.si.weatherapp
 
 import android.Manifest
+import android.app.NotificationManager
 import android.content.Context
 import android.content.Intent
 import android.content.pm.ApplicationInfo
@@ -99,7 +100,7 @@ class InputActivity : AppCompatActivity() {
 
             Log.v("lokacija network", "network: $location")
 
-            viewBinding.textView.text = "Latitude: ${location?.latitude}, Longitutde: ${location?.longitude}"
+            viewBinding.textView.text = "Latitude: ${location?.latitude}\nLongitutde: ${location?.longitude}"
             val latitude = location?.latitude
             val longitude = location?.longitude
             val API_CALL = "https://api.weatherapi.com/v1/current.json?key=$apiKey&q=$latitude $longitude&aqi=no"
@@ -109,7 +110,7 @@ class InputActivity : AppCompatActivity() {
                 Request.Method.GET, API_CALL,
                 { response ->
                     Log.v("response", response.toString())
-                    // Display the first 500 characters of the response string.
+
                     viewBinding.textView2.text = "${parseWeatherApiResponse(response)}"
                 },
                 {  response -> viewBinding.textView2.text = "That didn't work! "
@@ -193,6 +194,7 @@ class InputActivity : AppCompatActivity() {
                 data.putExtra("imageUri", image.toString())
                 setResult(RESULT_OK, data)
                 finish()
+
             } catch (e: Exception) {
                 Toast.makeText(this,e.toString(), Toast.LENGTH_LONG).show()
             }

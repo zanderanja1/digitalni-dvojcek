@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="cloud_recognition">Cloud recognition</string>
+    <string name="recycler_view_placeholder">Recycler view placeholder</string>
+    <string name="create_new">Create new</string>
+    <string name="simulate_data">Simulate data</string>
 </resources>
